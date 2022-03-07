@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot when logged in 1`] = `
+<DocumentFragment>
+  <nav
+    class="NavBar navbar navbar-expand-lg navbar-light"
+  >
+    <span
+      class="NavBar-Brand navbar-brand"
+    >
+      <a
+        class="nav-link"
+        href="/healthy-eater"
+      >
+        Healthy-Eater
+        <img
+          class="brand-img"
+          height="28px"
+          src="lettuce.png"
+          width="28px"
+        />
+      </a>
+    </span>
+    <div
+      class="NavBar-Container container"
+    >
+      <a
+        class="nav-link"
+        href="/find_recipes"
+      >
+        Find Recipes
+      </a>
+      <a
+        class="nav-link"
+        href="/recipes/saved-recipes"
+      >
+        Saved Recipes
+      </a>
+      <a
+        class="nav-link"
+        href="/mealplan"
+      >
+        Mealplan
+      </a>
+      <a
+        class="nav-link"
+        href="/points"
+      >
+        Calculate Points
+      </a>
+      <button
+        class="general-btn-red logout-btn"
+      >
+         Log Out Tyler
+      </button>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <nav
+    class="NavBar navbar navbar-expand-lg navbar-light"
+  >
+    <span
+      class="NavBar-Brand navbar-brand"
+    >
+      <a
+        class="nav-link"
+        href="/healthy-eater"
+      >
+        Healthy-Eater
+        <img
+          class="brand-img"
+          height="28px"
+          src="lettuce.png"
+          width="28px"
+        />
+      </a>
+    </span>
+    <div
+      class="NavBar-Container container"
+    >
+      <a
+        class="nav-link signup"
+        href="/users/signup"
+      >
+        Signup
+      </a>
+      <a
+        class="nav-link login"
+        href="/users/login"
+      >
+        Login
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

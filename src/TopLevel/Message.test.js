@@ -1,20 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import App from './App'
+import { render } from '@testing-library/react';
+import Message from './Message';
 import { MemoryRouter } from "react-router-dom";
 
 
 it("renders without crashing", function () {
   <MemoryRouter>
-    <App />
+    <Message />
   </MemoryRouter>
 });
 
 it("matches snapshot", function () {
-
   const container = render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>
+      <MemoryRouter>
+          <Message />
+      </MemoryRouter>
   );
   expect(container.asFragment()).toMatchSnapshot();
 });

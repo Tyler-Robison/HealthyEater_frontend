@@ -40,6 +40,8 @@ function App() {
     loginLogout()
   }, [token])
 
+  console.log('curr user', currentUser)
+
   // state where each var is being used
   const providerObj = { 
     currentUser, 

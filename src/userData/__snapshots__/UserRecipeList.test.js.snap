@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <div
+    class="UserRecipeList"
+  >
+    <div
+      class="UserRecipeList-div"
+    >
+      <h3
+        class="UserRecipeList-header"
+      >
+        Tyler's saved recipes
+      </h3>
+      <div>
+        <div>
+          <a
+            class="RecipeList-para"
+            href="/1111/detail"
+          >
+            <b>
+              bacon
+            </b>
+          </a>
+           (20 points)
+          <button
+            class="general-btn-red small-btn"
+            style="margin-left: 0.4rem;"
+          >
+            X
+          </button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a
+            class="RecipeList-para"
+            href="/2222/detail"
+          >
+            <b>
+              eggs
+            </b>
+          </a>
+           (10 points)
+          <button
+            class="general-btn-red small-btn"
+            style="margin-left: 0.4rem;"
+          >
+            X
+          </button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a
+            class="RecipeList-para"
+            href="/3333/detail"
+          >
+            <b>
+              salad
+            </b>
+          </a>
+           (5 points)
+          <button
+            class="general-btn-red small-btn"
+            style="margin-left: 0.4rem;"
+          >
+            X
+          </button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a
+            class="RecipeList-para"
+            href="/4444/detail"
+          >
+            <b>
+              bread
+            </b>
+          </a>
+           (7 points)
+          <button
+            class="general-btn-red small-btn"
+            style="margin-left: 0.4rem;"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
