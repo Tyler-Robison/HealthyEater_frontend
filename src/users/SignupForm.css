@@ -1,0 +1,25 @@
+.SignupForm {
+    background-image: url('../Images/homepage_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 94.3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SignupForm-div { 
+    margin-top: 3rem;
+    background-color: white;
+    width: 24vw;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.SignupForm-div input{ 
+    margin-bottom: 1rem;
+}
+
+.SignupForm-btn {
+    margin-bottom: 1rem;
+}

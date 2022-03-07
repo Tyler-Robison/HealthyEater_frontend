@@ -1,0 +1,15 @@
+.Day {
+    width: 15%;
+    height: 100%;
+    border: 1px solid black;
+    position: relative;
+    background-color: white;
+}
+
+.Day-points {
+    position: absolute;
+    bottom: 0rem;
+    margin: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

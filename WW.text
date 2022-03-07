@@ -1,0 +1,3 @@
+Smart Points Food Value Calculation
+
+(Calories * .0305) + (Sat Fat * .275) + (Sugar * .12) - (Protein * .098)

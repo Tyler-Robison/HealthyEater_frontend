@@ -1,0 +1,92 @@
+.recipe-div {
+    border: solid 2px black;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.ingredient-div {
+    background-image: url('../../Images/food_theme.jpg');
+    /* background-image */
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.nutrient-div {
+    background-image: url('../../Images/nutri_background.jpg');
+    width: 49.9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nutrient-para-container {
+    margin-bottom: 5px;
+}
+
+.nutrient-para {
+    margin: 0px;
+}
+
+.GetRecipes-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0rem;
+}
+
+.GetRecipes-header {
+    margin-top: 1rem;
+    color: #2477f3;
+    font-weight: 900;
+    font-size: 2.2rem;
+}
+
+.GetRecipes-IngForm-container {
+    margin-top: 0.4rem;
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    width: 45%;
+    height: 98%;
+    /* box-shadow: 2px 2px 8px rgb(70, 70, 70); */
+}
+
+.NutrientForm-container {
+    margin-top: 0.4rem;
+    position: relative;
+    background-color: rgb(191, 227, 240);
+    border-radius: 1rem;
+    width: 45%;
+    height: 98%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.container-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../Images/food_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 92.9vh;
+}
+
+.FindRecipes-div {
+    margin: 1.5rem 0px;
+    width: 26vw;
+    background-color: white;
+    padding: 1rem 0rem;;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.FindRecipes-para {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}

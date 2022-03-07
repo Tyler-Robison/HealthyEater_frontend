@@ -1,0 +1,32 @@
+.UserPoints {
+    background-image: url('../../Images/points.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 94.1vh;
+}
+
+.UserPoints-div {
+    margin-top: 2rem;
+    background-color: white;
+    width: 28vw;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.UserPoints-div button {
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.UserPoints-calc-div {
+    margin-bottom: 0.6rem;
+
+}
+
+.UserPoints-calc-div label {
+    font-size: 1rem;
+    font-weight: 600;
+}

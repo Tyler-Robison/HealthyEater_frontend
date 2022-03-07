@@ -1,0 +1,33 @@
+.RecipeList-div {
+    background-color: white;
+    border: 2px solid black;
+    width: 30vw;
+    margin-top: 1rem;
+    border-radius: 2%;
+    box-shadow: 10px 5px 5px rgb(87, 87, 87);
+}
+
+.RecipeList-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../Images/food_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 94vh;
+}
+
+.RecipeList-para {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.RecipeList-img {
+    margin-bottom: 1rem;
+}
+
+.RecipeList-container button {
+    margin-top: 1rem;
+    box-shadow: 10px 5px 5px rgb(87, 87, 87);
+}

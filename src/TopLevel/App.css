@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border-radius: 20%;
+  padding-top: 0px;
+  padding: 0px 0.3rem;
+  border: 1px black solid;
+}
+
+.general-btn {
+  padding: 4px 14px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+}
+
+.general-btn-red {
+  padding: 4px 14px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background-color: red;
+}
+
+/* button:active {
+  transform:scale(.95);
+} */
+
+
+
+
+

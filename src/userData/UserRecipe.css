@@ -1,0 +1,9 @@
+.small-btn {
+    font-size: small;
+    padding: 0px 0.25rem;
+    border-radius: 20%;
+}
+
+.UserRecipe-para {
+    margin-bottom: 0.5rem;
+}
