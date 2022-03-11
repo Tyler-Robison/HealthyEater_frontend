@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="AddIngredient-Form"
+  >
+    <div
+      class="nutrient-form-div"
+    >
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="fat"
+          >
+            Max Fat (grams)
+          </label>
+        </div>
+        <input
+          id="fat"
+          name="maxFat"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="satFat"
+          >
+            Max Sat Fat (grams)
+          </label>
+        </div>
+        <input
+          id="satFat"
+          name="maxSaturatedFat"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="carbs"
+          >
+            Max Carbs (grams)
+          </label>
+        </div>
+        <input
+          id="carbs"
+          name="maxCarbs"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="calories"
+          >
+             Max Calories (kCals)
+          </label>
+        </div>
+        <input
+          id="calories"
+          name="maxCalories"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="cholesterol"
+          >
+            Max Cholesterol (mg)
+          </label>
+        </div>
+        <input
+          id="cholesterol"
+          name="maxCholesterol"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="sugar"
+          >
+            Max Sugar (grams)
+          </label>
+        </div>
+        <input
+          id="sugar"
+          name="maxSugar"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="sodium"
+          >
+            Max Sodium (mg)
+          </label>
+        </div>
+        <input
+          id="sodium"
+          name="maxSodium"
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="nutrient-input-div"
+      >
+        <div>
+          <label
+            for="protein"
+          >
+            Min Protein (grams)
+          </label>
+        </div>
+        <input
+          id="protein"
+          name="minProtein"
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+    <div>
+      <button
+        class="general-btn set-nutrients-btn"
+        type="submit"
+      >
+        Update Values
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

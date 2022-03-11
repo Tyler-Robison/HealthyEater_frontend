@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
 import { useFormik } from "formik";
 import PlannerAPI from "../../APIs/plannerAPI";
-import UserAPI from "../../APIs/userAPI";
 import GlobalContext from "../../context/GlobalContext";
 
-// on submit tries to visit
-// http://localhost:3000/recipes/saved-recipes?daySelect=Tues&mealSelect=Cheesy+Ham+and+Shrimp+Macaroni+Au+Gratin
-const PlanForm = ({ days, userRecipes }) => {
+const PlanForm = ({ days }) => {
 
     const { token, currentUser, setCurrentUser } = useContext(GlobalContext);
 
@@ -21,8 +18,6 @@ const PlanForm = ({ days, userRecipes }) => {
     const handleFormikSubmit = async (values) => {
         let { daySelect, mealSelect } = values
 
-        // obj is stored as a string in select value.
-        // handle nothing selected by user
         let meal;
         mealSelect === '' ? meal = currentUser.recipes[0] :
             meal = JSON.parse(mealSelect)
@@ -32,10 +27,14 @@ const PlanForm = ({ days, userRecipes }) => {
             day: daySelect,
             recipe_id: meal.recipe_id
         }
-        // getUserInfo gets currentUser w/ mealData added via first API call
-        await PlannerAPI.setMeal(currentUser.id, token, data)
-        const user = await UserAPI.getUserInfo(currentUser.id, token)
-        setCurrentUser(user)
+        
+        const mealRes = await PlannerAPI.setMeal(currentUser.id, token, data)
+
+        // mealPlannerRow contains:
+        // id, recipe_id, day from user_mealplan table AND
+        // ww_points, name from recipes table 
+        currentUser.mealplan.push(mealRes.mealplannerRow)
+        setCurrentUser({...currentUser, currentUser})
     }
 
     const dayValues = days.map((day, idx) => {
@@ -48,6 +47,7 @@ const PlanForm = ({ days, userRecipes }) => {
             recipe_id: recipe.recipe_id,
             ww_points: recipe.ww_points
         }
+        // store recipeObj as string, convert back to object on formSubmit
         return <option key={recipe.recipe_id} value={JSON.stringify(recipeObj)}>{recipe.name}</option>
     })
 

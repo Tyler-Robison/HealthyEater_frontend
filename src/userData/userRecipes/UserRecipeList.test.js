@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import UserRecipeList from './UserRecipeList';
 import { MemoryRouter } from "react-router-dom";
-import ContextProvider from '../testContext'
+import ContextProvider from '../../testContext';
 
 
 it("renders without crashing", function () {
@@ -10,7 +10,7 @@ it("renders without crashing", function () {
     </MemoryRouter>
 });
 
-it("matches snapshot when logged out", function () {
+it("matches snapshot", function () {
 
     const container = render(
         <MemoryRouter>

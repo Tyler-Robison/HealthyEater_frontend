@@ -1,12 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import SignupForm from './SignupForm';
 import { MemoryRouter } from "react-router-dom";
-import UserProvider from '../testUtils'
+import ContextProvider from '../testContext'
 
 
 it("renders without crashing", function () {
     <MemoryRouter>
-        <SignupForm />
+        <ContextProvider>
+            <SignupForm />
+        </ContextProvider>
     </MemoryRouter>
 });
 
@@ -14,9 +16,9 @@ it("matches snapshot", function () {
 
     const container = render(
         <MemoryRouter>
-            <UserProvider>
+            <ContextProvider>
                 <SignupForm />
-            </UserProvider>
+            </ContextProvider>
         </MemoryRouter>
     );
     expect(container.asFragment()).toMatchSnapshot();

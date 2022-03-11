@@ -17,8 +17,10 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
     })
 
     const addIngredient = (values) => {
+        console.log('adding ing***************')
         const { ingredient } = values;
         if (ingredient === '') return
+        console.log('ingredient', ingredient)
         formik.resetForm();
         setIngredientsList([...ingredientsList, ingredient]);
     }
@@ -27,20 +29,23 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
     return (
         <form className="AddIngredient-Form" onSubmit={formik.handleSubmit}>
 
-                <input
-                    className="test-input"
-                    id="ingredient"
-                    name="ingredient"
-                    type='text'
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.ingredient}
-                />
-                  {formik.touched.ingredient && formik.errors.ingredient && (
-                    <div>{formik.errors.ingredient}</div>
-                )}
-     
-            <button className="general-btn" type="submit">Add ingredient</button>
+            <input
+                role=''
+                className="test-input"
+                id="ingredient"
+                name="ingredient"
+                type='text'
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.ingredient}
+                placeholder='Enter Ingredient'
+            />
+
+            {formik.touched.ingredient && formik.errors.ingredient && (
+                <div>{formik.errors.ingredient}</div>
+            )}
+
+            <button className="general-btn" type="submit">Add Ingredient</button>
         </form>
     )
 }

@@ -38,6 +38,7 @@ const GetRecipes = () => {
 
     const getRecipesFunc = async () => {
         const res = await SpoonacularAPI.getRecipes(ingredientsList, nutrientObj, token, currentUser.id)
+        console.log('recipe res', res)
         if (res.results.length === 0) {
             setMsg('Recipe search failed. Try removing ingredients. If you have nutritional constraints, try relaxing them.')
             return
@@ -72,18 +73,6 @@ const GetRecipes = () => {
                     <div className="NutrientForm-container">
                         <h3 className="GetRecipes-header">Nutrients</h3>
                         {/* <button onClick={resetNutrients}>Clear List</button> */}
-
-                        {/* for de-bugging purposes */}
-                        {/* <div className="nutrient-para-container">
-                            <p className="nutrient-para">Fat: {fat}</p>
-                            <p className="nutrient-para">Saturated Fat: {satFat}</p>
-                            <p className="nutrient-para">Carbs: {carbs}</p>
-                            <p className="nutrient-para">Calories: {calories}</p>
-                            <p className="nutrient-para">Cholesterol: {cholesterol}</p>
-                            <p className="nutrient-para">Sugar: {sugar}</p>
-                            <p className="nutrient-para">Sodium: {sodium}</p>
-                            <p className="nutrient-para">Protein: {protein}</p>
-                        </div> */}
 
                         <NutrientForm
                             setFat={setFat}

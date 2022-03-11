@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SpoonacularAPI from '../../APIs/spoonAPI';
-import UserAPI from '../../APIs/userAPI';
+import RecipeAPI from '../../APIs/recipeAPI';
 import NutrientTable from './NutrientTable';
 import StepsList from './StepsList';
 import GlobalContext from '../../context/GlobalContext';
@@ -41,9 +41,9 @@ const RecipeDetail = () => {
 
     // only care recipe detail, nutri detail can be obtained based on recipe_id
     const saveRecipe = async () => {
-        const res = await UserAPI.saveRecipe(recipeDetail, currentUser.id, token)
-        const user = await UserAPI.getUserInfo(currentUser.id, token)
-        setCurrentUser(user)
+        const recipeRes = await RecipeAPI.saveRecipe(recipeDetail, currentUser.id, token)
+        currentUser.recipes.push(recipeRes.savedRecipe)
+        setCurrentUser({...currentUser, currentUser})
     }
 
     if (!recipeDetail) return <p>Loading...</p>
@@ -53,7 +53,6 @@ const RecipeDetail = () => {
             <div className='RecipeDetail-summary'>
                 <h1>{recipeDetail.title}</h1>
 
-                {/* <h2>Summary: {recipeDetail.summary}</h2> */}
                 <h3>Preparation Time: {recipeDetail.readyInMinutes} Minutes</h3>
                 <h3>Serves: {recipeDetail.servings}</h3>
                 <h3>Weight Watcher's Smart Points: {recipeDetail.weightWatcherSmartPoints}</h3>

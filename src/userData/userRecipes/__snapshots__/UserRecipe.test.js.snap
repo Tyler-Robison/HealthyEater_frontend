@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <a
+        class="RecipeList-para"
+        href="/1111/detail"
+      >
+        <b>
+          bacon
+        </b>
+      </a>
+       (20 points)
+      <button
+        class="general-btn-red small-btn"
+        style="margin-left: 0.4rem;"
+      >
+        X
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

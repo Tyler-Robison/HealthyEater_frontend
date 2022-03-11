@@ -1,14 +1,14 @@
 import { getByLabelText, render, screen, fireEvent, act } from '@testing-library/react';
 import LoginForm from './LoginForm';
 import { MemoryRouter } from "react-router-dom";
-import UserProvider from '../testUtils'
-import App from '../Top_level/App'
-import { env } from 'process';
-import { Html } from '@mui/icons-material';
+import ContextProvider from '../testContext'
+import App from '../TopLevel/App';
 
 it("renders without crashing", function () {
     <MemoryRouter>
-        <LoginForm />
+        <ContextProvider>
+            <LoginForm />
+        </ContextProvider>
     </MemoryRouter>
 });
 
@@ -16,9 +16,9 @@ it("matches snapshot", function () {
 
     const container = render(
         <MemoryRouter>
-            <UserProvider>
+            <ContextProvider>
                 <LoginForm />
-            </UserProvider>
+            </ContextProvider>
         </MemoryRouter>
     );
     expect(container.asFragment()).toMatchSnapshot();

@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] = `
+<DocumentFragment>
+  <div
+    class="MealPlanner"
+  >
+    <div
+      class="MealPlanner-header"
+    >
+      <h1>
+        Tyler's Mealplan 
+      </h1>
+    </div>
+    <button
+      class="general-btn-red"
+    >
+      Clear Calendar
+    </button>
+    <br />
+    <div
+      class="week-div"
+    >
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Mon
+          </b>
+        </p>
+        <ol>
+          <li>
+             
+            <a
+              class="RecipeList-para"
+              href="/1111/detail"
+            >
+              <b>
+                bacon
+              </b>
+            </a>
+             (20 points)
+            <button
+              class="general-btn-red small-btn"
+            >
+              X
+            </button>
+          </li>
+          <li>
+             
+            <a
+              class="RecipeList-para"
+              href="/2222/detail"
+            >
+              <b>
+                eggs
+              </b>
+            </a>
+             (10 points)
+            <button
+              class="general-btn-red small-btn"
+            >
+              X
+            </button>
+          </li>
+        </ol>
+        <p
+          class="Day-points"
+        >
+          <b>
+            Total Points:
+          </b>
+           30
+        </p>
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Tues
+          </b>
+        </p>
+        <ol>
+          <li>
+             
+            <a
+              class="RecipeList-para"
+              href="/3333/detail"
+            >
+              <b>
+                salad
+              </b>
+            </a>
+             (5 points)
+            <button
+              class="general-btn-red small-btn"
+            >
+              X
+            </button>
+          </li>
+        </ol>
+        <p
+          class="Day-points"
+        >
+          <b>
+            Total Points:
+          </b>
+           5
+        </p>
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Wed
+          </b>
+        </p>
+        <ol />
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Thurs
+          </b>
+        </p>
+        <ol />
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Fri
+          </b>
+        </p>
+        <ol />
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Sat
+          </b>
+        </p>
+        <ol />
+      </div>
+      <div
+        class="Day"
+      >
+        <p>
+          <b>
+            Sun
+          </b>
+        </p>
+        <ol />
+      </div>
+    </div>
+    <form>
+      <label
+        for="daySelect"
+      >
+        Select Day
+      </label>
+      <select
+        id="daySelect"
+        name="daySelect"
+      >
+        <option
+          value="Mon"
+        >
+          Mon
+        </option>
+        <option
+          value="Tues"
+        >
+          Tues
+        </option>
+        <option
+          value="Wed"
+        >
+          Wed
+        </option>
+        <option
+          value="Thurs"
+        >
+          Thurs
+        </option>
+        <option
+          value="Fri"
+        >
+          Fri
+        </option>
+        <option
+          value="Sat"
+        >
+          Sat
+        </option>
+        <option
+          value="Sun"
+        >
+          Sun
+        </option>
+      </select>
+      <label
+        for="mealSelect"
+      >
+        Select Meal
+      </label>
+      <select
+        id="mealSelect"
+        name="mealSelect"
+      >
+        <option
+          value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
+        >
+          bacon
+        </option>
+        <option
+          value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
+        >
+          eggs
+        </option>
+        <option
+          value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
+        >
+          salad
+        </option>
+        <option
+          value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
+        >
+          bread
+        </option>
+      </select>
+      <button
+        class="general-btn"
+        type="submit"
+      >
+        Place Meal in Selected Data
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

@@ -1,7 +1,6 @@
 
 
 const Step = ({ step }) => {
-
     const displayItems = (step) => {
         if (step.length === 0) return 'None'
 

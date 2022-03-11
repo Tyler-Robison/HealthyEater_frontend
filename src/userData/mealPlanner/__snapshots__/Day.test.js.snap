@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot on day with meals 1`] = `
+<DocumentFragment>
+  <div
+    class="Day"
+  >
+    <p>
+      <b>
+        Mon
+      </b>
+    </p>
+    <ol>
+      <li>
+         
+        <a
+          class="RecipeList-para"
+          href="/1111/detail"
+        >
+          <b>
+            bacon
+          </b>
+        </a>
+         (20 points)
+        <button
+          class="general-btn-red small-btn"
+        >
+          X
+        </button>
+      </li>
+      <li>
+         
+        <a
+          class="RecipeList-para"
+          href="/2222/detail"
+        >
+          <b>
+            eggs
+          </b>
+        </a>
+         (10 points)
+        <button
+          class="general-btn-red small-btn"
+        >
+          X
+        </button>
+      </li>
+    </ol>
+    <p
+      class="Day-points"
+    >
+      <b>
+        Total Points:
+      </b>
+       30
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot on day with no meals 1`] = `
+<DocumentFragment>
+  <div
+    class="Day"
+  >
+    <p>
+      <b>
+        Wed
+      </b>
+    </p>
+    <ol />
+  </div>
+</DocumentFragment>
+`;

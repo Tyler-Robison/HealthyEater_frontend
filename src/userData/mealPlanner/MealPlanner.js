@@ -3,12 +3,11 @@ import React, { useContext } from 'react'
 import Day from './Day'
 import PlanForm from './PlanForm'
 import GlobalContext from '../../context/GlobalContext'
+import PlannerAPI from '../../APIs/plannerAPI'
 
 const MealPlanner = () => {
-    const { currentUser } = useContext(GlobalContext);
+    const { currentUser, setCurrentUser, token } = useContext(GlobalContext);
     const days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
-
-    console.log('curr user', currentUser)
 
     const calculateWeeksPoints = () => {
         let weekPoints = 0;
@@ -16,6 +15,12 @@ const MealPlanner = () => {
             weekPoints += ele.ww_points;
         }
         return weekPoints
+    }
+
+    const deleteMealplan = async () => {
+        await PlannerAPI.deleteAllMeals(currentUser.id, token);
+        currentUser.mealplan = [];
+        setCurrentUser({...currentUser, currentUser});
     }
 
 
@@ -31,14 +36,13 @@ const MealPlanner = () => {
                 {currentUser.points && <h5>Bonus points don't count towards weekly total</h5>}
             </div>
             {currentUser.points && <h3>Weekly points used: {calculateWeeksPoints()}</h3>}
+            <button className='general-btn-red' onClick={deleteMealplan}>Clear Calendar</button>
             <br></br>
             <div className="week-div">
-                {days.map((day, idx) => {
-                    return <Day day={day} />
-                })}
+                {days.map(day => <Day key={day} day={day} />)}
             </div>
             <PlanForm days={days} />
-       
+
         </div>
     )
 }

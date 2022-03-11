@@ -1,7 +1,7 @@
 import Step from "./Step";
 
 const StepsList = ({ recipeDetail }) => {
-
+    
     if (recipeDetail.analyzedInstructions.length === 0) {
         // API sometimes returns recipes that don't have steps
         return <h3>Sorry, that recipe doesn't exist anymore</h3>

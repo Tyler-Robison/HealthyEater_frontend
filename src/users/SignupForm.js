@@ -28,8 +28,8 @@ const SignupForm = () => {
     // login sets token, which triggers useEffect
     const signup = async (values) => {
         try {
+            console.log('attempting signup**********')
             const res = await UserAPI.register(values)
-            console.log('signup res', res)
             login(res.token);
             navigate('/');
         } catch (err) {

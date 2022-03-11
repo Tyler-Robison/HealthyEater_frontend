@@ -5,11 +5,11 @@ import RecipeDetail from "../Recipes/recipeDetail/RecipeDetail";
 import RequireAuth from "./RequireAuth";
 import MealPlanner from "../userData/mealPlanner/MealPlanner";
 import Home from "../home/Home";
-import UserPoints from "../userData/mealPlanner/UserPoints";
+import UserPoints from "../userData/userPoints/UserPoints";
 import LoginForm from "../users/LoginForm";
 import SignupForm from "../users/SignupForm";
 import RecipeList from "../Recipes/findRecipes/RecipeList";
-import UserRecipeList from "../userData/UserRecipeList";
+import UserRecipeList from "../userData/userRecipes/UserRecipeList";
 
 const RouteList = () => {
     // routes which require user to be logged in are wrapped in RequireAuth component

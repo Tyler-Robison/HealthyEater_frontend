@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with blank recipeList 1`] = `
+<DocumentFragment>
+  <div
+    class="RecipeList-container"
+  >
+    <button
+      class="general-btn-red"
+    >
+      Go Back
+    </button>
+    <button
+      class="general-btn-red"
+    >
+      Go Back
+    </button>
+    <p>
+      Search for Recipes first
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot with filled recipeList 1`] = `
+<DocumentFragment>
+  <div
+    class="RecipeList-container"
+  >
+    <button
+      class="general-btn-red"
+    >
+      Go Back
+    </button>
+    <div
+      class="RecipeList-div"
+    >
+      <a
+        class="RecipeList-para"
+        href="/1234/detail"
+      >
+        <b>
+          Scrambled Eggs
+        </b>
+      </a>
+      <p>
+        Uses 2 of your ingredients ( eggs, otherIngredient )
+      </p>
+      <img
+        alt="Picture of the recipe Scrambled Eggs"
+        class="RecipeList-img"
+        src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
+      />
+    </div>
+    <div
+      class="RecipeList-div"
+    >
+      <a
+        class="RecipeList-para"
+        href="/5678/detail"
+      >
+        <b>
+          BLT
+        </b>
+      </a>
+      <p>
+        Uses 3 of your ingredients ( bacon, lettuce, tomato )
+      </p>
+      <img
+        alt="Picture of the recipe BLT"
+        class="RecipeList-img"
+        src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
+      />
+    </div>
+    <button
+      class="general-btn-red"
+    >
+      Go Back
+    </button>
+  </div>
+</DocumentFragment>
+`;

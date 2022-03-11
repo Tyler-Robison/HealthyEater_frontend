@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 // import UserAPI from "../APIs/userAPI";
 import { useFormik } from "formik";
-// import loginValidate from './user_validators/loginValidate'
+import pointsValidate from "./pointsValidate";
 import GlobalContext from "../../context/GlobalContext";
 import calculatePoints from "./calcPoints";
 import PlannerAPI from "../../APIs/plannerAPI";
 import './UserPoints.css'
 
-// gender, age, height, weight, PAL
 const UserPoints = () => {
-    const { currentUser, setCurrentUser, token, setMsg, clearMsg } = useContext(GlobalContext)
+    const { currentUser, setCurrentUser, token } = useContext(GlobalContext)
+    const validate = pointsValidate;
 
     const formik = useFormik({
         initialValues: {
@@ -19,17 +19,19 @@ const UserPoints = () => {
             weight: '',
             PAL: ''
         },
+        validate,
         onSubmit: values => savePoints(values),
     })
 
+    // calculates weekly points allowance based on user input
+    // points is added to currentUser and will be displayed in mealplan
     const savePoints = async (values) => {
         if (values.PAL === '') values.PAL = 0
         if (values.gender === '') values.gender = 'male'
         const { PAL, age, gender, height, weight } = values
         const points = calculatePoints(gender, +age, +height, +weight, +PAL)
         const res = await PlannerAPI.setPoints(currentUser.id, points, token)
-
-        currentUser.points = res.savedRecipe.points
+        currentUser.points = res.points
         setCurrentUser({ ...currentUser, currentUser })
     }
 
@@ -47,8 +49,6 @@ const UserPoints = () => {
                             name="gender"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            // react-select?
-                            defaultValue={{ label: 'Male', value: 'male' }}
                         >
                             <option value='male'>Male</option>
                             <option value='female'>Female</option>

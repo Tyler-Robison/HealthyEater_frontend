@@ -21,6 +21,7 @@ class SpoonacularAPI {
             }
 
             const res = await axios.get(`${BASE_URL}/recipes/complex/${id}`, config)
+            console.log('got recipes', res)
             return res.data
         } catch (err) {
             console.log(err)

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <form>
+    <label
+      for="daySelect"
+    >
+      Select Day
+    </label>
+    <select
+      id="daySelect"
+      name="daySelect"
+    >
+      <option
+        value="Mon"
+      >
+        Mon
+      </option>
+      <option
+        value="Tues"
+      >
+        Tues
+      </option>
+      <option
+        value="Wed"
+      >
+        Wed
+      </option>
+      <option
+        value="Thurs"
+      >
+        Thurs
+      </option>
+      <option
+        value="Fri"
+      >
+        Fri
+      </option>
+      <option
+        value="Sat"
+      >
+        Sat
+      </option>
+      <option
+        value="Sun"
+      >
+        Sun
+      </option>
+    </select>
+    <label
+      for="mealSelect"
+    >
+      Select Meal
+    </label>
+    <select
+      id="mealSelect"
+      name="mealSelect"
+    >
+      <option
+        value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
+      >
+        bacon
+      </option>
+      <option
+        value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
+      >
+        eggs
+      </option>
+      <option
+        value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
+      >
+        salad
+      </option>
+      <option
+        value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
+      >
+        bread
+      </option>
+    </select>
+    <button
+      class="general-btn"
+      type="submit"
+    >
+      Place Meal in Selected Data
+    </button>
+  </form>
+</DocumentFragment>
+`;

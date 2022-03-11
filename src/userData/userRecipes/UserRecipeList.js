@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import UserRecipe from "./UserRecipe";
-import GlobalContext from "../context/GlobalContext";
+import GlobalContext from "../../context/GlobalContext";
 import './UserRecipeList.css'
 
 const UserRecipeList = () => {

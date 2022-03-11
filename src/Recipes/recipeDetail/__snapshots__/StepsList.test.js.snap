@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot. 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="step-div"
+    >
+      <p
+        class="step-number"
+      >
+        <b>
+          1
+        </b>
+      </p>
+      <p>
+        Do the first step
+      </p>
+      <p>
+        <b>
+          Equipment Used:
+        </b>
+         mock equipment, other equipment 
+      </p>
+      <p>
+        <b>
+          Ingredients Used:
+        </b>
+         mock ingredient, other ingredient 
+      </p>
+    </div>
+    <div
+      class="step-div"
+    >
+      <p
+        class="step-number"
+      >
+        <b>
+          2
+        </b>
+      </p>
+      <p>
+        Do the second step
+      </p>
+      <p>
+        <b>
+          Equipment Used:
+        </b>
+         None 
+      </p>
+      <p>
+        <b>
+          Ingredients Used:
+        </b>
+         None 
+      </p>
+    </div>
+    <div
+      class="step-div"
+    >
+      <p
+        class="step-number"
+      >
+        <b>
+          3
+        </b>
+      </p>
+      <p>
+        Do the third step
+      </p>
+      <p>
+        <b>
+          Equipment Used:
+        </b>
+         mock equipment 
+      </p>
+      <p>
+        <b>
+          Ingredients Used:
+        </b>
+         mock ingredient 
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

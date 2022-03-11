@@ -2,8 +2,7 @@ import React from "react";
 import './NutrientTable.css'
 
 const NutrientTable = ({nutritionDetail}) =>{
-
-
+    
     return (
         <table className='nutrition-table' >
         <thead>
@@ -14,8 +13,8 @@ const NutrientTable = ({nutritionDetail}) =>{
             </tr>
         </thead>
         <tbody>
-    {nutritionDetail.map(nutrient => {
-            return <tr>
+    {nutritionDetail.map((nutrient, idx) => {
+            return <tr key={idx}>
                 <td>{nutrient.title}</td>
                 <td>{nutrient.amount}</td>
                 <td>{nutrient.percentOfDailyNeeds}</td>
