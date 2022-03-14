@@ -26,6 +26,7 @@ exports[`matches snapshot 1`] = `
            (20 points)
           <button
             class="general-btn-red small-btn"
+            data-testid="1111"
             style="margin-left: 0.4rem;"
           >
             X
@@ -45,6 +46,7 @@ exports[`matches snapshot 1`] = `
            (10 points)
           <button
             class="general-btn-red small-btn"
+            data-testid="2222"
             style="margin-left: 0.4rem;"
           >
             X
@@ -64,6 +66,7 @@ exports[`matches snapshot 1`] = `
            (5 points)
           <button
             class="general-btn-red small-btn"
+            data-testid="3333"
             style="margin-left: 0.4rem;"
           >
             X
@@ -83,6 +86,7 @@ exports[`matches snapshot 1`] = `
            (7 points)
           <button
             class="general-btn-red small-btn"
+            data-testid="4444"
             style="margin-left: 0.4rem;"
           >
             X

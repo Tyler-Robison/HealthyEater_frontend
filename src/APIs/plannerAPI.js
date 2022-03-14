@@ -32,7 +32,7 @@ class PlannerAPI {
         try {
             const headers = { Authorization: `Bearer ${token}` };
             const res = await axios.delete(`${BASE_URL}/meals/${id}/${meal_id}`, { headers })
-            return res
+            return res.data
         } catch (err) {
             console.log(err)
         }

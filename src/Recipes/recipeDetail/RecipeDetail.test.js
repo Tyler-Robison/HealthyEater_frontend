@@ -82,11 +82,6 @@ const data = {
     }
 };
 
-// getting correct value back from mockAxios, but not waiting
-// if (!recipeDetail) return <p>Loading...</p>
-
-afterEach(cleanup);
-
 it("renders without crashing", function () {
     mockedAxios.get.mockResolvedValueOnce(data);
 
@@ -115,22 +110,23 @@ it('Matches snapshot', async () => {
     expect(asFragment()).toMatchSnapshot();
 })
 
-// test('recipeDetail', async () => {
+it('Correctly displays recipe detail', async () => {
+    mockedAxios.get.mockResolvedValueOnce(data);
 
-//     mockedAxios.get.mockResolvedValueOnce(data);
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <RecipeDetail />
+            </ContextProvider>
+        </MemoryRouter>
+    );
 
-//     const detailComponent = render(
-//         <MemoryRouter>
-//             <ContextProvider >
-//                 <RecipeDetail />
-//             </ContextProvider>
-//         </MemoryRouter>
-//     );
+    // will get screenshot of the loading text unless we wait
+    await waitForElementToBeRemoved(screen.getByText('Loading...'));
 
-//     await waitFor(() => {
-
-//         expect(mockedAxios.get.mockResolvedValueOnce(data)).toHaveBeenCalledTimes(1)
-//         expect(detailComponent.getByText('mocked recipe title'));
-//     });
-// });
+    // correctly display recipe title, cooktime and nutritional info
+    expect(screen.getByText('mocked recipe title')).toBeInTheDocument()
+    expect(screen.getByText('Preparation Time: 45 Minutes')).toBeInTheDocument()
+    expect(screen.getByText('261mg')).toBeInTheDocument()
+})
 

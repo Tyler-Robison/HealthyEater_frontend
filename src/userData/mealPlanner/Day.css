@@ -1,9 +1,10 @@
 .Day {
-    width: 15%;
+    max-width: 500px !important;
     height: 100%;
     border: 1px solid black;
     position: relative;
     background-color: white;
+    min-height: 20rem;
 }
 
 .Day-points {

@@ -4,14 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from "formik";
 import loginValidate from './user_validators/loginValidate'
 import GlobalContext from "../context/GlobalContext";
-import Message from "../TopLevel/Message";
+import useTimedMessage from "../customHooks/useTimedMessage";
 import './LoginForm.css'
 
 
 const LoginForm = () => {
     const validate = loginValidate
     const navigate = useNavigate();
-    const { currentUser, login, msg, setMsg, clearMsg } = useContext(GlobalContext)
+    const { currentUser, login } = useContext(GlobalContext)
+    const [isMsgActive, setIsMsgActive] = useTimedMessage()
 
     useEffect(() => {
         if (currentUser) navigate('/')
@@ -29,14 +30,13 @@ const LoginForm = () => {
     const loginUser = async (values) => {
         try {
             const res = await UserAPI.login(values)
-            console.log('login res', res)
-            // res is a token value
             login(res.token);
-            clearMsg()
             navigate('/')
+            
         } catch (err) {
             console.log('error', err)
-            setMsg('Invalid Username/Password')
+            formik.resetForm();
+            setIsMsgActive(true)
         }
     }
 
@@ -44,7 +44,7 @@ const LoginForm = () => {
         <div className="LoginForm">
             <div className="LoginForm-div">
                 <h1>Enter Username/Password</h1>
-                <Message msg={msg}/>
+                {isMsgActive ? <p>Invalid Username/Password</p> : null}
 
                 <form onSubmit={formik.handleSubmit}>
                     <div>

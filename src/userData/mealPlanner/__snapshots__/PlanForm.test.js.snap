@@ -82,7 +82,7 @@ exports[`matches snapshot 1`] = `
       class="general-btn"
       type="submit"
     >
-      Place Meal in Selected Data
+      Add to Calendar
     </button>
   </form>
 </DocumentFragment>

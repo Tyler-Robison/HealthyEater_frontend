@@ -28,9 +28,9 @@ const SignupForm = () => {
     // login sets token, which triggers useEffect
     const signup = async (values) => {
         try {
-            console.log('attempting signup**********')
             const res = await UserAPI.register(values)
             login(res.token);
+            formik.resetForm();
             navigate('/');
         } catch (err) {
             console.log('signup error', err)

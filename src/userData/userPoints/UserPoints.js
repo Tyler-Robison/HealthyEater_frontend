@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import UserAPI from "../APIs/userAPI";
 import { useFormik } from "formik";
 import pointsValidate from "./pointsValidate";
 import GlobalContext from "../../context/GlobalContext";
@@ -7,8 +6,10 @@ import calculatePoints from "./calcPoints";
 import PlannerAPI from "../../APIs/plannerAPI";
 import './UserPoints.css'
 
+// calculates weekly points allowance based on user input
+// points is added to currentUser and will be displayed in mealplan
 const UserPoints = () => {
-    const { currentUser, setCurrentUser, token } = useContext(GlobalContext)
+    const { currentUser, setCurrentUser, token } = useContext(GlobalContext);
     const validate = pointsValidate;
 
     const formik = useFormik({
@@ -21,18 +22,18 @@ const UserPoints = () => {
         },
         validate,
         onSubmit: values => savePoints(values),
-    })
+    });
 
-    // calculates weekly points allowance based on user input
-    // points is added to currentUser and will be displayed in mealplan
+    // get values from form -> calculate points
+    // attempt to update back-end, if works, update currUser
     const savePoints = async (values) => {
-        if (values.PAL === '') values.PAL = 0
-        if (values.gender === '') values.gender = 'male'
-        const { PAL, age, gender, height, weight } = values
-        const points = calculatePoints(gender, +age, +height, +weight, +PAL)
-        const res = await PlannerAPI.setPoints(currentUser.id, points, token)
-        currentUser.points = res.points
-        setCurrentUser({ ...currentUser, currentUser })
+        if (values.PAL === '') values.PAL = 0;
+        if (values.gender === '') values.gender = 'male';
+        const { PAL, age, gender, height, weight } = values;
+        const points = calculatePoints(gender, +age, +height, +weight, +PAL);
+        const res = await PlannerAPI.setPoints(currentUser.id, points, token);
+        currentUser.points = res.points;
+        setCurrentUser({ ...currentUser, currentUser });
     }
 
     return (

@@ -9,14 +9,10 @@ import useLocalStorage from "../customHooks/useLocalStorage";
 import GlobalContext from "../context/GlobalContext";
 
 // Top Level Component of the application
-// currentUserState exists for testing purposes only
-function App({ currentUserState = null }) {
+function App() {
   const [token, setToken] = useLocalStorage('token')
-  const [currentUser, setCurrentUser] = useState(currentUserState);
-  const [msg, setMsg] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
   const [recipes, setRecipes] = useState([])
-
-  const clearMsg = () => setMsg('');
 
   const logout = () => setToken(null);
   const login = token => setToken(token);
@@ -24,7 +20,7 @@ function App({ currentUserState = null }) {
   useEffect(() => {
     const loginLogout = async () => {
       if (token && token.length !== 0) {
-        
+
         // token contains id, iat (issued at)
         const id = jwt.decode(token).id
 
@@ -43,15 +39,12 @@ function App({ currentUserState = null }) {
     loginLogout()
   }, [token])
 
-  // state where each var is being used
+
   const providerObj = {
     currentUser,
     setCurrentUser,
     token,
     login,
-    msg,
-    setMsg,
-    clearMsg,
     recipes,
     setRecipes
   }

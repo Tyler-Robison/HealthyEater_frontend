@@ -17,17 +17,15 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
     })
 
     const addIngredient = (values) => {
-        console.log('adding ing***************')
         const { ingredient } = values;
         if (ingredient === '') return
-        console.log('ingredient', ingredient)
         formik.resetForm();
         setIngredientsList([...ingredientsList, ingredient]);
     }
 
 
     return (
-        <form className="AddIngredient-Form" onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
 
             <input
                 role=''
@@ -45,7 +43,7 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
                 <div>{formik.errors.ingredient}</div>
             )}
 
-            <button className="general-btn" type="submit">Add Ingredient</button>
+            <button className="general-btn my-2" type="submit">Add Ingredient</button>
         </form>
     )
 }

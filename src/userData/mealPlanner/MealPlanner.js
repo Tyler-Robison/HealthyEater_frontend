@@ -20,7 +20,7 @@ const MealPlanner = () => {
     const deleteMealplan = async () => {
         await PlannerAPI.deleteAllMeals(currentUser.id, token);
         currentUser.mealplan = [];
-        setCurrentUser({...currentUser, currentUser});
+        setCurrentUser({ ...currentUser, currentUser });
     }
 
 
@@ -38,9 +38,17 @@ const MealPlanner = () => {
             {currentUser.points && <h3>Weekly points used: {calculateWeeksPoints()}</h3>}
             <button className='general-btn-red' onClick={deleteMealplan}>Clear Calendar</button>
             <br></br>
-            <div className="week-div">
-                {days.map(day => <Day key={day} day={day} />)}
+
+            <div className='container w-100 mx-2'>
+                <div className="MealPlanner-week-div row">
+                    {days.map(day => {
+                        // return <div className=''> 
+                        return <Day key={day} day={day} />
+                        // </div> }
+                        })}
+                </div>
             </div>
+
             <PlanForm days={days} />
 
         </div>

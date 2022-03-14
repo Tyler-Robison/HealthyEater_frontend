@@ -8,10 +8,8 @@ const ContextProvider = ({ children, userData = testUser, initRecipes = testReci
 
   const [token, setToken] = useState('fake token')
   const [currentUser, setCurrentUser] = useState(userData);
-  const [msg, setMsg] = useState('');
   const [recipes, setRecipes] = useState(initRecipes)
 
-  const clearMsg = () => setMsg(null);
   const login = token => setToken(token);
 
 
@@ -19,10 +17,8 @@ const ContextProvider = ({ children, userData = testUser, initRecipes = testReci
     currentUser,
     setCurrentUser,
     token,
+    setToken,
     login,
-    msg,
-    setMsg,
-    clearMsg,
     recipes,
     setRecipes
   }

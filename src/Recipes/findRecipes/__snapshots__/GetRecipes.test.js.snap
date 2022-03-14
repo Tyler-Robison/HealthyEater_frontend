@@ -41,7 +41,6 @@ exports[`matches snapshot 1`] = `
           >
             Ingredients
           </h3>
-          <h3 />
           <form
             class="AddIngredient-Form"
           >

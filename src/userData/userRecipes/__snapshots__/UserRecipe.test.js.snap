@@ -15,6 +15,7 @@ exports[`matches snapshot 1`] = `
        (20 points)
       <button
         class="general-btn-red small-btn"
+        data-testid="1111"
         style="margin-left: 0.4rem;"
       >
         X

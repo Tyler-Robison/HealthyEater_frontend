@@ -11,7 +11,6 @@ exports[`matches snapshot 1`] = `
       <h1>
         Enter Username/Password
       </h1>
-      <h3 />
       <form>
         <div>
           <div>

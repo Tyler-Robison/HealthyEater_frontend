@@ -18,23 +18,24 @@ const PlanForm = ({ days }) => {
     const handleFormikSubmit = async (values) => {
         let { daySelect, mealSelect } = values
 
-        let meal;
-        mealSelect === '' ? meal = currentUser.recipes[0] :
-            meal = JSON.parse(mealSelect)
+        const meal = (mealSelect === '' ? currentUser.recipes[0] : 
+        JSON.parse(mealSelect))
 
         if (daySelect === '') daySelect = 'Mon'
         const data = {
             day: daySelect,
             recipe_id: meal.recipe_id
         }
-        
+
         const mealRes = await PlannerAPI.setMeal(currentUser.id, token, data)
+        // console.log('meal res', mealRes)
 
         // mealPlannerRow contains:
         // id, recipe_id, day from user_mealplan table AND
         // ww_points, name from recipes table 
         currentUser.mealplan.push(mealRes.mealplannerRow)
-        setCurrentUser({...currentUser, currentUser})
+
+        setCurrentUser({ ...currentUser, currentUser })
     }
 
     const dayValues = days.map((day, idx) => {
@@ -47,7 +48,8 @@ const PlanForm = ({ days }) => {
             recipe_id: recipe.recipe_id,
             ww_points: recipe.ww_points
         }
-        // store recipeObj as string, convert back to object on formSubmit
+        
+        // store recipeObj as string, convert back to object upon formSubmit
         return <option key={recipe.recipe_id} value={JSON.stringify(recipeObj)}>{recipe.name}</option>
     })
 
@@ -70,7 +72,7 @@ const PlanForm = ({ days }) => {
             >{recipeValues}</select>
 
 
-            <button className="general-btn" type="submit">Place Meal in Selected Data</button>
+            <button className="general-btn" type="submit">Add to Calendar</button>
         </form>
     )
 }

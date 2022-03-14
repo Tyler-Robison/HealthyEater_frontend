@@ -1,4 +1,5 @@
 import { render, screen, fireEvent, waitFor, getByText } from '@testing-library/react';
+
 import App from './App'
 import { MemoryRouter } from "react-router-dom";
 import { testUser, testRecipes } from '../testHelpers'
@@ -8,80 +9,10 @@ const mockUserData = {
   data: { user: testUser }
 }
 
-// token contains:
-// password = password
-// {
-//   "username": "newUser",
-//   "isAdmin": false,
-//   "id": 12,
-//   "iat": 1646862301
-// }
 const mockTokenData = {
   data:
     { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld1VzZXIiLCJpc0FkbWluIjpmYWxzZSwiaWQiOjEyLCJpYXQiOjE2NDY4NjIzMDF9.JJqdcVY4iUqVA3dkNTvSTImGQQbetu0p8pQ7cXHgSd0' }
 }
-
-const registerNewUser = async () => {
-  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
-  mockedAxios.get.mockResolvedValueOnce(mockUserData);
-
-  render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>
-  );
-
-
-  const signupAnchor = screen.getByText('Signup')
-  fireEvent.click(signupAnchor)
-
-  const signupBtn = screen.getByText('Sign-up');
-  const usernameInput = screen.getByLabelText('Username');
-  const passwordInput = screen.getByLabelText('Password');
-
-  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
-  fireEvent.change(passwordInput, { target: { value: 'password' } });
-  fireEvent.click(signupBtn);
-
-  // navigated back to homepage, showing user-specific welcome back msg
-  await waitFor(() => {
-    expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
-    expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
-    expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-  });
-}
-
-// get an error when trying to invoke this inside functions
-// const addIngredients = async () => {
-//   registerNewUser()
-
-//   // Don't proceed until registration complete. 
-//   await waitFor(() => {
-//     expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-//   });
-
-//   const recipeAnchor = screen.getAllByText('Find Recipes')[0]
-//   fireEvent.click(recipeAnchor)
-
-//   const addIngredientBtn = screen.getByText('Add Ingredient')
-//   const ingredientInput = screen.getByPlaceholderText('Enter Ingredient')
-
-//   fireEvent.change(ingredientInput, { target: { value: 'Cheese' } });
-//   fireEvent.click(addIngredientBtn)
-
-//   await waitFor(() => {
-//     expect(screen.getByText('Cheese')).toBeInTheDocument();
-//   });
-
-//   fireEvent.change(ingredientInput, { target: { value: 'Olives' } });
-//   fireEvent.click(addIngredientBtn)
-
-//   await waitFor(() => {
-//     expect(screen.getByText('Cheese')).toBeInTheDocument();
-//     expect(screen.getByText('Olives')).toBeInTheDocument();
-//   });
-// }
-
 
 it("renders without crashing", function () {
   <MemoryRouter>
@@ -99,123 +30,102 @@ it("matches snapshot", function () {
   expect(container.asFragment()).toMatchSnapshot();
 });
 
-// test("Sign-up works", async function () {
-//   // mock of the token value returned by UserApi.register
-//   mockedAxios.post.mockResolvedValueOnce(mockTokenData);
 
-//   // mock of currentUser by returned by UserAPI.getUserInfo
-//   mockedAxios.get.mockResolvedValueOnce(mockUserData);
+test("can register new user, starting from homepage", async function () {
+  // mock of the token value returned by UserApi.register
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
 
-//   render(
-//     <MemoryRouter initialEntries={['/']}>
-//       <App />
-//     </MemoryRouter>
-//   );
+  // mock of currentUser by returned by UserAPI.getUserInfo
+  mockedAxios.get.mockResolvedValueOnce(mockUserData);
 
-//   // proves we're on homepage
-//   expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
 
-//   const signupAnchor = screen.getByText('Signup')
-//   fireEvent.click(signupAnchor)
+  // proves we're on homepage
+  expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
 
-//   // moved from homepage to sign-in page
-//   expect(screen.queryByText('Welcome to Healthy-Eater!')).not.toBeInTheDocument();
-//   expect(screen.getByText('Enter Username/Password')).toBeInTheDocument();
+  const signupAnchor = screen.getByText('Signup')
+  fireEvent.click(signupAnchor)
 
-//   const signupBtn = screen.getByText('Sign-up');
-//   const usernameInput = screen.getByLabelText('Username');
-//   const passwordInput = screen.getByLabelText('Password');
+  // moved from homepage to sign-in page
+  expect(screen.queryByText('Welcome to Healthy-Eater!')).not.toBeInTheDocument();
+  expect(screen.getByText('Enter Username/Password')).toBeInTheDocument();
 
-//   fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
-//   fireEvent.change(passwordInput, { target: { value: 'password' } });
-//   fireEvent.click(signupBtn);
+  const signupBtn = screen.getByText('Sign-up');
+  const usernameInput = screen.getByLabelText('Username');
+  const passwordInput = screen.getByLabelText('Password');
 
-//   // navigated back to homepage, showing user-specific welcome back msg
-//   await waitFor(() => {
-//     expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
-//     expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
-//     expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-//   });
-// });
+  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
+  fireEvent.change(passwordInput, { target: { value: 'password' } });
+  fireEvent.click(signupBtn);
 
-// test("Sign-up fails with invalid password, correct message displays", async function () {
-//   // mock of the token value returned by UserAPI.register
-//   mockedAxios.post.mockResolvedValueOnce(mockTokenData);
+  // navigated back to homepage, showing user-specific welcome back msg
+  await waitFor(() => {
+    expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
+    expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
+  });
+});
 
-//   // mock of currentUser by returned by UserAPI.getUserInfo
-//   mockedAxios.get.mockResolvedValueOnce(mockUserData);
+test("Sign-up fails with invalid password, correct message displays", async function () {
+  // mock of the token value returned by UserAPI.register
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
 
-//   render(
-//     <MemoryRouter initialEntries={['/']}>
-//       <App />
-//     </MemoryRouter>
-//   );
+  // mock of currentUser by returned by UserAPI.getUserInfo
+  mockedAxios.get.mockResolvedValueOnce(mockUserData);
 
-//   const signupAnchor = screen.getByText('Signup')
-//   fireEvent.click(signupAnchor)
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
 
-//   const signupBtn = screen.getByText('Sign-up');
-//   const usernameInput = screen.getByLabelText('Username');
-//   const passwordInput = screen.getByLabelText('Password');
+  const signupAnchor = screen.getByText('Signup')
+  fireEvent.click(signupAnchor)
 
-//   fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
-//   fireEvent.change(passwordInput, { target: { value: 'pwd' } });
-//   fireEvent.click(signupBtn);
+  const signupBtn = screen.getByText('Sign-up');
+  const usernameInput = screen.getByLabelText('Username');
+  const passwordInput = screen.getByLabelText('Password');
 
-//   // registration failure, correct error msg displayed
-//   await waitFor(() => {
-//     expect(screen.queryByText('Welcome back Tyler!')).not.toBeInTheDocument();
-//     expect(screen.getByText('Password must be between 5 to 30 characters')).toBeInTheDocument();
-//   });
-// });
+  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
+  fireEvent.change(passwordInput, { target: { value: 'pwd' } });
+  fireEvent.click(signupBtn);
 
-// same procedure as register user, unit test
-
+  // registration failure, correct error msg displayed
+  await waitFor(() => {
+    expect(screen.queryByText('Welcome back Tyler!')).not.toBeInTheDocument();
+    expect(screen.getByText('Password must be between 5 to 30 characters')).toBeInTheDocument();
+  });
+});
 
 
-// Don't proceed until registration complete. 
-// await waitFor(() => {
-//   expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-// });
+const registerNewUser = async (password = 'password') => {
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
+  mockedAxios.get.mockResolvedValueOnce(mockUserData);
 
-// test("Can add ingredients", async function () {
-//   render(
-//     <MemoryRouter initialEntries={['/']}>
-//       <App currentUserState={testUser} />
-//     </MemoryRouter>
-//   );
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
 
-//   const recipeAnchor = screen.getAllByText('Find Recipes')[0]
-//   expect(recipeAnchor).toBeInTheDocument
-//   fireEvent.click(recipeAnchor)
-  
-//   const addIngredientBtn = screen.getByText('Add Ingredient')
-//   const ingredientInput = screen.getByPlaceholderText('Enter Ingredient')
-//   expect(addIngredientBtn).toBeInTheDocument()
-//   expect(ingredientInput).toBeInTheDocument()
-//   // expect(screen.getByText('********')).toBeInTheDocument()
-  
-//   // fireEvent.change(ingredientInput, { target: { value: 'Cheese' } });
-//   // fireEvent.click(addIngredientBtn)
-  
-//   // await waitFor(() => {
-//   // expect(screen.getByText('Cheese')).toBeInTheDocument();
-//   // });
+  const signupAnchor = screen.getByText('Signup')
+  fireEvent.click(signupAnchor)
 
-//   // fireEvent.change(ingredientInput, { target: { value: 'Olives' } });
-//   // fireEvent.click(addIngredientBtn)
+  const signupBtn = screen.getByText('Sign-up');
+  const usernameInput = screen.getByLabelText('Username');
+  const passwordInput = screen.getByLabelText('Password');
 
-//   // await waitFor(() => {
-//   //   expect(screen.getByText('Cheese')).toBeInTheDocument();
-//   //   expect(screen.getByText('Olives')).toBeInTheDocument();
-//   // });
-// });
+  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
+  fireEvent.change(passwordInput, { target: { value: password } });
+  fireEvent.click(signupBtn);
+}
 
 
-
-
-
-test("Can add ingredients", async function () {
+test("new user can sign-up then access site functionality", async function () {
   registerNewUser()
 
   // Don't proceed until registration complete. 
@@ -235,6 +145,7 @@ test("Can add ingredients", async function () {
   fireEvent.change(ingredientInput, { target: { value: 'Cheese' } });
   fireEvent.click(addIngredientBtn)
 
+  // only signed-in users can access this page and add ingredients
   await waitFor(() => {
     expect(screen.getByText('Cheese')).toBeInTheDocument();
   });
@@ -248,71 +159,29 @@ test("Can add ingredients", async function () {
   });
 });
 
+test("user denied site access on failed sign-up", async function () {
+  const mockedUsedNavigate = jest.fn();
 
+  jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockedUsedNavigate,
+  }));
 
+  // password must be 5 characters minimum
+  registerNewUser('bad')
 
+  // registerNewUser failed because bad password
+  await waitFor(() => {
+    expect(screen.getByText('Password must be between 5 to 30 characters')).toBeInTheDocument();
+  });
 
-// test("Can get recipe list based on ingredients", async function () {
-//   const mockListData = {
-//     data: {
-//       results: testRecipes
-//     }
-//   }
+  // Because registration failed, find recipes link isn't showing on screen
+  // We can still attempt to manually navigate to that URL
+  // User will be re-directed back to homepage. 
+  mockedUsedNavigate('/find_recipes')
 
-//   mockedAxios.get.mockResolvedValueOnce(mockListData);
-//   registerNewUser()
-
-//   // Don't proceed until registration complete. 
-//   await waitFor(() => {
-//     expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-//   });
-
-//   const recipeAnchor = screen.getAllByText('Find Recipes')[0]
-//   fireEvent.click(recipeAnchor)
-
-//   const addIngredientBtn = screen.getByText('Add Ingredient')
-//   const ingredientInput = screen.getByPlaceholderText('Enter Ingredient')
-
-//   fireEvent.change(ingredientInput, { target: { value: 'Cheese' } });
-//   fireEvent.click(addIngredientBtn)
-
-//   await waitFor(() => {
-//     expect(screen.getByText('Cheese')).toBeInTheDocument();
-//   });
-
-//   fireEvent.change(ingredientInput, { target: { value: 'Olives' } });
-//   fireEvent.click(addIngredientBtn)
-
-//   await waitFor(() => {
-//     expect(screen.getByText('Cheese')).toBeInTheDocument();
-//     expect(screen.getByText('Olives')).toBeInTheDocument();
-//   });
-
-//   const getRecipeButton = screen.getByText('Get Recipes')
-//   expect(getRecipeButton).toBeInTheDocument()
-
-//   // mocking SpoonAPI.getRecipes which leads to an axios.get request
-//   // testRecipes is a mocked array of recipe objects
-
-
-//   // fireEvent fails because of:
-//   // "TypeError: Cannot read properties of undefined (reading 'length')".] {
-
-//   // recipe res is receiving the mocked currentUser value from that mock
-//   // recipe res {
-//   //   user: {
-//   //     id: 1,
-//   //     username: 'Tyler',
-//   //     isAdmin: false,
-//   //     points: null,
-//   //     mealplan: [ [Object], [Object], [Object] ],
-//   //     recipes: [ [Object], [Object], [Object], [Object] ]
-//   //   }
-//   // }
-//   fireEvent.click(getRecipeButton)
-
-//   // expect(screen.getByText('Uses')).toBeInTheDocument();
-// });
-
+  // Didn't get to GetRecipes component because user isn't logged in
+  expect(screen.queryByText('Ingredients')).not.toBeInTheDocument()
+});
 
 

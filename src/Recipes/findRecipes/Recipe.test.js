@@ -1,14 +1,15 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import RecipeList from './RecipeList';
+import Recipe from './Recipe';
 import { MemoryRouter } from "react-router-dom";
 import ContextProvider from '../../testContext'
+import { testRecipes } from '../../testHelpers';
 
 // using listState to set 
 const DummyComponent = () => {
 
     return (
-        <RecipeList />
+        <Recipe recipe={testRecipes[0]} />
     )
 }
 
@@ -20,8 +21,7 @@ it("renders without crashing", function () {
     </MemoryRouter>
 });
 
-// recipeList provided in testContext as testRecipes
-it("matches snapshot with filled recipeList", function () {
+it("matches snapshot", function () {
 
     const container = render(
         <MemoryRouter>
@@ -33,15 +33,18 @@ it("matches snapshot with filled recipeList", function () {
     expect(container.asFragment()).toMatchSnapshot();
 });
 
-
-it("matches snapshot with blank recipeList", function () {
-
-    const container = render(
+it("correctly displays recipe values", function () {
+    render(
         <MemoryRouter>
-            <ContextProvider initRecipes={[]}>
+            <ContextProvider >
                 <DummyComponent />
             </ContextProvider>
         </MemoryRouter>
     );
-    expect(container.asFragment()).toMatchSnapshot();
-});
+
+    // name
+    expect(screen.getByText('Scrambled Eggs')).toBeInTheDocument()
+    
+    // ingredient count
+    expect(screen.getByText('Uses 2 of your ingredients ( eggs, otherIngredient )')).toBeInTheDocument()
+})

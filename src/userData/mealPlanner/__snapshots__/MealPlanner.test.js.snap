@@ -43,6 +43,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
              (20 points)
             <button
               class="general-btn-red small-btn"
+              data-testid="1"
             >
               X
             </button>
@@ -60,6 +61,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
              (10 points)
             <button
               class="general-btn-red small-btn"
+              data-testid="2"
             >
               X
             </button>
@@ -96,6 +98,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
              (5 points)
             <button
               class="general-btn-red small-btn"
+              data-testid="3"
             >
               X
             </button>
@@ -241,7 +244,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
         class="general-btn"
         type="submit"
       >
-        Place Meal in Selected Data
+        Add to Calendar
       </button>
     </form>
   </div>

@@ -6,6 +6,10 @@ import './UserRecipeList.css'
 const UserRecipeList = () => {
     const { currentUser } = useContext(GlobalContext)
 
+    if (currentUser.recipes.length === 0) return (
+       <p>You haven't saved any recipes yet</p>
+    )
+
     return (
         <div className="UserRecipeList">
             <div className="UserRecipeList-div">

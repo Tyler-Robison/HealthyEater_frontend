@@ -34,8 +34,8 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
     }
 
     return (
-        <form className="AddIngredient-Form" onSubmit={formik.handleSubmit}>
-            <div className="nutrient-form-div">
+        <form onSubmit={formik.handleSubmit}>
+            <div className="NutrientForm-container">
                 <div className="nutrient-input-div">
                     <div><label htmlFor="fat">Max Fat (grams)</label></div>
                     <input
@@ -158,7 +158,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                 )}
             </div>
             <div>
-                <button className="general-btn set-nutrients-btn" type="submit">Update Values</button>
+                <button className="general-btn NutrientForm-set-nutrients-btn" type="submit">Update Values</button>
             </div>
         </form>
     )

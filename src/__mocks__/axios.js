@@ -5,12 +5,14 @@
 
 const axios = {
     get: jest.fn().mockResolvedValue(),
-    post: jest.fn().mockResolvedValue()
+    post: jest.fn().mockResolvedValue(),
+    patch: jest.fn().mockResolvedValue(),
+    delete: jest.fn().mockResolvedValue()
 }
 
-const mockGetRecipes = jest.fn().mockImplementation((data) => {
-    return
-})
+// const mockGetRecipes = jest.fn().mockImplementation((data) => {
+//     return
+// })
 
 export default axios
 

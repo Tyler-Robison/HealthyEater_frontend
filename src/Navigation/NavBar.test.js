@@ -1,15 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import NavBar from './NavBar';
 import { MemoryRouter } from "react-router-dom";
 import ContextProvider from '../testContext'
-import jwt from 'jsonwebtoken'
-import GlobalContext from "../context/GlobalContext";
-import App from '../TopLevel/App'
+import GlobalContext from '../context/GlobalContext'
 
 
 
-const logout = () => setToken(null);
 
 it("renders without crashing", function () {
     <MemoryRouter>
@@ -41,51 +38,54 @@ it("matches snapshot when logged out", function () {
     expect(container.asFragment()).toMatchSnapshot();
 });
 
-// need to create fake version of App component
-const DummyApp = () => {
-    // const [token, setToken] = useState('token')
-    // const [currentUser, setCurrentUser] = useState(null);
-    const { setCurrentUser, token } = useContext(GlobalContext);
+// Have to create a dummy version of App so that logout can be passed into NavBar
+const DummyComponent = () => {
+
+    const { token, setToken, setCurrentUser } = useContext(GlobalContext)
+
     const logout = () => setToken(null);
 
-    // changed to id instead of username
     useEffect(() => {
         const loginLogout = async () => {
-            if (token && token.length !== 0) {
-                // token only contains id, username, isAdmin
-                // createToken function determines what it contains
-                const id = jwt.decode(token).id
-                // this is where login is failing
-                // middle-ware protection on .get /:id
-                const res = await UserAPI.getUserInfo(id, token)
-                setCurrentUser(res);
-            }
-            else {
-                setCurrentUser(null)
-            }
+            // currentUser being truthy/falsy is what determines
+            // if logout button will be present
+            if (token === null) setCurrentUser(null);
         }
         loginLogout()
     }, [token])
 
     return (
-
         <NavBar logout={logout} />
-
-    );
+    )
 }
 
+it("logged in users can logout", function () {
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <DummyComponent />
+            </ContextProvider>
+        </MemoryRouter>
+    )
 
-// test('logged in users can log out', function () {
-//     const app = render(
-//         <MemoryRouter>
-//             <ContextProvider>
-//                 <DummyApp />
-//             </ContextProvider>
-//         </MemoryRouter>
-//     );
+    // prior to logout, logout btn and find recipes are present
+    // signup is absent
+    const logoutBtn = screen.getByText('Log Out Tyler')
+    let findRecipes = screen.queryByText('Find Recipes')
+    let signup = screen.queryByText('Signup')
+    expect(logoutBtn).toBeInTheDocument();
+    expect(signup).not.toBeInTheDocument()
+    expect(findRecipes).toBeInTheDocument();
 
-    // const logoutBtn = app.getByText('Log Out Tyler')
-    // expect(logoutBtn).toBeInTheDocument();
-    // fireEvent.click(logoutBtn)
-    // expect(logoutBtn).not.toBeInTheDocument();
-// });
+    fireEvent.click(logoutBtn)
+
+    // after logout, logout btn and find recipes are absent
+    // signup is present
+    signup = screen.queryByText('Signup')
+    findRecipes = screen.queryByText('Find Recipes')
+    expect(logoutBtn).not.toBeInTheDocument();
+    expect(signup).toBeInTheDocument()
+    expect(findRecipes).not.toBeInTheDocument();
+});
+
+
