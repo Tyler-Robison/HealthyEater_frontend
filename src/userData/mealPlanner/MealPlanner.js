@@ -39,7 +39,7 @@ const MealPlanner = () => {
             <button className='general-btn-red' onClick={deleteMealplan}>Clear Calendar</button>
             <br></br>
 
-            <div className='container w-100 mx-2'>
+            <div className='container vw-100 mx-2'>
                 <div className="MealPlanner-week-div row">
                     {days.map(day => {
                         // return <div className=''> 

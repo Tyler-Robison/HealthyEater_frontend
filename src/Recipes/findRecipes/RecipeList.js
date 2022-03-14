@@ -8,12 +8,10 @@ const RecipeList = () => {
     const { recipes } = useContext(GlobalContext)
     const navigate = useNavigate()
 
-    console.log('recipes', recipes)
-
     return (
         <div className='RecipeList-container'>
             <button className='general-btn-red' onClick={() => navigate('/find_recipes')}>Go Back</button>
-            {recipes.map(recipe => <Recipe recipe={recipe} />)}
+            {recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />)}
             <button className='general-btn-red' onClick={() => navigate('/find_recipes')}>Go Back</button>
             {recipes.length === 0 && <p>Search for Recipes first</p>}
         </div>

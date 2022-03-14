@@ -2,9 +2,7 @@
 
 exports[`matches snapshot with blank ingredientList 1`] = `
 <DocumentFragment>
-  <form
-    class="AddIngredient-Form"
-  >
+  <form>
     <input
       class="test-input"
       id="ingredient"
@@ -15,7 +13,7 @@ exports[`matches snapshot with blank ingredientList 1`] = `
       value=""
     />
     <button
-      class="general-btn"
+      class="general-btn my-2"
       type="submit"
     >
       Add Ingredient
@@ -26,9 +24,7 @@ exports[`matches snapshot with blank ingredientList 1`] = `
 
 exports[`matches snapshot with filled ingredientList 1`] = `
 <DocumentFragment>
-  <form
-    class="AddIngredient-Form"
-  >
+  <form>
     <input
       class="test-input"
       id="ingredient"
@@ -39,7 +35,7 @@ exports[`matches snapshot with filled ingredientList 1`] = `
       value=""
     />
     <button
-      class="general-btn"
+      class="general-btn my-2"
       type="submit"
     >
       Add Ingredient

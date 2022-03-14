@@ -19,149 +19,153 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
     </button>
     <br />
     <div
-      class="week-div"
+      class="container w-100 mx-2"
     >
       <div
-        class="Day"
+        class="MealPlanner-week-div row"
       >
-        <p>
-          <b>
-            Mon
-          </b>
-        </p>
-        <ol>
-          <li>
-             
-            <a
-              class="RecipeList-para"
-              href="/1111/detail"
-            >
-              <b>
-                bacon
-              </b>
-            </a>
-             (20 points)
-            <button
-              class="general-btn-red small-btn"
-              data-testid="1"
-            >
-              X
-            </button>
-          </li>
-          <li>
-             
-            <a
-              class="RecipeList-para"
-              href="/2222/detail"
-            >
-              <b>
-                eggs
-              </b>
-            </a>
-             (10 points)
-            <button
-              class="general-btn-red small-btn"
-              data-testid="2"
-            >
-              X
-            </button>
-          </li>
-        </ol>
-        <p
-          class="Day-points"
+        <div
+          class="Day col-lg"
         >
-          <b>
-            Total Points:
-          </b>
-           30
-        </p>
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Tues
-          </b>
-        </p>
-        <ol>
-          <li>
-             
-            <a
-              class="RecipeList-para"
-              href="/3333/detail"
-            >
-              <b>
-                salad
-              </b>
-            </a>
-             (5 points)
-            <button
-              class="general-btn-red small-btn"
-              data-testid="3"
-            >
-              X
-            </button>
-          </li>
-        </ol>
-        <p
-          class="Day-points"
+          <p>
+            <b>
+              Mon
+            </b>
+          </p>
+          <ol>
+            <li>
+               
+              <a
+                class="RecipeList-para"
+                href="/1111/detail"
+              >
+                <b>
+                  bacon
+                </b>
+              </a>
+               (20 points)
+              <button
+                class="general-btn-red small-btn"
+                data-testid="1"
+              >
+                X
+              </button>
+            </li>
+            <li>
+               
+              <a
+                class="RecipeList-para"
+                href="/2222/detail"
+              >
+                <b>
+                  eggs
+                </b>
+              </a>
+               (10 points)
+              <button
+                class="general-btn-red small-btn"
+                data-testid="2"
+              >
+                X
+              </button>
+            </li>
+          </ol>
+          <p
+            class="Day-points"
+          >
+            <b>
+              Total Points:
+            </b>
+             30
+          </p>
+        </div>
+        <div
+          class="Day col-lg"
         >
-          <b>
-            Total Points:
-          </b>
-           5
-        </p>
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Wed
-          </b>
-        </p>
-        <ol />
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Thurs
-          </b>
-        </p>
-        <ol />
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Fri
-          </b>
-        </p>
-        <ol />
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Sat
-          </b>
-        </p>
-        <ol />
-      </div>
-      <div
-        class="Day"
-      >
-        <p>
-          <b>
-            Sun
-          </b>
-        </p>
-        <ol />
+          <p>
+            <b>
+              Tues
+            </b>
+          </p>
+          <ol>
+            <li>
+               
+              <a
+                class="RecipeList-para"
+                href="/3333/detail"
+              >
+                <b>
+                  salad
+                </b>
+              </a>
+               (5 points)
+              <button
+                class="general-btn-red small-btn"
+                data-testid="3"
+              >
+                X
+              </button>
+            </li>
+          </ol>
+          <p
+            class="Day-points"
+          >
+            <b>
+              Total Points:
+            </b>
+             5
+          </p>
+        </div>
+        <div
+          class="Day col-lg"
+        >
+          <p>
+            <b>
+              Wed
+            </b>
+          </p>
+          <ol />
+        </div>
+        <div
+          class="Day col-lg"
+        >
+          <p>
+            <b>
+              Thurs
+            </b>
+          </p>
+          <ol />
+        </div>
+        <div
+          class="Day col-lg"
+        >
+          <p>
+            <b>
+              Fri
+            </b>
+          </p>
+          <ol />
+        </div>
+        <div
+          class="Day col-lg"
+        >
+          <p>
+            <b>
+              Sat
+            </b>
+          </p>
+          <ol />
+        </div>
+        <div
+          class="Day col-lg"
+        >
+          <p>
+            <b>
+              Sun
+            </b>
+          </p>
+          <ol />
+        </div>
       </div>
     </div>
     <form>

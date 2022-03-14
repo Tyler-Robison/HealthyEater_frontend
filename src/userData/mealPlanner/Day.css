@@ -4,7 +4,21 @@
     border: 1px solid black;
     position: relative;
     background-color: white;
-    min-height: 20rem;
+    min-height: 40rem;
+}
+
+@media (max-width: 1400px) {
+    .Day {
+       min-height: 45rem;
+     
+    }
+}
+
+@media (max-width: 1000px) {
+    .Day {
+       min-height: 12rem;
+     
+    }
 }
 
 .Day-points {

@@ -1,4 +1,4 @@
-
+import './IngredientList.css'
 
 const IngredientList = ({ ingredientsList, setIngredientsList }) => {
 
@@ -8,9 +8,9 @@ const IngredientList = ({ ingredientsList, setIngredientsList }) => {
     }
 
     return (
-        <div>
+        <div className="IngredientList">
             {ingredientsList.map((ingredient, idx) => {
-                return <div key={idx}>
+                return <div className="IngredientList-div" key={idx}>
                     {`${ingredient} `}
                     <button className="delete-btn" onClick={() => removeIngredient(ingredient)}>X</button>
                 </div>

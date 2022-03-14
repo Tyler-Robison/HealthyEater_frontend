@@ -3,234 +3,240 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container-div"
+    class="GetRecipes"
   >
     <div
-      class="FindRecipes-div"
+      class="GetRecipes-explainer-div"
     >
       <h2>
         Recipe Search
       </h2>
       <p
-        class="FindRecipes-para"
+        class="GetRecipes-explainer-para"
       >
         1) Enter ingredients one at a time
       </p>
       <p
-        class="FindRecipes-para"
+        class="GetRecipes-explainer-para"
       >
         2) Optionally, add nutrient requirements
       </p>
       <p
-        class="FindRecipes-para"
+        class="GetRecipes-explainer-para"
       >
         3) Click "Get Recipes"
       </p>
     </div>
     <div
-      class="recipe-div"
+      class="GetRecipes-container container"
     >
       <div
-        class="ingredient-div"
+        class="row w-100"
       >
         <div
-          class="GetRecipes-IngForm-container"
+          class="GetRecipes-ingredient-div col-md-6"
         >
-          <h3
-            class="GetRecipes-header"
+          <div
+            class="GetRecipes-IngForm-container content-box d-flex flex-column"
           >
-            Ingredients
-          </h3>
-          <form
-            class="AddIngredient-Form"
-          >
-            <input
-              class="test-input"
-              id="ingredient"
-              name="ingredient"
-              placeholder="Enter Ingredient"
-              role=""
-              type="text"
-              value=""
-            />
-            <button
-              class="general-btn"
-              type="submit"
+            <h3
+              class="GetRecipes-header"
             >
-              Add Ingredient
-            </button>
-          </form>
-          <div />
-          <button
-            class="general-btn GetRecipes-btn"
-          >
-            Get Recipes
-          </button>
-        </div>
-      </div>
-      <div
-        class="nutrient-div"
-      >
-        <div
-          class="NutrientForm-container"
-        >
-          <h3
-            class="GetRecipes-header"
-          >
-            Nutrients
-          </h3>
-          <form
-            class="AddIngredient-Form"
-          >
+              Ingredients
+            </h3>
             <div
-              class="nutrient-form-div"
+              class="flex-grow-1 d-flex flex-column justify-content-between"
             >
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="fat"
+              <div>
+                <form>
+                  <input
+                    class="test-input"
+                    id="ingredient"
+                    name="ingredient"
+                    placeholder="Enter Ingredient"
+                    role=""
+                    type="text"
+                    value=""
+                  />
+                  <button
+                    class="general-btn my-2"
+                    type="submit"
                   >
-                    Max Fat (grams)
-                  </label>
-                </div>
-                <input
-                  id="fat"
-                  name="maxFat"
-                  type="number"
-                  value=""
-                />
+                    Add Ingredient
+                  </button>
+                </form>
+                <div />
               </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="satFat"
-                  >
-                    Max Sat Fat (grams)
-                  </label>
-                </div>
-                <input
-                  id="satFat"
-                  name="maxSaturatedFat"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="carbs"
-                  >
-                    Max Carbs (grams)
-                  </label>
-                </div>
-                <input
-                  id="carbs"
-                  name="maxCarbs"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="calories"
-                  >
-                     Max Calories (kCals)
-                  </label>
-                </div>
-                <input
-                  id="calories"
-                  name="maxCalories"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="cholesterol"
-                  >
-                    Max Cholesterol (mg)
-                  </label>
-                </div>
-                <input
-                  id="cholesterol"
-                  name="maxCholesterol"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="sugar"
-                  >
-                    Max Sugar (grams)
-                  </label>
-                </div>
-                <input
-                  id="sugar"
-                  name="maxSugar"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="sodium"
-                  >
-                    Max Sodium (mg)
-                  </label>
-                </div>
-                <input
-                  id="sodium"
-                  name="maxSodium"
-                  type="number"
-                  value=""
-                />
-              </div>
-              <div
-                class="nutrient-input-div"
-              >
-                <div>
-                  <label
-                    for="protein"
-                  >
-                    Min Protein (grams)
-                  </label>
-                </div>
-                <input
-                  id="protein"
-                  name="minProtein"
-                  type="number"
-                  value=""
-                />
-              </div>
-            </div>
-            <div>
               <button
-                class="general-btn set-nutrients-btn"
-                type="submit"
+                class="general-btn GetRecipes-btn"
               >
-                Update Values
+                Get Recipes
               </button>
             </div>
-          </form>
+          </div>
+        </div>
+        <div
+          class="GetRecipes-nutrient-div col-md-6"
+        >
+          <div
+            class="GetRecipes-NutForm-container content-box"
+          >
+            <h3
+              class="GetRecipes-header"
+            >
+              Nutrients
+            </h3>
+            <form>
+              <div
+                class="NutrientForm-container"
+              >
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="fat"
+                    >
+                      Max Fat (grams)
+                    </label>
+                  </div>
+                  <input
+                    id="fat"
+                    name="maxFat"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="satFat"
+                    >
+                      Max Sat Fat (grams)
+                    </label>
+                  </div>
+                  <input
+                    id="satFat"
+                    name="maxSaturatedFat"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="carbs"
+                    >
+                      Max Carbs (grams)
+                    </label>
+                  </div>
+                  <input
+                    id="carbs"
+                    name="maxCarbs"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="calories"
+                    >
+                       Max Calories (kCals)
+                    </label>
+                  </div>
+                  <input
+                    id="calories"
+                    name="maxCalories"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="cholesterol"
+                    >
+                      Max Cholesterol (mg)
+                    </label>
+                  </div>
+                  <input
+                    id="cholesterol"
+                    name="maxCholesterol"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="sugar"
+                    >
+                      Max Sugar (grams)
+                    </label>
+                  </div>
+                  <input
+                    id="sugar"
+                    name="maxSugar"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="sodium"
+                    >
+                      Max Sodium (mg)
+                    </label>
+                  </div>
+                  <input
+                    id="sodium"
+                    name="maxSodium"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="nutrient-input-div"
+                >
+                  <div>
+                    <label
+                      for="protein"
+                    >
+                      Min Protein (grams)
+                    </label>
+                  </div>
+                  <input
+                    id="protein"
+                    name="minProtein"
+                    type="number"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div>
+                <button
+                  class="general-btn NutrientForm-set-nutrients-btn"
+                  type="submit"
+                >
+                  Update Values
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

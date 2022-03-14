@@ -62,7 +62,7 @@ const GetRecipes = () => {
                 <p className="GetRecipes-explainer-para">3) Click "Get Recipes"</p>
             </div>
             <div className="GetRecipes-container container">
-                <div className="row w-100">
+                <div className="row">
                     <div className="GetRecipes-ingredient-div col-md-6">
 
 
@@ -78,8 +78,9 @@ const GetRecipes = () => {
                                     <IngredientList ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
 
                                 </div>
-                                
-                                    <button className="general-btn GetRecipes-btn" onClick={getRecipesFunc}>Get Recipes</button>
+                                <div className="row d-flex flex-column align-items-center">
+                                    <button className="general-btn GetRecipes-btn col-6" onClick={getRecipesFunc}>Get Recipes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,3 +110,11 @@ const GetRecipes = () => {
 }
 
 export default GetRecipes;
+
+// File for storing API KEYS
+// Different from SECRET_KEY used for token creation in config.js
+// Not associated with a payment method, don't put in git regardless
+
+// const SPOON_API_KEY = 'e11de31554674e8f9eb207f54aab2a27';
+
+// module.exports = SPOON_API_KEY;

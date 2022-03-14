@@ -1,0 +1,10 @@
+.IngredientList {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+}
+
+.IngredientList-div {
+    margin-top: 0.5rem;
+    margin-right: 40%;
+}

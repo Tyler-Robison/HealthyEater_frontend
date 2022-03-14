@@ -42,7 +42,9 @@ const RecipeDetail = () => {
     // only care recipe detail, nutri detail can be obtained based on recipe_id
     const saveRecipe = async () => {
         const recipeRes = await RecipeAPI.saveRecipe(recipeDetail, currentUser.id, token)
+       
         currentUser.recipes.push(recipeRes.savedRecipe)
+    
         setCurrentUser({...currentUser, currentUser})
     }
 

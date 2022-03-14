@@ -2,8 +2,6 @@ import React from "react";
 import { useFormik } from "formik";
 import ingredientValidate from './ingredientValidate'
 
-import './IngredientForm.css'
-
 
 const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
     const validate = ingredientValidate
@@ -28,7 +26,6 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
         <form onSubmit={formik.handleSubmit}>
 
             <input
-                role=''
                 className="test-input"
                 id="ingredient"
                 name="ingredient"
@@ -43,7 +40,9 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
                 <div>{formik.errors.ingredient}</div>
             )}
 
-            <button className="general-btn my-2" type="submit">Add Ingredient</button>
+            <div>
+                <button className="general-btn mb-2" type="submit">Add Ingredient</button>
+            </div>
         </form>
     )
 }

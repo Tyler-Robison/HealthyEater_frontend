@@ -124,9 +124,77 @@ const registerNewUser = async (password = 'password') => {
   fireEvent.click(signupBtn);
 }
 
+test("user denied site access on failed sign-up", async function () {
+  const mockedUsedNavigate = jest.fn();
+
+  jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockedUsedNavigate,
+  }));
+
+  // password must be 5 characters minimum
+  registerNewUser('bad')
+
+  // registerNewUser failed because bad password
+  await waitFor(() => {
+    expect(screen.getByText('Password must be between 5 to 30 characters')).toBeInTheDocument();
+  });
+
+  // Because registration failed, find recipes link isn't showing on screen
+  // We can still attempt to manually navigate to that URL
+  // User will be re-directed back to homepage. 
+  mockedUsedNavigate('/find_recipes')
+
+  // Didn't get to GetRecipes component because user isn't logged in
+  expect(screen.queryByText('Ingredients')).not.toBeInTheDocument()
+});
+
+test("existing user can login", async function () {
+
+  // mock of the token value returned by UserApi.login
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
+
+  // mock of currentUser by returned by UserAPI.getUserInfo
+  mockedAxios.get.mockResolvedValueOnce(mockUserData);
+
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  // proves we're on homepage
+  expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
+
+  const loginAnchor = screen.getByText('Login')
+  fireEvent.click(loginAnchor)
+
+  const usernameInput = screen.getByPlaceholderText('Username')
+  const passwordInput = screen.getByPlaceholderText('Password')
+  const loginBtn = screen.getByTestId('login-btn')
+
+  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
+  fireEvent.change(passwordInput, { target: { value: 'Password' } });
+  fireEvent.click(loginBtn)
+
+  await waitFor(() => {
+    expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
+    expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
+  });
+})
 
 test("new user can sign-up then access site functionality", async function () {
   registerNewUser()
+
+  const mockedRecipes = {
+    data: {
+      results: testRecipes
+    }
+  }
+
+  // after registration there is a second GET request that we'll have to mock
+  mockedAxios.get.mockResolvedValueOnce(mockedRecipes);
 
   // Don't proceed until registration complete. 
   await waitFor(() => {
@@ -157,31 +225,17 @@ test("new user can sign-up then access site functionality", async function () {
     expect(screen.getByText('Cheese')).toBeInTheDocument();
     expect(screen.getByText('Olives')).toBeInTheDocument();
   });
-});
 
-test("user denied site access on failed sign-up", async function () {
-  const mockedUsedNavigate = jest.fn();
+  const getRecipesBtn = screen.getByText('Get Recipes')
+  fireEvent.click(getRecipesBtn)
 
-  jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: () => mockedUsedNavigate,
-  }));
-
-  // password must be 5 characters minimum
-  registerNewUser('bad')
-
-  // registerNewUser failed because bad password
   await waitFor(() => {
-    expect(screen.getByText('Password must be between 5 to 30 characters')).toBeInTheDocument();
-  });
-
-  // Because registration failed, find recipes link isn't showing on screen
-  // We can still attempt to manually navigate to that URL
-  // User will be re-directed back to homepage. 
-  mockedUsedNavigate('/find_recipes')
-
-  // Didn't get to GetRecipes component because user isn't logged in
-  expect(screen.queryByText('Ingredients')).not.toBeInTheDocument()
+    // counts total num times mockedAxios.GET has been called 
+    // it was also called in registerNewUser function - so 2 is correct
+    expect(mockedAxios.get.mockResolvedValueOnce(mockedRecipes)).toHaveBeenCalledTimes(2)
+    expect(screen.getByText('BLT')).toBeInTheDocument()
+    expect(screen.getByText('Uses 3 of your ingredients ( bacon, lettuce, tomato )')).toBeInTheDocument()
+  })
 });
 
 

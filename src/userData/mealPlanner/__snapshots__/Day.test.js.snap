@@ -3,7 +3,7 @@
 exports[`matches snapshot on day with meals 1`] = `
 <DocumentFragment>
   <div
-    class="Day"
+    class="Day col-lg"
   >
     <p>
       <b>
@@ -63,7 +63,7 @@ exports[`matches snapshot on day with meals 1`] = `
 exports[`matches snapshot on day with no meals 1`] = `
 <DocumentFragment>
   <div
-    class="Day"
+    class="Day col-lg"
   >
     <p>
       <b>
