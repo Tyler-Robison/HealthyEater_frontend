@@ -6,52 +6,56 @@ exports[`matches snapshot 1`] = `
     class="LoginForm"
   >
     <div
-      class="LoginForm-div"
+      class="row mt-3"
     >
-      <h1>
-        Enter Username/Password
-      </h1>
-      <form>
-        <div>
+      <div
+        class="LoginForm-div col-12"
+      >
+        <h1>
+          Enter Username/Password
+        </h1>
+        <form>
           <div>
-            <label
-              for="username"
-            >
-              Username
-            </label>
+            <div>
+              <label
+                for="username"
+              >
+                Username
+              </label>
+            </div>
+            <input
+              id="username"
+              name="username"
+              placeholder="Username"
+              type="text"
+              value=""
+            />
           </div>
-          <input
-            id="username"
-            name="username"
-            placeholder="Username"
-            type="text"
-            value=""
-          />
-        </div>
-        <div>
           <div>
-            <label
-              for="password"
-            >
-              Password
-            </label>
+            <div>
+              <label
+                for="password"
+              >
+                Password
+              </label>
+            </div>
+            <input
+              id="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value=""
+            />
           </div>
-          <input
-            id="password"
-            name="password"
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-        </div>
-        <button
-          class="general-btn LoginForm-btn"
-          data-testid="login-btn"
-          type="submit"
-        >
-          Login
-        </button>
-      </form>
+          <button
+            class="general-btn LoginForm-btn"
+            data-testid="login-btn"
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>

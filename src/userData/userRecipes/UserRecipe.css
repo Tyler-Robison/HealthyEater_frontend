@@ -4,6 +4,14 @@
     border-radius: 20%;
 }
 
-.UserRecipe-para {
-    margin-bottom: 0.5rem;
+@media (max-width: 800px) {
+    .UserRecipe-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 468px) {
+    .UserRecipe-link {
+        font-size: 0.6rem;
+    }
 }

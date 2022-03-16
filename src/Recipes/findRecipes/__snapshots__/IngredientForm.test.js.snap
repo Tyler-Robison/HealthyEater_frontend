@@ -8,16 +8,17 @@ exports[`matches snapshot with blank ingredientList 1`] = `
       id="ingredient"
       name="ingredient"
       placeholder="Enter Ingredient"
-      role=""
       type="text"
       value=""
     />
-    <button
-      class="general-btn my-2"
-      type="submit"
-    >
-      Add Ingredient
-    </button>
+    <div>
+      <button
+        class="general-btn mb-2"
+        type="submit"
+      >
+        Add Ingredient
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;
@@ -30,16 +31,17 @@ exports[`matches snapshot with filled ingredientList 1`] = `
       id="ingredient"
       name="ingredient"
       placeholder="Enter Ingredient"
-      role=""
       type="text"
       value=""
     />
-    <button
-      class="general-btn my-2"
-      type="submit"
-    >
-      Add Ingredient
-    </button>
+    <div>
+      <button
+        class="general-btn mb-2"
+        type="submit"
+      >
+        Add Ingredient
+      </button>
+    </div>
   </form>
 </DocumentFragment>
 `;

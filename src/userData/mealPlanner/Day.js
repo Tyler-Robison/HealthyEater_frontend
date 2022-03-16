@@ -13,8 +13,8 @@ const Day = ({ day }) => {
         const res = await PlannerAPI.deleteMeal(currentUser.id, meal_id, token)
 
         currentUser.mealplan = currentUser.mealplan.filter(m => m.id !== res.id)
- 
-        setCurrentUser({...currentUser, currentUser})
+
+        setCurrentUser({ ...currentUser, currentUser })
     }
 
 
@@ -29,14 +29,17 @@ const Day = ({ day }) => {
     return (
         <div className='Day col-lg'>
             <p><b>{day}</b></p>
-            <ol>
-                {daysMeals.map(d => {
-                    return <li key={uuid()}> <Link to={`/${d.recipe_id}/detail`} className='RecipeList-para'><b>{d.name}</b></Link> ({d.ww_points ? d.ww_points : 'Not Available'} points)
-                        <button data-testid={d.id} className="general-btn-red small-btn" onClick={() => deleteMeal(d.id)}>X</button>
-                    </li>
-                })}
-            </ol>
-            {totalPoints > 0 && <p className="Day-points"><b>Total Points:</b> {totalPoints}</p>}
+
+            <div className="list-container">
+                <ol>
+                    {daysMeals.map(d => {
+                        return <li key={uuid()}> <Link to={`/${d.recipe_id}/detail`} className='RecipeList-para'><b>{d.name}</b></Link> ({d.ww_points ? d.ww_points : 'Not Available'} points)
+                            <button data-testid={d.id} className="general-btn-red small-btn" onClick={() => deleteMeal(d.id)}>X</button>
+                        </li>
+                    })}
+                </ol>
+            </div>
+            {totalPoints > 0 && <p className="Day-points"><b>Points:</b> {totalPoints}</p>}
         </div>
     )
 }

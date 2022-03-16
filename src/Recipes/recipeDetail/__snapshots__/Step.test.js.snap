@@ -3,7 +3,7 @@
 exports[`matches snapshot. 1`] = `
 <DocumentFragment>
   <div
-    class="step-div"
+    class="step-div col-10"
   >
     <p
       class="step-number"

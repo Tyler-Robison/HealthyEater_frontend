@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import './Recipe.css'
 
 const Recipe = ({ recipe }) => {
 
@@ -9,10 +10,12 @@ const Recipe = ({ recipe }) => {
     })
 
     return (
-        <div key={recipe.id} className='RecipeList-div'>
-            <Link to={`/${recipe.id}/detail`} className='RecipeList-para'><b>{recipe.title}</b></Link>
-            <p>Uses {recipe.usedIngredients.length} of your ingredients ( {displayIngredients(recipe)} )</p>
-            <img className='RecipeList-img' src={recipe.image} alt={`Picture of the recipe ${recipe.title}`}></img>
+        <div className="row">
+            <div key={recipe.id} className='Recipe col-12'>
+                <Link to={`/${recipe.id}/detail`} className='RecipeList-para'><b>{recipe.title}</b></Link>
+                <p>Uses {recipe.usedIngredients.length} of your ingredients ( {displayIngredients(recipe)} )</p>
+                <img className='Recipe-img' src={recipe.image} alt={`Picture of the recipe ${recipe.title}`}></img>
+            </div>
         </div>
     )
 }

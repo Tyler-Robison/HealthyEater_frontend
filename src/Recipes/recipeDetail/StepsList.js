@@ -8,7 +8,7 @@ const StepsList = ({ recipeDetail }) => {
     }
 
     return (
-        <div>
+        <div className="d-flex flex-column align-items-center row StepList">
             {recipeDetail.analyzedInstructions[0].steps.map(step => {
                 return <Step key={step.number} step={step} />
             })}

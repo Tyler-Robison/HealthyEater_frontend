@@ -5,26 +5,34 @@
     position: relative;
     background-color: white;
     min-height: 40rem;
+
 }
 
 @media (max-width: 1400px) {
     .Day {
        min-height: 45rem;
-     
+   
     }
 }
 
 @media (max-width: 1000px) {
     .Day {
        min-height: 12rem;
-     
+       width: 100vw;
     }
 }
 
-.Day-points {
-    position: absolute;
-    bottom: 0rem;
-    margin: 0px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@media (min-width: 1400px) {
+    .list-container {
+        min-height: 35rem;
+        max-height: 35rem;
+    }
 }
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+    .list-container {
+        min-height: 40rem;
+        max-height: 40rem;
+    }
+}
+

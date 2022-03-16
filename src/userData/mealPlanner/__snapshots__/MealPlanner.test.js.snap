@@ -6,11 +6,15 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
     class="MealPlanner"
   >
     <div
-      class="MealPlanner-header"
+      class="row d-flex flex-column align-items-center mt-3"
     >
-      <h1>
-        Tyler's Mealplan 
-      </h1>
+      <div
+        class="MealPlanner-header col-12"
+      >
+        <h1>
+          Tyler's Mealplan 
+        </h1>
+      </div>
     </div>
     <button
       class="general-btn-red"
@@ -19,7 +23,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
     </button>
     <br />
     <div
-      class="container w-100 mx-2"
+      class=" week-container container vw-100 mx-2"
     >
       <div
         class="MealPlanner-week-div row"
@@ -32,49 +36,53 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Mon
             </b>
           </p>
-          <ol>
-            <li>
-               
-              <a
-                class="RecipeList-para"
-                href="/1111/detail"
-              >
-                <b>
-                  bacon
-                </b>
-              </a>
-               (20 points)
-              <button
-                class="general-btn-red small-btn"
-                data-testid="1"
-              >
-                X
-              </button>
-            </li>
-            <li>
-               
-              <a
-                class="RecipeList-para"
-                href="/2222/detail"
-              >
-                <b>
-                  eggs
-                </b>
-              </a>
-               (10 points)
-              <button
-                class="general-btn-red small-btn"
-                data-testid="2"
-              >
-                X
-              </button>
-            </li>
-          </ol>
+          <div
+            class="list-container"
+          >
+            <ol>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/1111/detail"
+                >
+                  <b>
+                    bacon
+                  </b>
+                </a>
+                 (20 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="1"
+                >
+                  X
+                </button>
+              </li>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/2222/detail"
+                >
+                  <b>
+                    eggs
+                  </b>
+                </a>
+                 (10 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="2"
+                >
+                  X
+                </button>
+              </li>
+            </ol>
+          </div>
           <p
             class="Day-points"
           >
             <b>
-              Total Points:
+              Points:
             </b>
              30
           </p>
@@ -87,31 +95,35 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Tues
             </b>
           </p>
-          <ol>
-            <li>
-               
-              <a
-                class="RecipeList-para"
-                href="/3333/detail"
-              >
-                <b>
-                  salad
-                </b>
-              </a>
-               (5 points)
-              <button
-                class="general-btn-red small-btn"
-                data-testid="3"
-              >
-                X
-              </button>
-            </li>
-          </ol>
+          <div
+            class="list-container"
+          >
+            <ol>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/3333/detail"
+                >
+                  <b>
+                    salad
+                  </b>
+                </a>
+                 (5 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="3"
+                >
+                  X
+                </button>
+              </li>
+            </ol>
+          </div>
           <p
             class="Day-points"
           >
             <b>
-              Total Points:
+              Points:
             </b>
              5
           </p>
@@ -124,7 +136,11 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Wed
             </b>
           </p>
-          <ol />
+          <div
+            class="list-container"
+          >
+            <ol />
+          </div>
         </div>
         <div
           class="Day col-lg"
@@ -134,7 +150,11 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Thurs
             </b>
           </p>
-          <ol />
+          <div
+            class="list-container"
+          >
+            <ol />
+          </div>
         </div>
         <div
           class="Day col-lg"
@@ -144,7 +164,11 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Fri
             </b>
           </p>
-          <ol />
+          <div
+            class="list-container"
+          >
+            <ol />
+          </div>
         </div>
         <div
           class="Day col-lg"
@@ -154,7 +178,11 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Sat
             </b>
           </p>
-          <ol />
+          <div
+            class="list-container"
+          >
+            <ol />
+          </div>
         </div>
         <div
           class="Day col-lg"
@@ -164,93 +192,101 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
               Sun
             </b>
           </p>
-          <ol />
+          <div
+            class="list-container"
+          >
+            <ol />
+          </div>
         </div>
       </div>
     </div>
-    <form>
-      <label
-        for="daySelect"
-      >
-        Select Day
-      </label>
-      <select
-        id="daySelect"
-        name="daySelect"
-      >
-        <option
-          value="Mon"
+    <div
+      class="MealPlanner-form"
+    >
+      <form>
+        <label
+          for="daySelect"
         >
-          Mon
-        </option>
-        <option
-          value="Tues"
+          Select Day
+        </label>
+        <select
+          id="daySelect"
+          name="daySelect"
         >
-          Tues
-        </option>
-        <option
-          value="Wed"
+          <option
+            value="Mon"
+          >
+            Mon
+          </option>
+          <option
+            value="Tues"
+          >
+            Tues
+          </option>
+          <option
+            value="Wed"
+          >
+            Wed
+          </option>
+          <option
+            value="Thurs"
+          >
+            Thurs
+          </option>
+          <option
+            value="Fri"
+          >
+            Fri
+          </option>
+          <option
+            value="Sat"
+          >
+            Sat
+          </option>
+          <option
+            value="Sun"
+          >
+            Sun
+          </option>
+        </select>
+        <label
+          for="mealSelect"
         >
-          Wed
-        </option>
-        <option
-          value="Thurs"
+          Select Meal
+        </label>
+        <select
+          id="mealSelect"
+          name="mealSelect"
         >
-          Thurs
-        </option>
-        <option
-          value="Fri"
+          <option
+            value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
+          >
+            bacon
+          </option>
+          <option
+            value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
+          >
+            eggs
+          </option>
+          <option
+            value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
+          >
+            salad
+          </option>
+          <option
+            value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
+          >
+            bread
+          </option>
+        </select>
+        <button
+          class="general-btn"
+          type="submit"
         >
-          Fri
-        </option>
-        <option
-          value="Sat"
-        >
-          Sat
-        </option>
-        <option
-          value="Sun"
-        >
-          Sun
-        </option>
-      </select>
-      <label
-        for="mealSelect"
-      >
-        Select Meal
-      </label>
-      <select
-        id="mealSelect"
-        name="mealSelect"
-      >
-        <option
-          value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
-        >
-          bacon
-        </option>
-        <option
-          value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
-        >
-          eggs
-        </option>
-        <option
-          value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
-        >
-          salad
-        </option>
-        <option
-          value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
-        >
-          bread
-        </option>
-      </select>
-      <button
-        class="general-btn"
-        type="submit"
-      >
-        Add to Calendar
-      </button>
-    </form>
+          Add to Calendar
+        </button>
+      </form>
+    </div>
   </div>
 </DocumentFragment>
 `;

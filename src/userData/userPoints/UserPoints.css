@@ -9,12 +9,33 @@
 }
 
 .UserPoints-div {
-    margin-top: 2rem;
     background-color: white;
     width: 28vw;
     border-radius: 1rem;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
 }
+
+.calc-para {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1000px) {
+    .calc-para {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .calc-para {
+        font-size: 0.8rem;
+    }
+}
+
+/* @media (max-width: 400px) {
+    .calc-para {
+        font-size: 0.6rem;
+    }
+} */
 
 .UserPoints-div button {
     margin-top: 0.8rem;

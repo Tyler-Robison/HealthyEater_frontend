@@ -1,15 +1,25 @@
 .nutrition-table {
     border: 2px solid black;
     background-color: white;
+    margin-bottom: 1rem;
 }
 
 .nutrition-table th {
     border: 1px solid black;
     padding: 0px 2rem;
-
-    /* width: 10rem; */
 }
 
 .nutrition-table td {
     border: 1px solid black;
+}
+
+@media (max-width: 468px) {
+    .nutrition-table {
+        font-size: 0.8rem;
+    }
+
+    .nutrition-table th {
+        font-size: 0.8rem;
+    }
+
 }

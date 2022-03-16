@@ -6,138 +6,146 @@ exports[`matches snapshot 1`] = `
     class="UserPoints"
   >
     <div
-      class="UserPoints-div"
+      class="row mt-3"
     >
-      <h1>
-        Find Your Daily Points!
-      </h1>
-      <form>
-        <div
-          class="UserPoints-calc-div"
-        >
-          <div>
-            <label
-              for="gender"
-            >
-              Gender
-            </label>
-          </div>
-          <select
-            id="gender"
-            name="gender"
+      <div
+        class="UserPoints-div col-12"
+      >
+        <h1>
+          Find Your Daily Points!
+        </h1>
+        <form>
+          <div
+            class="UserPoints-calc-div"
           >
-            <option
-              value="male"
+            <div>
+              <label
+                for="gender"
+              >
+                Gender
+              </label>
+            </div>
+            <select
+              id="gender"
+              name="gender"
             >
-              Male
-            </option>
-            <option
-              value="female"
-            >
-              Female
-            </option>
-          </select>
-        </div>
-        <div
-          class="UserPoints-calc-div"
-        >
-          <div>
-            <label
-              for="age"
-            >
-              Age
-            </label>
+              <option
+                value="male"
+              >
+                Male
+              </option>
+              <option
+                value="female"
+              >
+                Female
+              </option>
+            </select>
           </div>
-          <input
-            id="age"
-            name="age"
-            type="number"
-            value=""
-          />
-        </div>
-        <div
-          class="UserPoints-calc-div"
-        >
-          <div>
-            <label
-              for="height"
-            >
-              Height (inches)
-            </label>
-          </div>
-          <input
-            id="height"
-            name="height"
-            type="number"
-            value=""
-          />
-        </div>
-        <div
-          class="UserPoints-calc-div"
-        >
-          <div>
-            <label
-              for="weight"
-            >
-              Weight (lbs)
-            </label>
-          </div>
-          <input
-            id="weight"
-            name="weight"
-            type="number"
-            value=""
-          />
-        </div>
-        <div
-          class="UserPoints-calc-div"
-        >
-          <div>
-            <label
-              for="PAL"
-            >
-              Physical Activity Level
-            </label>
-          </div>
-          <select
-            id="PAL"
-            name="PAL"
+          <div
+            class="UserPoints-calc-div"
           >
-            <option
-              value="0"
+            <div>
+              <label
+                for="age"
+              >
+                Age
+              </label>
+            </div>
+            <input
+              id="age"
+              name="age"
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="UserPoints-calc-div"
+          >
+            <div>
+              <label
+                for="height"
+              >
+                Height (inches)
+              </label>
+            </div>
+            <input
+              id="height"
+              name="height"
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="UserPoints-calc-div"
+          >
+            <div>
+              <label
+                for="weight"
+              >
+                Weight (lbs)
+              </label>
+            </div>
+            <input
+              id="weight"
+              name="weight"
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="UserPoints-calc-div"
+          >
+            <div>
+              <label
+                for="PAL"
+              >
+                Physical Activity Level
+              </label>
+            </div>
+            <select
+              id="PAL"
+              name="PAL"
             >
-              Very Low (Mostly sitting, little to no exercise)
-            </option>
-            <option
-              value="2"
-            >
-              Low (Significant standing/walking, no rigorous exercise)
-            </option>
-            <option
-              value="4"
-            >
-              Moderate (Light exercise multiple times per week)
-            </option>
-            <option
-              value="6"
-            >
-              High (Rigorous exercise multiple times per week)
-            </option>
-          </select>
-        </div>
-        <button
-          class="general-btn"
-          type="submit"
+              <option
+                value="0"
+              >
+                Very Low (Mostly sitting, little to no exercise)
+              </option>
+              <option
+                value="2"
+              >
+                Low (Significant standing/walking, no rigorous exercise)
+              </option>
+              <option
+                value="4"
+              >
+                Moderate (Light exercise multiple times per week)
+              </option>
+              <option
+                value="6"
+              >
+                High (Rigorous exercise multiple times per week)
+              </option>
+            </select>
+          </div>
+          <button
+            class="general-btn"
+            type="submit"
+          >
+            Calculate Points
+          </button>
+        </form>
+        <p
+          class="calc-para"
         >
-          Calculate Points
-        </button>
-      </form>
-      <h4>
-        Calculation used to determine weekly points allowance
-      </h4>
-      <h4>
-        Based on Weight Watchers Smart Points System
-      </h4>
+          Calculation used to determine weekly points allowance
+        </p>
+        <p
+          class="calc-para"
+        >
+          Based on Weight Watchers Smart Points System
+        </p>
+      </div>
     </div>
   </div>
 </DocumentFragment>

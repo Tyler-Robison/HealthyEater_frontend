@@ -3,24 +3,28 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="RecipeList-div"
+    class="row"
   >
-    <a
-      class="RecipeList-para"
-      href="/1234/detail"
+    <div
+      class="Recipe col-12"
     >
-      <b>
-        Scrambled Eggs
-      </b>
-    </a>
-    <p>
-      Uses 2 of your ingredients ( eggs, otherIngredient )
-    </p>
-    <img
-      alt="Picture of the recipe Scrambled Eggs"
-      class="RecipeList-img"
-      src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
-    />
+      <a
+        class="RecipeList-para"
+        href="/1234/detail"
+      >
+        <b>
+          Scrambled Eggs
+        </b>
+      </a>
+      <p>
+        Uses 2 of your ingredients ( eggs, otherIngredient )
+      </p>
+      <img
+        alt="Picture of the recipe Scrambled Eggs"
+        class="Recipe-img"
+        src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

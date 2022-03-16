@@ -9,12 +9,35 @@
 }
 
 .Home-div { 
-    margin-top: 3rem;
     background-color: white;
-    width: 38vw;
     border-radius: 1rem;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
 }
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .Home-para {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .Home-para {
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .Home-para {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media  (max-width: 576px) {
+    .Home-para {
+        font-size: 0.6rem !important;
+    }
+}
+
 
 .Home-h1 {
     margin-top: 0.8rem;

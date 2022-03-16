@@ -3,9 +3,11 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <div>
+    <div
+      class="UserRecipe-div"
+    >
       <a
-        class="RecipeList-para"
+        class="UserRecipe-link"
         href="/1111/detail"
       >
         <b>

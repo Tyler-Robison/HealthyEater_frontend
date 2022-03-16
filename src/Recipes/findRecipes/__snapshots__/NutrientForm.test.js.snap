@@ -2,11 +2,9 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <form
-    class="AddIngredient-Form"
-  >
+  <form>
     <div
-      class="nutrient-form-div"
+      class="NutrientForm-container"
     >
       <div
         class="nutrient-input-div"
@@ -147,7 +145,7 @@ exports[`matches snapshot 1`] = `
     </div>
     <div>
       <button
-        class="general-btn set-nutrients-btn"
+        class="general-btn NutrientForm-set-nutrients-btn"
         type="submit"
       >
         Update Values

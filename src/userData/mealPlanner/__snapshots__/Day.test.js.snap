@@ -10,49 +10,53 @@ exports[`matches snapshot on day with meals 1`] = `
         Mon
       </b>
     </p>
-    <ol>
-      <li>
-         
-        <a
-          class="RecipeList-para"
-          href="/1111/detail"
-        >
-          <b>
-            bacon
-          </b>
-        </a>
-         (20 points)
-        <button
-          class="general-btn-red small-btn"
-          data-testid="1"
-        >
-          X
-        </button>
-      </li>
-      <li>
-         
-        <a
-          class="RecipeList-para"
-          href="/2222/detail"
-        >
-          <b>
-            eggs
-          </b>
-        </a>
-         (10 points)
-        <button
-          class="general-btn-red small-btn"
-          data-testid="2"
-        >
-          X
-        </button>
-      </li>
-    </ol>
+    <div
+      class="list-container"
+    >
+      <ol>
+        <li>
+           
+          <a
+            class="RecipeList-para"
+            href="/1111/detail"
+          >
+            <b>
+              bacon
+            </b>
+          </a>
+           (20 points)
+          <button
+            class="general-btn-red small-btn"
+            data-testid="1"
+          >
+            X
+          </button>
+        </li>
+        <li>
+           
+          <a
+            class="RecipeList-para"
+            href="/2222/detail"
+          >
+            <b>
+              eggs
+            </b>
+          </a>
+           (10 points)
+          <button
+            class="general-btn-red small-btn"
+            data-testid="2"
+          >
+            X
+          </button>
+        </li>
+      </ol>
+    </div>
     <p
       class="Day-points"
     >
       <b>
-        Total Points:
+        Points:
       </b>
        30
     </p>
@@ -70,7 +74,11 @@ exports[`matches snapshot on day with no meals 1`] = `
         Wed
       </b>
     </p>
-    <ol />
+    <div
+      class="list-container"
+    >
+      <ol />
+    </div>
   </div>
 </DocumentFragment>
 `;

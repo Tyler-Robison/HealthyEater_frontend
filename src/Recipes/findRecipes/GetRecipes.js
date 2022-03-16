@@ -42,7 +42,7 @@ const GetRecipes = () => {
             setIsMsg2Active(true)
         }
         const res = await SpoonacularAPI.getRecipes(ingredientsList, nutrientObj, token, currentUser.id)
-        console.log('recipe res', res)
+        
         if (res.results.length === 0) {
             setIsMsgActive(true)
             return
@@ -64,8 +64,6 @@ const GetRecipes = () => {
             <div className="GetRecipes-container container">
                 <div className="row">
                     <div className="GetRecipes-ingredient-div col-md-6">
-
-
 
                         <div className="GetRecipes-IngForm-container content-box d-flex flex-column">
                             <h3 className="GetRecipes-header">Ingredients</h3>
@@ -110,11 +108,3 @@ const GetRecipes = () => {
 }
 
 export default GetRecipes;
-
-// File for storing API KEYS
-// Different from SECRET_KEY used for token creation in config.js
-// Not associated with a payment method, don't put in git regardless
-
-// const SPOON_API_KEY = 'e11de31554674e8f9eb207f54aab2a27';
-
-// module.exports = SPOON_API_KEY;

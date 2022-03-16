@@ -32,7 +32,7 @@ const LoginForm = () => {
             const res = await UserAPI.login(values)
             login(res.token);
             navigate('/')
-            
+
         } catch (err) {
             console.log('error', err)
             formik.resetForm();
@@ -42,43 +42,45 @@ const LoginForm = () => {
 
     return (
         <div className="LoginForm">
-            <div className="LoginForm-div">
-                <h1>Enter Username/Password</h1>
-                {isMsgActive ? <p>Invalid Username/Password</p> : null}
+            <div className="row mt-3">
+                <div className="LoginForm-div col-12">
+                    <h1>Enter Username/Password</h1>
+                    {isMsgActive ? <p>Invalid Username/Password</p> : null}
 
-                <form onSubmit={formik.handleSubmit}>
-                    <div>
-                        <div><label htmlFor="username">Username</label></div>
-                        <input
-                            id="username"
-                            name="username"
-                            type='text'
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.username}
-                            placeholder="Username"
-                        />
-                        {formik.touched.username && formik.errors.username && (
-                            <div>{formik.errors.username}</div>
-                        )}
-                    </div>
-                    <div>
-                        <div><label htmlFor="password">Password</label></div>
-                        <input
-                            id="password"
-                            name="password"
-                            type='password'
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.password}
-                            placeholder="Password"
-                        />
-                        {formik.touched.password && formik.errors.password && (
-                            <div>{formik.errors.password}</div>
-                        )}
-                    </div>
-                    <button className="general-btn LoginForm-btn" data-testid="login-btn" type="submit">Login</button>
-                </form>
+                    <form onSubmit={formik.handleSubmit}>
+                        <div>
+                            <div><label htmlFor="username">Username</label></div>
+                            <input
+                                id="username"
+                                name="username"
+                                type='text'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.username}
+                                placeholder="Username"
+                            />
+                            {formik.touched.username && formik.errors.username && (
+                                <div>{formik.errors.username}</div>
+                            )}
+                        </div>
+                        <div>
+                            <div><label htmlFor="password">Password</label></div>
+                            <input
+                                id="password"
+                                name="password"
+                                type='password'
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.password}
+                                placeholder="Password"
+                            />
+                            {formik.touched.password && formik.errors.password && (
+                                <div>{formik.errors.password}</div>
+                            )}
+                        </div>
+                        <button className="general-btn LoginForm-btn" data-testid="login-btn" type="submit">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

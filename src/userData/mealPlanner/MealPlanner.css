@@ -12,9 +12,10 @@
     border-radius: 1rem;
     width: 30vw;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    font-size: 1rem;
 }
 
-.MealPlanner-week-div {
+/* .MealPlanner-week-div { */
     /* width: 100vw; */
     /* height: 40vh; */
 
@@ -22,4 +23,29 @@
     border-bottom: 1px solid black; */
     /* margin: auto; */
     /* margin-bottom: 1rem; */
+/* } */
+
+@media (max-width: 1000px) {
+    .week-container {
+        max-width: 500px !important;
+    }
 }
+
+@media (max-width: 468px) {
+    .MealPlanner-explain-para {
+        font-size: 12px;
+    }
+}
+
+.MealPlanner-form {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    height: 120px;
+}
+
+@media (max-width: 800px) {
+    .MealPlanner-form {
+        font-size: 12px;
+    }
+}
+

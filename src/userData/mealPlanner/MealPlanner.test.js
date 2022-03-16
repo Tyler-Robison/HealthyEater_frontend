@@ -73,7 +73,7 @@ test('can empty calendar', async function () {
       </MemoryRouter>
    );
 
-   expect(screen.getAllByText('Total Points:')[0]).toBeInTheDocument()
+   expect(screen.getAllByText('Points:')[0]).toBeInTheDocument()
 
    const clearCalendarBtn = screen.getByText('Clear Calendar');
    fireEvent.click(clearCalendarBtn);
@@ -82,7 +82,7 @@ test('can empty calendar', async function () {
    // all meals have been removed from calendar
    await waitFor(() => {
       expect(mockedAxios.delete.mockResolvedValueOnce(mockData)).toHaveBeenCalledTimes(1);
-      expect(screen.queryByText('Total Points:')).not.toBeInTheDocument()
+      expect(screen.queryByText('Points:')).not.toBeInTheDocument()
    })
 })
 

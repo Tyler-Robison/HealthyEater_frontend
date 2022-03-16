@@ -11,7 +11,7 @@ const Step = ({ step }) => {
     }
 
     return (
-        <div className='step-div'>
+        <div className='step-div col-10'>
 
             <p className='step-number'><b>{step.number}</b></p>
             <p>{step.step}</p>

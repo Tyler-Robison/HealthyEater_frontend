@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import PlannerAPI from "../../APIs/plannerAPI";
 import GlobalContext from "../../context/GlobalContext";
 
+
 const PlanForm = ({ days }) => {
 
     const { token, currentUser, setCurrentUser } = useContext(GlobalContext);
@@ -18,8 +19,8 @@ const PlanForm = ({ days }) => {
     const handleFormikSubmit = async (values) => {
         let { daySelect, mealSelect } = values
 
-        const meal = (mealSelect === '' ? currentUser.recipes[0] : 
-        JSON.parse(mealSelect))
+        const meal = (mealSelect === '' ? currentUser.recipes[0] :
+            JSON.parse(mealSelect))
 
         if (daySelect === '') daySelect = 'Mon'
         const data = {
@@ -48,32 +49,34 @@ const PlanForm = ({ days }) => {
             recipe_id: recipe.recipe_id,
             ww_points: recipe.ww_points
         }
-        
+
         // store recipeObj as string, convert back to object upon formSubmit
         return <option key={recipe.recipe_id} value={JSON.stringify(recipeObj)}>{recipe.name}</option>
     })
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="daySelect">Select Day</label>
-            <select
-                id="daySelect"
-                name="daySelect"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-            >{dayValues}</select>
+        <div className="MealPlanner-form">
+            <form onSubmit={formik.handleSubmit}>
+                <label htmlFor="daySelect">Select Day</label>
+                <select
+                    id="daySelect"
+                    name="daySelect"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                >{dayValues}</select>
 
-            <label htmlFor="mealSelect">Select Meal</label>
-            <select
-                id="mealSelect"
-                name="mealSelect"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-            >{recipeValues}</select>
+                <label htmlFor="mealSelect">Select Meal</label>
+                <select
+                    id="mealSelect"
+                    name="mealSelect"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                >{recipeValues}</select>
 
 
-            <button className="general-btn" type="submit">Add to Calendar</button>
-        </form>
+                <button className="general-btn" type="submit">Add to Calendar</button>
+            </form>
+        </div>
     )
 }
 

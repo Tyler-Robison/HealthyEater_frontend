@@ -31,7 +31,7 @@ exports[`matches snapshot 1`] = `
       class="GetRecipes-container container"
     >
       <div
-        class="row w-100"
+        class="row"
       >
         <div
           class="GetRecipes-ingredient-div col-md-6"
@@ -54,24 +54,31 @@ exports[`matches snapshot 1`] = `
                     id="ingredient"
                     name="ingredient"
                     placeholder="Enter Ingredient"
-                    role=""
                     type="text"
                     value=""
                   />
-                  <button
-                    class="general-btn my-2"
-                    type="submit"
-                  >
-                    Add Ingredient
-                  </button>
+                  <div>
+                    <button
+                      class="general-btn mb-2"
+                      type="submit"
+                    >
+                      Add Ingredient
+                    </button>
+                  </div>
                 </form>
-                <div />
+                <div
+                  class="IngredientList"
+                />
               </div>
-              <button
-                class="general-btn GetRecipes-btn"
+              <div
+                class="row d-flex flex-column align-items-center"
               >
-                Get Recipes
-              </button>
+                <button
+                  class="general-btn GetRecipes-btn col-6"
+                >
+                  Get Recipes
+                </button>
+              </div>
             </div>
           </div>
         </div>

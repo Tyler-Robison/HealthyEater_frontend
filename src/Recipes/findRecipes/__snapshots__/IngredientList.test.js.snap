@@ -2,14 +2,20 @@
 
 exports[`matches snapshot with blank ingredientList 1`] = `
 <DocumentFragment>
-  <div />
+  <div
+    class="IngredientList"
+  />
 </DocumentFragment>
 `;
 
 exports[`matches snapshot with filled ingredientList 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
+  <div
+    class="IngredientList"
+  >
+    <div
+      class="IngredientList-div"
+    >
       cheese 
       <button
         class="delete-btn"
@@ -17,7 +23,9 @@ exports[`matches snapshot with filled ingredientList 1`] = `
         X
       </button>
     </div>
-    <div>
+    <div
+      class="IngredientList-div"
+    >
       eggs 
       <button
         class="delete-btn"

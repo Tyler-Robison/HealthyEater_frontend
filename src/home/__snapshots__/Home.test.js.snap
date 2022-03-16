@@ -6,43 +6,47 @@ exports[`matches snapshot 1`] = `
     class="Home"
   >
     <div
-      class="Home-div"
+      class="row mt-3"
     >
-      <h1>
-        Welcome back Tyler!
-      </h1>
-      <p
-        class="Home-para"
+      <div
+        class="Home-div col-12"
       >
-        <b>
-          Find Recipes
-        </b>
-         allows you to search for recipes based on ingredients and nutrients
-      </p>
-      <p
-        class="Home-para"
-      >
-        <b>
-          Saved Recipes
-        </b>
-         is where you view or delete your saved recipes
-      </p>
-      <p
-        class="Home-para"
-      >
-        <b>
-          Mealplan
-        </b>
-         is where you create your mealplan using saved recipes
-      </p>
-      <p
-        class="Home-para"
-      >
-        <b>
-          Calculate Points
-        </b>
-         determines your weekly allotment of Weight Watcher Smart Points
-      </p>
+        <h1>
+          Welcome back Tyler!
+        </h1>
+        <p
+          class="Home-para"
+        >
+          <b>
+            Find Recipes
+          </b>
+           allows you to search for recipes based on ingredients and nutrients
+        </p>
+        <p
+          class="Home-para"
+        >
+          <b>
+            Saved Recipes
+          </b>
+           is where you view or delete your saved recipes
+        </p>
+        <p
+          class="Home-para"
+        >
+          <b>
+            Mealplan
+          </b>
+           is where you create your mealplan using saved recipes
+        </p>
+        <p
+          class="Home-para"
+        >
+          <b>
+            Calculate Points
+          </b>
+           determines your weekly allotment of Weight Watcher Smart Points
+        </p>
+      </div>
     </div>
   </div>
 </DocumentFragment>

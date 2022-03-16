@@ -6,23 +6,29 @@ exports[`Matches snapshot 1`] = `
     class="RecipeDetail"
   >
     <div
-      class="RecipeDetail-summary"
+      class="row mt-3"
     >
-      <h1>
-        mocked recipe title
-      </h1>
-      <h3>
-        Preparation Time: 45 Minutes
-      </h3>
-      <h3>
-        Serves: 5
-      </h3>
-      <h3>
-        Weight Watcher's Smart Points: 4
-      </h3>
+      <div
+        class="RecipeDetail-summary col-12"
+      >
+        <h1
+          class="RecipeDetail-header"
+        >
+          mocked recipe title
+        </h1>
+        <p>
+          Preparation Time: 45 Minutes
+        </p>
+        <p>
+          Serves: 5
+        </p>
+        <p>
+          Weight Watcher's Smart Points: 4
+        </p>
+      </div>
     </div>
     <button
-      class="general-btn"
+      class="general-btn save-recipe-btn"
     >
       Save Recipe
     </button>
@@ -34,9 +40,11 @@ exports[`Matches snapshot 1`] = `
     <div
       class="steps-container"
     >
-      <div>
+      <div
+        class="d-flex flex-column align-items-center row StepList"
+      >
         <div
-          class="step-div"
+          class="step-div col-10"
         >
           <p
             class="step-number"
@@ -62,7 +70,7 @@ exports[`Matches snapshot 1`] = `
           </p>
         </div>
         <div
-          class="step-div"
+          class="step-div col-10"
         >
           <p
             class="step-number"
@@ -88,7 +96,7 @@ exports[`Matches snapshot 1`] = `
           </p>
         </div>
         <div
-          class="step-div"
+          class="step-div col-10"
         >
           <p
             class="step-number"
@@ -118,385 +126,389 @@ exports[`Matches snapshot 1`] = `
     <div
       class="nutrition-div"
     >
-      <div>
-        <h5>
+      <div
+        class="header-backer"
+      >
+        <h2>
           Bad Stuff!
-        </h5>
-        <table
-          class="nutrition-table"
-        >
-          <thead>
-            <tr>
-              <th>
-                Nutrient
-              </th>
-              <th>
-                Amount
-              </th>
-              <th>
-                Daily Need (%)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Calories
-              </td>
-              <td>
-                660k
-              </td>
-              <td>
-                33.03
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Fat
-              </td>
-              <td>
-                20g
-              </td>
-              <td>
-                31.41
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Saturated Fat
-              </td>
-              <td>
-                7g
-              </td>
-              <td>
-                48.21
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Carbohydrates
-              </td>
-              <td>
-                46g
-              </td>
-              <td>
-                15.51
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Sugar
-              </td>
-              <td>
-                2g
-              </td>
-              <td>
-                2.39
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Cholesterol
-              </td>
-              <td>
-                261mg
-              </td>
-              <td>
-                87.23
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Sodium
-              </td>
-              <td>
-                1134mg
-              </td>
-              <td>
-                49.32
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <br />
-        <h5>
-          Good Stuff!
-        </h5>
-        <table
-          class="nutrition-table"
-        >
-          <thead>
-            <tr>
-              <th>
-                Nutrient
-              </th>
-              <th>
-                Amount
-              </th>
-              <th>
-                Daily Need (%)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Protein
-              </td>
-              <td>
-                68g
-              </td>
-              <td>
-                137.37
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Selenium
-              </td>
-              <td>
-                105µg
-              </td>
-              <td>
-                150.87
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B3
-              </td>
-              <td>
-                28mg
-              </td>
-              <td>
-                143.89
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B6
-              </td>
-              <td>
-                1mg
-              </td>
-              <td>
-                97.74
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Phosphorus
-              </td>
-              <td>
-                758mg
-              </td>
-              <td>
-                75.9
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B1
-              </td>
-              <td>
-                0.85mg
-              </td>
-              <td>
-                56.5
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B2
-              </td>
-              <td>
-                0.77mg
-              </td>
-              <td>
-                45.51
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Manganese
-              </td>
-              <td>
-                0.83mg
-              </td>
-              <td>
-                41.55
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B5
-              </td>
-              <td>
-                4mg
-              </td>
-              <td>
-                40.63
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin K
-              </td>
-              <td>
-                42µg
-              </td>
-              <td>
-                40.47
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Iron
-              </td>
-              <td>
-                6mg
-              </td>
-              <td>
-                37.35
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Potassium
-              </td>
-              <td>
-                1143mg
-              </td>
-              <td>
-                32.67
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Folate
-              </td>
-              <td>
-                121µg
-              </td>
-              <td>
-                30.38
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Calcium
-              </td>
-              <td>
-                277mg
-              </td>
-              <td>
-                27.78
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Magnesium
-              </td>
-              <td>
-                107mg
-              </td>
-              <td>
-                26.77
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Zinc
-              </td>
-              <td>
-                3mg
-              </td>
-              <td>
-                23.98
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin B12
-              </td>
-              <td>
-                1µg
-              </td>
-              <td>
-                17.71
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Fiber
-              </td>
-              <td>
-                3g
-              </td>
-              <td>
-                15.3
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Copper
-              </td>
-              <td>
-                0.26mg
-              </td>
-              <td>
-                13.16
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin A
-              </td>
-              <td>
-                588IU
-              </td>
-              <td>
-                11.77
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin C
-              </td>
-              <td>
-                6mg
-              </td>
-              <td>
-                8.31
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin E
-              </td>
-              <td>
-                1mg
-              </td>
-              <td>
-                7.09
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Vitamin D
-              </td>
-              <td>
-                0.96µg
-              </td>
-              <td>
-                6.43
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        </h2>
       </div>
+      <table
+        class="nutrition-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Nutrient
+            </th>
+            <th>
+              Amount
+            </th>
+            <th>
+              Daily Need (%)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Calories
+            </td>
+            <td>
+              660k
+            </td>
+            <td>
+              33.03
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Fat
+            </td>
+            <td>
+              20g
+            </td>
+            <td>
+              31.41
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Saturated Fat
+            </td>
+            <td>
+              7g
+            </td>
+            <td>
+              48.21
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Carbohydrates
+            </td>
+            <td>
+              46g
+            </td>
+            <td>
+              15.51
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sugar
+            </td>
+            <td>
+              2g
+            </td>
+            <td>
+              2.39
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Cholesterol
+            </td>
+            <td>
+              261mg
+            </td>
+            <td>
+              87.23
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sodium
+            </td>
+            <td>
+              1134mg
+            </td>
+            <td>
+              49.32
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="header-backer"
+      >
+        <h2>
+          Good Stuff!
+        </h2>
+      </div>
+      <table
+        class="nutrition-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Nutrient
+            </th>
+            <th>
+              Amount
+            </th>
+            <th>
+              Daily Need (%)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Protein
+            </td>
+            <td>
+              68g
+            </td>
+            <td>
+              137.37
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Selenium
+            </td>
+            <td>
+              105µg
+            </td>
+            <td>
+              150.87
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B3
+            </td>
+            <td>
+              28mg
+            </td>
+            <td>
+              143.89
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B6
+            </td>
+            <td>
+              1mg
+            </td>
+            <td>
+              97.74
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Phosphorus
+            </td>
+            <td>
+              758mg
+            </td>
+            <td>
+              75.9
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B1
+            </td>
+            <td>
+              0.85mg
+            </td>
+            <td>
+              56.5
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B2
+            </td>
+            <td>
+              0.77mg
+            </td>
+            <td>
+              45.51
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Manganese
+            </td>
+            <td>
+              0.83mg
+            </td>
+            <td>
+              41.55
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B5
+            </td>
+            <td>
+              4mg
+            </td>
+            <td>
+              40.63
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin K
+            </td>
+            <td>
+              42µg
+            </td>
+            <td>
+              40.47
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Iron
+            </td>
+            <td>
+              6mg
+            </td>
+            <td>
+              37.35
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Potassium
+            </td>
+            <td>
+              1143mg
+            </td>
+            <td>
+              32.67
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Folate
+            </td>
+            <td>
+              121µg
+            </td>
+            <td>
+              30.38
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Calcium
+            </td>
+            <td>
+              277mg
+            </td>
+            <td>
+              27.78
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Magnesium
+            </td>
+            <td>
+              107mg
+            </td>
+            <td>
+              26.77
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Zinc
+            </td>
+            <td>
+              3mg
+            </td>
+            <td>
+              23.98
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin B12
+            </td>
+            <td>
+              1µg
+            </td>
+            <td>
+              17.71
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Fiber
+            </td>
+            <td>
+              3g
+            </td>
+            <td>
+              15.3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Copper
+            </td>
+            <td>
+              0.26mg
+            </td>
+            <td>
+              13.16
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin A
+            </td>
+            <td>
+              588IU
+            </td>
+            <td>
+              11.77
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin C
+            </td>
+            <td>
+              6mg
+            </td>
+            <td>
+              8.31
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin E
+            </td>
+            <td>
+              1mg
+            </td>
+            <td>
+              7.09
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Vitamin D
+            </td>
+            <td>
+              0.96µg
+            </td>
+            <td>
+              6.43
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <br />
     <button
       class="general-btn-red"
     >
