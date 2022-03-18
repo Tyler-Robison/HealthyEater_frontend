@@ -1,5 +1,10 @@
 import './IngredientList.css'
-
+/** IngredientList (component) displays the contents of ingredientsList (state) in a form that is visible to users
+ * 
+ * items on the list can be removed by clicking on the red 'X'
+ * 
+ * Contents on ingredientsList (state) are sent to the back-end /recipes/complex when user clicks "Get Recipes" button
+  */
 const IngredientList = ({ ingredientsList, setIngredientsList }) => {
 
     const removeIngredient = (ingredient) => {

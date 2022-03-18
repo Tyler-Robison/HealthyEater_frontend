@@ -4,13 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from "formik";
 import signupValidate from "./user_validators/signupValidate";
 import GlobalContext from "../context/GlobalContext";
+import useTimedMessage from "../customHooks/useTimedMessage";
 import './SignupForm.css'
 
-
+/** SignupForm allows users to create new accounts
+ * 
+ * upon succesful registration currentUser will be created, allowing all components to access user info*/
 const SignupForm = () => {
     const validate = signupValidate
     const navigate = useNavigate();
     const { currentUser, login } = useContext(GlobalContext)
+    const [failureMsg, setfailureMsg] = useTimedMessage()
 
     useEffect(() => {
         if (currentUser) navigate('/')
@@ -25,7 +29,7 @@ const SignupForm = () => {
         onSubmit: values => signup(values),
     })
 
-    // login sets token, which triggers useEffect
+    // login sets token, which triggers useEffect in App.js
     const signup = async (values) => {
         try {
             const res = await UserAPI.register(values)
@@ -33,7 +37,8 @@ const SignupForm = () => {
             formik.resetForm();
             navigate('/');
         } catch (err) {
-            console.log('signup error', err)
+            setfailureMsg(true)
+            formik.resetForm();
         }
     }
 
@@ -43,6 +48,7 @@ const SignupForm = () => {
                 <div className="SignupForm-div col-12">
 
                     <h1>Enter Username/Password</h1>
+                    {failureMsg && <p>That username is already taken</p>}
                     <form onSubmit={formik.handleSubmit}>
                         <div>
                             <div><label htmlFor="username">Username</label></div>

@@ -15,11 +15,18 @@ const recipeArr = [
 const testUser = {
     id: 1,
     username: "Tyler",
-    isAdmin: false,
     points: null,
     mealplan: mealplanArr,
     recipes: recipeArr
 };
+
+const testGuest = {
+    id: 1,
+    username: "guest",
+    points: null,
+    mealplan: mealplanArr,
+    recipes: recipeArr
+}
 
 // mock recipe search results
 const testRecipes = [
@@ -39,5 +46,6 @@ const testRecipes = [
 
 export {
     testUser,
+    testGuest,
     testRecipes
 }

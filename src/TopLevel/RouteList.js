@@ -11,35 +11,38 @@ import SignupForm from "../users/SignupForm";
 import RecipeList from "../Recipes/findRecipes/RecipeList";
 import UserRecipeList from "../userData/userRecipes/UserRecipeList";
 
+/** RouteList Contains all routes used by Healthy-Eater app
+ * 
+ * routes wrapped in <RequireAuth> require user to be logged in
+ * 
+ * unrecognized routes re-direct to homepage*/
 const RouteList = () => {
-    // routes which require user to be logged in are wrapped in RequireAuth component
-    // which checks for logged-in user and re-directs to login if needed
 
     return (
         <Routes>
 
             {/* homepage */}
-            <Route path="/healthy-eater" element={<Home />} />
+            <Route path="/healthyeater" element={<Home />} />
 
 
             {/* recipe routes */}
-            <Route path="/find_recipes"
+            <Route path="/findrecipes"
                 element={<RequireAuth redirectTo="/login"><GetRecipes /></RequireAuth>} />
 
             <Route path="/recipes"
                 element={<RequireAuth redirectTo="/login"><RecipeList /></RequireAuth>} />
 
-            <Route path="/:recipeID/detail"
+            <Route path="/recipes/:recipeID"
                 element={<RequireAuth redirectTo="/login"><RecipeDetail /></RequireAuth>} />
 
-            <Route path="/recipes/saved-recipes"
+            <Route path="/savedrecipes"
                 element={<RequireAuth redirectTo="/login"><UserRecipeList /></RequireAuth>} />
 
 
             {/* user auth routes */}
-            <Route path="/users/signup" element={<SignupForm />} />
+            <Route path="/signup" element={<SignupForm />} />
 
-            <Route path="/users/login" element={<LoginForm />} />
+            <Route path="/login" element={<LoginForm />} />
 
 
             {/* mealplan routes */}
@@ -52,8 +55,8 @@ const RouteList = () => {
 
 
             {/* re-direct routes */}
-            <Route path="/" element={<Navigate replace to="/healthy-eater" />} />
-            <Route path='*' element={<Navigate replace to="/healthy-eater" />} />
+            <Route path="/" element={<Navigate replace to="/healthyeater" />} />
+            <Route path='*' element={<Navigate replace to="/healthyeater" />} />
         </Routes>
     )
 }

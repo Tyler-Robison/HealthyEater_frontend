@@ -3,21 +3,22 @@
 exports[`matches snapshot with blank recipeList 1`] = `
 <DocumentFragment>
   <div
-    class="RecipeList-container"
+    class="RecipeList d-flex flex-column"
   >
-    <button
-      class="general-btn-red"
+    <div
+      class="RecipeList-container"
     >
-      Go Back
-    </button>
-    <button
-      class="general-btn-red"
-    >
-      Go Back
-    </button>
-    <p>
-      Search for Recipes first
-    </p>
+      <button
+        class="general-btn-red"
+      >
+        Go Back
+      </button>
+      <button
+        class="general-btn-red"
+      >
+        Go Back
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -25,66 +26,70 @@ exports[`matches snapshot with blank recipeList 1`] = `
 exports[`matches snapshot with filled recipeList 1`] = `
 <DocumentFragment>
   <div
-    class="RecipeList-container"
+    class="RecipeList d-flex flex-column"
   >
-    <button
-      class="general-btn-red"
-    >
-      Go Back
-    </button>
     <div
-      class="row"
+      class="RecipeList-container"
     >
-      <div
-        class="Recipe col-12"
+      <button
+        class="general-btn-red"
       >
-        <a
-          class="RecipeList-para"
-          href="/1234/detail"
-        >
-          <b>
-            Scrambled Eggs
-          </b>
-        </a>
-        <p>
-          Uses 2 of your ingredients ( eggs, otherIngredient )
-        </p>
-        <img
-          alt="Picture of the recipe Scrambled Eggs"
-          class="Recipe-img"
-          src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
-        />
-      </div>
-    </div>
-    <div
-      class="row"
-    >
+        Go Back
+      </button>
       <div
-        class="Recipe col-12"
+        class="row"
       >
-        <a
-          class="RecipeList-para"
-          href="/5678/detail"
+        <div
+          class="Recipe col-12"
         >
-          <b>
-            BLT
-          </b>
-        </a>
-        <p>
-          Uses 3 of your ingredients ( bacon, lettuce, tomato )
-        </p>
-        <img
-          alt="Picture of the recipe BLT"
-          class="Recipe-img"
-          src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
-        />
+          <a
+            class="RecipeList-para"
+            href="/recipes/1234"
+          >
+            <b>
+              Scrambled Eggs
+            </b>
+          </a>
+          <p>
+            Uses 2 of your ingredients ( eggs, otherIngredient )
+          </p>
+          <img
+            alt="Picture of the recipe Scrambled Eggs"
+            class="Recipe-img"
+            src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
+          />
+        </div>
       </div>
+      <div
+        class="row"
+      >
+        <div
+          class="Recipe col-12"
+        >
+          <a
+            class="RecipeList-para"
+            href="/recipes/5678"
+          >
+            <b>
+              BLT
+            </b>
+          </a>
+          <p>
+            Uses 3 of your ingredients ( bacon, lettuce, tomato )
+          </p>
+          <img
+            alt="Picture of the recipe BLT"
+            class="Recipe-img"
+            src="https://spoonacular.com/recipeImages/716426-312x231.jpg"
+          />
+        </div>
+      </div>
+      <button
+        class="general-btn-red"
+      >
+        Go Back
+      </button>
     </div>
-    <button
-      class="general-btn-red"
-    >
-      Go Back
-    </button>
   </div>
 </DocumentFragment>
 `;

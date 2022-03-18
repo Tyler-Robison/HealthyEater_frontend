@@ -4,18 +4,23 @@ import Day from './Day'
 import PlanForm from './PlanForm'
 import GlobalContext from '../../context/GlobalContext'
 import PlannerAPI from '../../APIs/plannerAPI'
-import Spinner from '../../Spinner'
 import { Link } from 'react-router-dom'
 
+/** Mealplanner allows users to set their saved recipes into days of the week
+ * 
+ * Calculates daily and weekly points used based on recipes inputted into planner
+ * 
+ * renders PlanForm, the component used to add meals to mealplanner
+ * 
+ * Individual meals can be deleted by clicking on the red 'X' button, all meals can be deleted with Clear Calendar button*/
 const MealPlanner = () => {
     const { currentUser, setCurrentUser, token } = useContext(GlobalContext);
     const days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
 
-    const calculateWeeksPoints = () => {
-        return currentUser.mealplan.reduce((accum, nextEle) => {
+    const calculateWeeksPoints = () => currentUser.mealplan.reduce((accum, nextEle) => {
             return accum += nextEle.ww_points
         }, 0)
-    }
+    
 
     const deleteMealplan = async () => {
         await PlannerAPI.deleteAllMeals(currentUser.id, token);
@@ -23,8 +28,6 @@ const MealPlanner = () => {
         setCurrentUser({ ...currentUser, currentUser });
     }
 
-
-    // if (!currentUser) return <Spinner />
     if (currentUser.recipes.length === 0) return <p className="no-recipe-para">You have no saved recipes, go to <Link to={`/find_recipes`} className='RecipeList-para'><b>Find Recipes</b></Link></p>
 
     return (

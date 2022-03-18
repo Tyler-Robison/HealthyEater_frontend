@@ -5,102 +5,119 @@ exports[`matches snapshot 1`] = `
   <div
     class="App"
   >
-    <nav
-      class="NavBar navbar navbar-expand-lg navbar-light"
-    >
-      <span
-        class="NavBar-Brand navbar-brand"
-      >
-        <a
-          aria-current="page"
-          class="nav-link active"
-          href="/healthy-eater"
-        >
-          Healthy-Eater
-          <img
-            class="brand-img"
-            height="28px"
-            src="lettuce.png"
-            width="28px"
-          />
-        </a>
-      </span>
-      <div
-        class="NavBar-Container container"
-      >
-        <a
-          class="nav-link signup"
-          href="/users/signup"
-        >
-          Signup
-        </a>
-        <a
-          class="nav-link login"
-          href="/users/login"
-        >
-          Login
-        </a>
-      </div>
-    </nav>
     <div
-      class="Home"
+      class="main-container d-flex h-100 flex-column"
     >
+      <nav
+        class="NavBar navbar navbar-expand-lg navbar-light"
+      >
+        <span
+          class="NavBar-Brand navbar-brand"
+        >
+          <a
+            aria-current="page"
+            class="nav-link active"
+            href="/healthyeater"
+          >
+            Healthy-Eater
+            <img
+              class="brand-img"
+              height="28px"
+              src="lettuce.png"
+              width="28px"
+            />
+          </a>
+        </span>
+        <div
+          class="NavBar-Container container"
+        >
+          <a
+            class="nav-link signup "
+            href="/signup"
+          >
+            Signup
+          </a>
+          <button
+            class="general-btn"
+          >
+            Continue as Guest
+          </button>
+          <a
+            class="nav-link login"
+            href="/login"
+          >
+            Login
+          </a>
+        </div>
+      </nav>
       <div
-        class="row mt-3"
+        class="Home"
       >
         <div
-          class="Home-div col-12"
+          class="row mt-3"
         >
-          <h1
-            class="Home-h1"
+          <div
+            class="Home-div col-12"
           >
-            Welcome to Healthy-Eater!
-          </h1>
-          <p
-            class="Home-para"
-          >
-             You aren't logged in, click 
-            <b>
-              login
-            </b>
-             or 
-            <b>
-              signup
-            </b>
-             buttons to access site
-          </p>
-          <p
-            class="Home-para"
-          >
-            <b>
-              Find Recipes
-            </b>
-             allows you to search for recipes based on ingredients and nutrients
-          </p>
-          <p
-            class="Home-para"
-          >
-            <b>
-              Saved Recipes
-            </b>
-             is where you view or delete your saved recipes
-          </p>
-          <p
-            class="Home-para"
-          >
-            <b>
-              Mealplan
-            </b>
-             is where you create your mealplan using saved recipes
-          </p>
-          <p
-            class="Home-para"
-          >
-            <b>
-              Calculate Points
-            </b>
-             determines your weekly allotment of Weight Watcher Smart Points
-          </p>
+            <h1
+              class="Home-h1"
+            >
+              Welcome to Healthy-Eater!
+            </h1>
+            <p
+              class="Home-para"
+            >
+               You aren't logged in, 
+              <a
+                href="/users/login"
+              >
+                <b>
+                  Login
+                </b>
+              </a>
+               or 
+              <a
+                href="/users/signup"
+              >
+                <b>
+                  Sign-up
+                </b>
+              </a>
+               to access site
+            </p>
+            <p
+              class="Home-para"
+            >
+              <b>
+                Find Recipes:
+              </b>
+               Search for recipes based on ingredients and nutrients
+            </p>
+            <p
+              class="Home-para"
+            >
+              <b>
+                Saved Recipes:
+              </b>
+               View or delete your saved recipes
+            </p>
+            <p
+              class="Home-para"
+            >
+              <b>
+                Mealplan:
+              </b>
+               Create your mealplan using saved recipes
+            </p>
+            <p
+              class="Home-para"
+            >
+              <b>
+                Calculate Points:
+              </b>
+               Determine your weekly allotment of Weight Watcher Smart Points
+            </p>
+          </div>
         </div>
       </div>
     </div>

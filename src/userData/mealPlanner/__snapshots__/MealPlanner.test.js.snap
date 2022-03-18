@@ -8,20 +8,25 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
     <div
       class="row d-flex flex-column align-items-center mt-3"
     >
-      <div
-        class="MealPlanner-header col-12"
+      <p
+        class="no-recipe-para"
       >
-        <h1>
-          Tyler's Mealplan 
-        </h1>
-      </div>
+        Use 
+        <a
+          href="/points"
+        >
+          <b>
+            Point Calculator
+          </b>
+        </a>
+         to determine points allotment 
+      </p>
     </div>
     <button
-      class="general-btn-red"
+      class="general-btn-red mb-2"
     >
       Clear Calendar
     </button>
-    <br />
     <div
       class=" week-container container vw-100 mx-2"
     >
@@ -29,7 +34,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
         class="MealPlanner-week-div row"
       >
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -37,7 +42,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol>
               <li>
@@ -88,7 +93,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
           </p>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -96,7 +101,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol>
               <li>
@@ -129,7 +134,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
           </p>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -137,13 +142,13 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol />
           </div>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -151,13 +156,13 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol />
           </div>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -165,13 +170,13 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol />
           </div>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -179,13 +184,13 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol />
           </div>
         </div>
         <div
-          class="Day col-lg"
+          class="Day col-lg d-flex flex-column"
         >
           <p>
             <b>
@@ -193,7 +198,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
             </b>
           </p>
           <div
-            class="list-container"
+            class="list-container flex-grow-1"
           >
             <ol />
           </div>

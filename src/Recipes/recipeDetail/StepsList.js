@@ -1,5 +1,8 @@
 import Step from "./Step";
 
+/** StepsList renders each item in "recipeDetail.analyzedInstructions" as an individual Step component
+ * 
+ * recipeDetail is passed down from the RecipeDetail component*/
 const StepsList = ({ recipeDetail }) => {
     
     if (recipeDetail.analyzedInstructions.length === 0) {

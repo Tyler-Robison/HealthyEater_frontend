@@ -18,33 +18,33 @@ exports[`matches snapshot 1`] = `
           class="Home-para"
         >
           <b>
-            Find Recipes
+            Find Recipes:
           </b>
-           allows you to search for recipes based on ingredients and nutrients
+           Search for recipes based on ingredients and nutrients
         </p>
         <p
           class="Home-para"
         >
           <b>
-            Saved Recipes
+            Saved Recipes:
           </b>
-           is where you view or delete your saved recipes
+           View or delete your saved recipes
         </p>
         <p
           class="Home-para"
         >
           <b>
-            Mealplan
+            Mealplan:
           </b>
-           is where you create your mealplan using saved recipes
+           Create your mealplan using saved recipes
         </p>
         <p
           class="Home-para"
         >
           <b>
-            Calculate Points
+            Calculate Points:
           </b>
-           determines your weekly allotment of Weight Watcher Smart Points
+           Determine your weekly allotment of Weight Watcher Smart Points
         </p>
       </div>
     </div>

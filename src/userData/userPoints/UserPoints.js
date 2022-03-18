@@ -6,8 +6,9 @@ import calculatePoints from "./calcPoints";
 import PlannerAPI from "../../APIs/plannerAPI";
 import './UserPoints.css'
 
-// calculates weekly points allowance based on user input
-// points is added to currentUser and will be displayed in mealplan
+/** calculates weekly points allowance based on user input
+ * 
+ * points are added to currentUser and will be displayed in mealplan */
 const UserPoints = () => {
     const { currentUser, setCurrentUser, token } = useContext(GlobalContext);
     const validate = pointsValidate;

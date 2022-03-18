@@ -10,7 +10,7 @@ exports[`matches snapshot when logged in 1`] = `
     >
       <a
         class="nav-link"
-        href="/healthy-eater"
+        href="/healthyeater"
       >
         Healthy-Eater
         <img
@@ -26,13 +26,13 @@ exports[`matches snapshot when logged in 1`] = `
     >
       <a
         class="nav-link"
-        href="/find_recipes"
+        href="/findrecipes"
       >
         Find Recipes
       </a>
       <a
         class="nav-link"
-        href="/recipes/saved-recipes"
+        href="/savedrecipes"
       >
         Saved Recipes
       </a>
@@ -68,7 +68,7 @@ exports[`matches snapshot when logged out 1`] = `
     >
       <a
         class="nav-link"
-        href="/healthy-eater"
+        href="/healthyeater"
       >
         Healthy-Eater
         <img
@@ -83,14 +83,19 @@ exports[`matches snapshot when logged out 1`] = `
       class="NavBar-Container container"
     >
       <a
-        class="nav-link signup"
-        href="/users/signup"
+        class="nav-link signup "
+        href="/signup"
       >
         Signup
       </a>
+      <button
+        class="general-btn"
+      >
+        Continue as Guest
+      </button>
       <a
         class="nav-link login"
-        href="/users/login"
+        href="/login"
       >
         Login
       </a>

@@ -1,6 +1,10 @@
 import React from "react";
 import './NutrientTable.css'
 
+/** NutrientTable displays either the "good" or "bad" nutrients associated with a recipe
+ * 
+ * for each nutrient an amount and % of daily need is displayed
+  */
 const NutrientTable = ({nutritionDetail}) =>{
     
     return (

@@ -4,6 +4,9 @@ import GlobalContext from "../../context/GlobalContext";
 import { Link } from "react-router-dom";
 import './UserRecipeList.css'
 
+/** UserRecipeList displays all recipes saved by currentUser
+ * 
+ * recipes deleted here will cascade to the mealplanner*/
 const UserRecipeList = () => {
     const { currentUser } = useContext(GlobalContext)
 

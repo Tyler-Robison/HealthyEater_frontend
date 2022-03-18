@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import GlobalContext from "./context/GlobalContext";
-import jwt from 'jsonwebtoken'
 import { testUser, testRecipes } from "./testHelpers";
 
-
+/** mock version of GlobabContext, used in many tests 
+ * 
+ * Allows manual setting of currentUser and recipes without having to register
+ * 
+ * Prevents app from trying to get token out of localStorage*/
 const ContextProvider = ({ children, userData = testUser, initRecipes = testRecipes }) => {
 
   const [token, setToken] = useState('fake token')

@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 import './Day.css'
 import { v4 as uuid } from 'uuid';
 
-
+/** Day represents a single column in the mealplanner
+ * 
+ * rows in the user_mealplan table contain userId, recipeId and day
+ * 
+ *  that information allows creation of front-end mealplanner*/
 const Day = ({ day }) => {
     const { currentUser, setCurrentUser, token } = useContext(GlobalContext)
 
@@ -21,10 +25,7 @@ const Day = ({ day }) => {
     // day = 'Mon', 'Tues' etc
     const daysMeals = currentUser.mealplan.filter(meal => day === meal.day)
 
-    let totalPoints = 0;
-    for (let ele of daysMeals) {
-        totalPoints += ele.ww_points;
-    }
+    const totalPoints = daysMeals.reduce((accum, nextEle) => accum += nextEle.ww_points, 0)
 
     return (
         <div className='Day col-lg d-flex flex-column'>

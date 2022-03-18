@@ -10,7 +10,7 @@ exports[`matches snapshot 1`] = `
     >
       <a
         class="RecipeList-para"
-        href="/1234/detail"
+        href="/recipes/1234"
       >
         <b>
           Scrambled Eggs

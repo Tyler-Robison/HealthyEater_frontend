@@ -4,6 +4,12 @@ import './NutrientForm.css'
 import nutrientValidate from './nutrientValidate'
 import useTimedMessage from "../../customHooks/useTimedMessage";
 
+/** NutrientForm sets the state of the 8 nutrients that can optionally be used to constrain recipe search
+ * 
+ * Any nutrients with a user inputted value will be used to constrain search, others are ignored
+ * 
+ * User must click "Set Nutrient Constraints" button for constraints to be applied
+  */
 const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setCholesterol, setCarbs, setCalories }) => {
     const [isMsgActive, setIsMsgActive] = useTimedMessage(1500)
     const validate = nutrientValidate;

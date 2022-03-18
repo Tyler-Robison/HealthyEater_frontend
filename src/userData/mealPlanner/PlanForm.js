@@ -3,7 +3,11 @@ import { useFormik } from "formik";
 import PlannerAPI from "../../APIs/plannerAPI";
 import GlobalContext from "../../context/GlobalContext";
 
-
+/** Form used to add meals to mealplanner
+ * 
+ * User selects a day and recipe to add to that day
+ * 
+ * days can have duplicate recipes*/
 const PlanForm = ({ days }) => {
 
     const { token, currentUser, setCurrentUser } = useContext(GlobalContext);
@@ -29,7 +33,6 @@ const PlanForm = ({ days }) => {
         }
 
         const mealRes = await PlannerAPI.setMeal(currentUser.id, token, data)
-        // console.log('meal res', mealRes)
 
         // mealPlannerRow contains:
         // id, recipe_id, day from user_mealplan table AND
@@ -39,8 +42,8 @@ const PlanForm = ({ days }) => {
         setCurrentUser({ ...currentUser, currentUser })
     }
 
-    const dayValues = days.map((day, idx) => {
-        return <option key={idx} value={day}>{day}</option>
+    const dayValues = days.map(day => {
+        return <option key={day} value={day}>{day}</option>
     })
 
     const recipeValues = currentUser.recipes.map(recipe => {

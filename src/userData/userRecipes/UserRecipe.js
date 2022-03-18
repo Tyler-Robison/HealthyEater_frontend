@@ -4,12 +4,12 @@ import GlobalContext from "../../context/GlobalContext";
 import { Link } from "react-router-dom";
 import './UserRecipe.css'
 
+/** UserRecipe represents a single item in UserRecipeList */
 const UserRecipe = ({ recipe }) => {
     const { currentUser, setCurrentUser, token } = useContext(GlobalContext);
 
     const deleteRecipe = async () => {
         const res = await RecipeAPI.removeRecipe(currentUser.id, recipe.recipe_id, token);
-        console.log('res', res)
         // returns id of deleted recipe 
         // recipe has to be removed from recipes and mealplan
 

@@ -1,24 +1,5 @@
 
-// Calculates passive daily calorie consumption using Mifflin-Jeor equation
-// const calculateCalBurn = (gender, age, height, weight, PAL) => {
-//     const cmHeight = height * 2.54;
-//     const genderAdjust = (gender === 'male' ? 5 : -161)
-
-//     // basal metabolic rate -> amount of calories you consume just by existing.
-//     const BMR = (10 * weight) + (6.25 * cmHeight) - (5 * age) + genderAdjust;
-
-//     // Thermic Effect of Food -> calories consumed by digestion
-//     const TEF = BMR * 0.1
-
-//     // PAL = physical activity level
-//     // TDEE = Total Daily Energy Expenditure
-//     const TDEE = (BMR * PAL) + TEF
-//     return TDEE
-// }
-
-// export default calculateCalBurn;
-
-// Weight Watchers points calculation method
+/** Weight Watchers 2018 points calculation method */
 const calculatePoints = (gender, age, height, weight, PAL) => {
     const genderAdjust = (gender === 'male' ? 8 : 2)
 

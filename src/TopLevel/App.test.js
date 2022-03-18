@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor, getByText } from '@testing-library/
 
 import App from './App'
 import { MemoryRouter } from "react-router-dom";
-import { testUser, testRecipes } from '../testHelpers'
+import { testUser, testGuest, testRecipes } from '../testHelpers'
 import mockedAxios from 'axios';
 
 const mockUserData = {
@@ -166,7 +166,7 @@ test("existing user can login", async function () {
   // proves we're on homepage
   expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
 
-  const loginAnchor = screen.getByText('Login')
+  const loginAnchor = screen.getAllByText('Login')[0]
   fireEvent.click(loginAnchor)
 
   const usernameInput = screen.getByPlaceholderText('Username')
@@ -237,5 +237,33 @@ test("new user can sign-up then access site functionality", async function () {
     expect(screen.getByText('Uses 3 of your ingredients ( bacon, lettuce, tomato )')).toBeInTheDocument()
   })
 });
+
+test("guest users can sign-in via 'Continue as Guest' Button", async function () {
+
+  const mockGuestData = {
+    data: { user: testGuest }
+  }
+  // mock of the token value returned by UserApi.register
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
+
+  // mock of currentUser by returned by UserAPI.getUserInfo
+  mockedAxios.get.mockResolvedValueOnce(mockGuestData);
+
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  const guestLoginBtn = screen.getByText('Continue as Guest')
+  expect(screen.queryByText('Welcome back guest!')).not.toBeInTheDocument();
+  fireEvent.click(guestLoginBtn)
+
+  // guest has been logged in and re-directed to homepage
+  await waitFor(() => {
+    expect(mockedAxios.get.mockResolvedValueOnce(mockGuestData)).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Welcome back guest!')).toBeInTheDocument();
+  });
+})
 
 

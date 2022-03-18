@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import GlobalContext from "../context/GlobalContext";
 
-/** "Higher-Order Component" for private routes.
+/** RequireAuth wraps around a child component
+ * 
+ * renders that child component only if the user is logged in, otherwise re-directs user
+ * 
+ * <Route path="/recipes" element={<RequireAuth redirectTo="/login"><RecipeList /></RequireAuth>} />
+ * 
+ * In the above example, RecipeList can only be reached if the user is logged in
  *
- * In routing component, use these instead of <Route ...>. This component
- * will check if there is a valid current user and only continues to the
- * route if so. If no user is present, redirects to login form.
- */
+ * used in RouteList to protect routes that require users to be logged in*/
 
 const RequireAuth = ({ children, redirectTo }) => {
     const { currentUser } = useContext(GlobalContext)

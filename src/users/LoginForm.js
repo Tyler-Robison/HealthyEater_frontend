@@ -7,12 +7,14 @@ import GlobalContext from "../context/GlobalContext";
 import useTimedMessage from "../customHooks/useTimedMessage";
 import './LoginForm.css'
 
-
+/** LoginForm allows existing users to login
+ * 
+ * upon succesful login currentUser will be created, allowing all components to access user info*/
 const LoginForm = () => {
     const validate = loginValidate
     const navigate = useNavigate();
     const { currentUser, login } = useContext(GlobalContext)
-    const [isMsgActive, setIsMsgActive] = useTimedMessage()
+    const [failureMsg, setFailureMsg] = useTimedMessage()
 
     useEffect(() => {
         if (currentUser) navigate('/')
@@ -27,6 +29,7 @@ const LoginForm = () => {
         onSubmit: values => loginUser(values),
     })
 
+    // login sets token, which triggers useEffect in App.js
     const loginUser = async (values) => {
         try {
             const res = await UserAPI.login(values)
@@ -34,9 +37,8 @@ const LoginForm = () => {
             navigate('/')
 
         } catch (err) {
-            console.log('error', err)
             formik.resetForm();
-            setIsMsgActive(true)
+            setFailureMsg(true)
         }
     }
 
@@ -45,7 +47,7 @@ const LoginForm = () => {
             <div className="row mt-3">
                 <div className="LoginForm-div col-12">
                     <h1>Enter Username/Password</h1>
-                    {isMsgActive ? <p>Invalid Username/Password</p> : null}
+                    {failureMsg && <p>Invalid Username/Password</p>}
 
                     <form onSubmit={formik.handleSubmit}>
                         <div>

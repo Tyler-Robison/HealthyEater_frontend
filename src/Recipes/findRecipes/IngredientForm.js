@@ -2,7 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import ingredientValidate from './ingredientValidate'
 
-
+/** IngredientForm allows users to enter ingredients
+ * 
+ * submitted ingredients are added to ingredientsList state
+  */
 const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
     const validate = ingredientValidate
 

@@ -6,16 +6,22 @@ import { Navbar, Container } from "react-bootstrap";
 import lettuce from '../Images/lettuce.png'
 import './NavBar.css'
 
-const NavBar = ({ logout }) => {
+/** NavBar is always visible, allows quick navigation between the site's main features
+ * 
+ * loggedOutView - dispays login/sign-up and continue as guest button
+ * 
+ * loggedInView - displays the four main features of the site (Find Recipes, Saved Recipes, Mealplan, Calculate Points) and logout button
+  */
+const NavBar = ({ logout, guestLogin }) => {
     const { currentUser } = useContext(GlobalContext)
 
     const loggedInView = <>
 
-        <NavLink className="nav-link" to="/find_recipes">
+        <NavLink className="nav-link" to="/findrecipes">
             Find Recipes
         </NavLink>
 
-        <NavLink className="nav-link" to="/recipes/saved-recipes">
+        <NavLink className="nav-link" to="/savedrecipes">
             Saved Recipes
         </NavLink>
 
@@ -36,11 +42,13 @@ const NavBar = ({ logout }) => {
 
    
 
-            <NavLink className="nav-link signup " to="/users/signup">
+            <NavLink className="nav-link signup " to="/signup">
                 Signup
             </NavLink>
 
-            <NavLink className="nav-link login" to="/users/login">
+            <button onClick={guestLogin} className="general-btn">Continue as Guest</button>
+
+            <NavLink className="nav-link login" to="/login">
                 Login
             </NavLink>
    
@@ -51,7 +59,7 @@ const NavBar = ({ logout }) => {
         <Navbar className="NavBar" expand="lg">
 
             <Navbar.Brand className="NavBar-Brand">
-                <NavLink className="nav-link" to="/healthy-eater">
+                <NavLink className="nav-link" to="/healthyeater">
                     Healthy-Eater<img className="brand-img" src={lettuce} height='28px' width='28px'></img>
                 </NavLink>
             </Navbar.Brand>
