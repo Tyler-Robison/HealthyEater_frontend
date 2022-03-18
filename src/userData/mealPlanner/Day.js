@@ -34,7 +34,7 @@ const Day = ({ day }) => {
             <div className="list-container flex-grow-1">
                 <ol>
                     {daysMeals.map(d => {
-                        return <li key={uuid()}> <Link to={`/${d.recipe_id}/detail`} className='RecipeList-para'><b>{d.name}</b></Link> ({d.ww_points ? d.ww_points : 'Not Available'} points)
+                        return <li key={uuid()}> <Link to={`/recipes/${d.recipe_id}`} className='RecipeList-para'><b>{d.name}</b></Link> ({d.ww_points ? d.ww_points : 'Not Available'} points)
                             <button data-testid={d.id} className="general-btn-red small-btn" onClick={() => deleteMeal(d.id)}>X</button>
                         </li>
                     })}

@@ -28,7 +28,7 @@ const MealPlanner = () => {
         setCurrentUser({ ...currentUser, currentUser });
     }
 
-    if (currentUser.recipes.length === 0) return <p className="no-recipe-para">You have no saved recipes, go to <Link to={`/find_recipes`} className='RecipeList-para'><b>Find Recipes</b></Link></p>
+    if (currentUser.recipes.length === 0) return <p className="no-recipe-para">You have no saved recipes, go to <Link to={`/findrecipes`} className='RecipeList-para'><b>Find Recipes</b></Link></p>
 
     return (
         <div className='MealPlanner'>

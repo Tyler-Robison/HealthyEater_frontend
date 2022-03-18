@@ -17,9 +17,9 @@ const RecipeList = () => {
     return (
         <div className='RecipeList d-flex flex-column'>
             <div className='RecipeList-container'>
-                <button className='general-btn-red' onClick={() => navigate('/find_recipes')}>Go Back</button>
+                <button className='general-btn-red' onClick={() => navigate('/findrecipes')}>Go Back</button>
                 {recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />)}
-                <button className='general-btn-red' onClick={() => navigate('/find_recipes')}>Go Back</button>
+                <button className='general-btn-red' onClick={() => navigate('/findrecipes')}>Go Back</button>
                 {/* this navigate will only invoke if user manually enters the URL, search with 0 results won't bring them here */}
                 {recipes.length === 0 && navigate('/')}
             </div>

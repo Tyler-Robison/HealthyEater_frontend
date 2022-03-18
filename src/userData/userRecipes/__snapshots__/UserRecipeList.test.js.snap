@@ -22,7 +22,7 @@ exports[`matches snapshot 1`] = `
           >
             <a
               class="UserRecipe-link"
-              href="/1111/detail"
+              href="/recipes/1111"
             >
               <b>
                 bacon
@@ -44,7 +44,7 @@ exports[`matches snapshot 1`] = `
           >
             <a
               class="UserRecipe-link"
-              href="/2222/detail"
+              href="/recipes/2222"
             >
               <b>
                 eggs
@@ -66,7 +66,7 @@ exports[`matches snapshot 1`] = `
           >
             <a
               class="UserRecipe-link"
-              href="/3333/detail"
+              href="/recipes/3333"
             >
               <b>
                 salad
@@ -88,7 +88,7 @@ exports[`matches snapshot 1`] = `
           >
             <a
               class="UserRecipe-link"
-              href="/4444/detail"
+              href="/recipes/4444"
             >
               <b>
                 bread

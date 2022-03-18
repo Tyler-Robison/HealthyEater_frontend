@@ -18,7 +18,7 @@ exports[`matches snapshot on day with meals 1`] = `
            
           <a
             class="RecipeList-para"
-            href="/1111/detail"
+            href="/recipes/1111"
           >
             <b>
               bacon
@@ -36,7 +36,7 @@ exports[`matches snapshot on day with meals 1`] = `
            
           <a
             class="RecipeList-para"
-            href="/2222/detail"
+            href="/recipes/2222"
           >
             <b>
               eggs

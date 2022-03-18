@@ -49,7 +49,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
                  
                 <a
                   class="RecipeList-para"
-                  href="/1111/detail"
+                  href="/recipes/1111"
                 >
                   <b>
                     bacon
@@ -67,7 +67,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
                  
                 <a
                   class="RecipeList-para"
-                  href="/2222/detail"
+                  href="/recipes/2222"
                 >
                   <b>
                     eggs
@@ -108,7 +108,7 @@ exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] =
                  
                 <a
                   class="RecipeList-para"
-                  href="/3333/detail"
+                  href="/recipes/3333"
                 >
                   <b>
                     salad

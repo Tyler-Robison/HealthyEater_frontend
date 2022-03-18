@@ -8,7 +8,7 @@ exports[`matches snapshot 1`] = `
     >
       <a
         class="UserRecipe-link"
-        href="/1111/detail"
+        href="/recipes/1111"
       >
         <b>
           bacon

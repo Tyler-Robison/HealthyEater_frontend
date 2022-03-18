@@ -30,10 +30,10 @@ class PlannerAPI {
     }
 
     /** DELETES individual row in user_mealplan table  */
-    static async deleteMeal(id, meal_id, token) {
+    static async deleteMeal(id, mealId, token) {
         try {
             const headers = { Authorization: `Bearer ${token}` };
-            const res = await axios.delete(`${BASE_URL}/meals/${id}/${meal_id}`, { headers })
+            const res = await axios.delete(`${BASE_URL}/meals/${id}/${mealId}`, { headers })
             return res.data
         } catch (err) {
             console.log(err)
