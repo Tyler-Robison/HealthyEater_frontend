@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* height: 92.9vh; */
+    flex-grow: 1;
 }
 
 .GetRecipes-explainer-div {
@@ -32,23 +32,16 @@
 .GetRecipes-explainer-para {
     margin: 0px;
     font-weight: 700;
-    /* font-size: 1.2rem; */
 }
 
 .GetRecipes-container {
     border: solid 2px black;
     padding: 0;
     margin: 0;
-    /* width: 100vw; */
-    /* height: 60vh; */
-    /* display: flex;
-    flex-direction: row; */
 }
 
 .GetRecipes-ingredient-div {
     background-image: url('../../Images/food_theme.jpg');
-    /* background-image */
-    /* width: 50vw; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +50,6 @@
 
 .GetRecipes-nutrient-div {
     background-image: url('../../Images/nutri_background.jpg');
-    /* width: 49.9vw; */
     display: flex;
     flex-direction: column;
     align-items: center;

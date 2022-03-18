@@ -2,12 +2,16 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-// contains all API calls related to recipe endpoints. 
+
+/** contains all API calls related to recipe endpoints.  */
 
 class RecipeAPI {
 
-    // Saves a recipe if a user clicks to save it
-    // Won't add to db if user alreday has that recipe
+      /** POSTS a recipe to recipes table if a user clicks to save it
+     * 
+     * Recipe will only be added to recipes table if it doesn't already exist there
+     * 
+     * recipe will only be added to users_recipes if currentUser hasn't already saved that recipe */
     static async saveRecipe(recipeDetail, id, token) {
         try {
             const data = recipeDetail
@@ -20,7 +24,7 @@ class RecipeAPI {
         }
     }
 
-    // gets user's list of saved recipes
+    /** GETS users list of saved recipes  */
     static async getRecipes(id, token) {
         try {
             const headers = { Authorization: `Bearer ${token}` };
@@ -32,7 +36,9 @@ class RecipeAPI {
         }
     }
 
-    // removes from user's list of saved recipes
+   /** DELETES individual row in users_recipes 
+    * 
+    * does not remove any rows from recipes as that would cascade to other users  */
     static async removeRecipe(id, recipeId, token) {
         try {
             const headers = { Authorization: `Bearer ${token}` };

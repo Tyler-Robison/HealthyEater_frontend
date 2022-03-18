@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:3001";
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-// contains all API calls related to mealplanner endpoints. 
+/** contains all API calls related to mealplanner endpoints.  */
 
 class PlannerAPI {
 
+    /** POSTS a row in user_mealplan table based on passed in data (day, recipeId, userId)  */
     static async setMeal(id, token, data) {
         try {
             const headers = { Authorization: `Bearer ${token}` };
@@ -17,6 +17,7 @@ class PlannerAPI {
         }
     }
 
+    /** PATCHES points value in users table  */
     static async setPoints(id, points, token) {
         try {
             const data = { points: points }
@@ -28,6 +29,7 @@ class PlannerAPI {
         }
     }
 
+    /** DELETES individual row in user_mealplan table  */
     static async deleteMeal(id, meal_id, token) {
         try {
             const headers = { Authorization: `Bearer ${token}` };
@@ -38,6 +40,7 @@ class PlannerAPI {
         }
     }
 
+    /** DELETES ALL rows for a given user in user_mealplan table  */
     static async deleteAllMeals(id, token) {
         try {
             const headers = { Authorization: `Bearer ${token}` };

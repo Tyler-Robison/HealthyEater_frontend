@@ -105,7 +105,7 @@ it('Matches snapshot', async () => {
     );
 
     // will get screenshot of the loading text unless we wait
-    await waitForElementToBeRemoved(screen.getByText('Loading...'));
+    await waitForElementToBeRemoved(screen.getByTestId('loading-spinner'));
 
     expect(asFragment()).toMatchSnapshot();
 })
@@ -122,7 +122,7 @@ it('Correctly displays recipe detail', async () => {
     );
 
     // will get screenshot of the loading text unless we wait
-    await waitForElementToBeRemoved(screen.getByText('Loading...'));
+    await waitForElementToBeRemoved(screen.getByTestId('loading-spinner'));
 
     // correctly display recipe title, cooktime and nutritional info
     expect(screen.getByText('mocked recipe title')).toBeInTheDocument()

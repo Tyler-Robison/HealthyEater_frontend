@@ -148,7 +148,7 @@ exports[`matches snapshot 1`] = `
         class="general-btn NutrientForm-set-nutrients-btn"
         type="submit"
       >
-        Update Values
+        Set Nutrient Constraints
       </button>
     </div>
   </form>

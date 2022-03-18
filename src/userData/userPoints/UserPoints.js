@@ -40,8 +40,8 @@ const UserPoints = () => {
         <div className="UserPoints">
             <div className="row mt-3">
                 <div className="UserPoints-div col-12">
-                    <h1>Find Your Daily Points!</h1>
-                    {currentUser.points && <p className="calc-para"><b>Daily Points set to {currentUser.points}</b></p>}
+                    <h1 className="calc-h1">Find Your Daily Points!</h1>
+                    {currentUser.points && <p className="calc-header"><b>Daily Points set to {currentUser.points}</b></p>}
 
                     <form onSubmit={formik.handleSubmit}>
                         <div className="UserPoints-calc-div">

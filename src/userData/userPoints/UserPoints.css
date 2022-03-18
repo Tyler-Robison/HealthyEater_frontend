@@ -17,6 +17,16 @@
 
 .calc-para {
     font-size: 1.2rem;
+    color: rgb(0, 119, 158);
+}
+
+.calc-header {
+    font-size: 1.4rem;
+    color: rgb(0, 119, 158);
+}
+
+.calc-h1 {
+    color: rgb(0, 119, 158);
 }
 
 @media (max-width: 1000px) {

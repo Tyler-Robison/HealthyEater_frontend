@@ -19,6 +19,14 @@
   background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
 }
 
+.general-btn-green {
+  padding: 4px 14px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #3cc068 0%, #177247 100%);
+}
+
 .general-btn-red {
   padding: 4px 14px;
   border-radius: 6px;
@@ -28,8 +36,26 @@
 }
 
 button:active {
-  transform: translateY(4px);
+  transform: scale(1.2);
 }
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+
 
 
 

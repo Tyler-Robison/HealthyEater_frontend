@@ -27,10 +27,10 @@ const Day = ({ day }) => {
     }
 
     return (
-        <div className='Day col-lg'>
+        <div className='Day col-lg d-flex flex-column'>
             <p><b>{day}</b></p>
 
-            <div className="list-container">
+            <div className="list-container flex-grow-1">
                 <ol>
                     {daysMeals.map(d => {
                         return <li key={uuid()}> <Link to={`/${d.recipe_id}/detail`} className='RecipeList-para'><b>{d.name}</b></Link> ({d.ww_points ? d.ww_points : 'Not Available'} points)

@@ -53,8 +53,12 @@ function App() {
   return (
     <div className="App">
       <GlobalContext.Provider value={providerObj}>
-        <NavBar logout={logout} />
-        <RouteList />
+        <div className="main-container d-flex h-100 flex-column">
+          <NavBar logout={logout} />
+
+          <RouteList />
+
+        </div>
       </GlobalContext.Provider>
     </div>
   );

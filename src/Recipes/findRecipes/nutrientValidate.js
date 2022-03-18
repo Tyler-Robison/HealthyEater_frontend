@@ -2,7 +2,7 @@ const nutrientValidate = values => {
     const errors = {};
     if (values.maxFat < 0) errors.maxFat = 'Fat must be blank or positive number';
 
-    if (values.maxSatFat < 0) errors.maxSatFat = 'Sat fat must be blank or positive number';
+    if (values.maxSaturatedFat < 0) errors.maxSaturatedFat = 'Sat fat must be blank or positive number';
     // if (values.maxSatFat && (values.maxSatFat <= 10 || typeof values.maxSatFat !== 'number')) {
     //     errors.maxSatFat = 'Field must be blank or number higher than 0';
     // }

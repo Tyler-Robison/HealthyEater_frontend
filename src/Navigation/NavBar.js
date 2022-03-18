@@ -34,17 +34,19 @@ const NavBar = ({ logout }) => {
 
     const loggedOutView = <>
 
-        <NavLink className="nav-link signup" to="/users/signup">
-            Signup
-        </NavLink>
-    
-        <NavLink className="nav-link login" to="/users/login">
-            Login
-        </NavLink>
+   
+
+            <NavLink className="nav-link signup " to="/users/signup">
+                Signup
+            </NavLink>
+
+            <NavLink className="nav-link login" to="/users/login">
+                Login
+            </NavLink>
+   
 
     </>
 
-    // carrot icon next to healthy eater
     return (
         <Navbar className="NavBar" expand="lg">
 

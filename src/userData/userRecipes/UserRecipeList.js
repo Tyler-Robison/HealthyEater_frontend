@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import UserRecipe from "./UserRecipe";
 import GlobalContext from "../../context/GlobalContext";
+import { Link } from "react-router-dom";
 import './UserRecipeList.css'
 
 const UserRecipeList = () => {
     const { currentUser } = useContext(GlobalContext)
 
     if (currentUser.recipes.length === 0) return (
-        <p>You haven't saved any recipes yet</p>
+        <p className="no-recipe-para">You have no saved recipes, go to <Link to={`/find_recipes`} className='RecipeList-para'><b>Find Recipes</b></Link></p>
     )
 
     return (

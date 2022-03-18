@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+ /** custom hook that allows state to be initially retrieved from browser's local storage  */
 const useLocalStorage = (key, defaultValue = []) => {
     const [state, setState] = useState(() => {
         let value

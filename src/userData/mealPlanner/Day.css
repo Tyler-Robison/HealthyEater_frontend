@@ -1,38 +1,17 @@
 .Day {
     max-width: 500px !important;
-    height: 100%;
     border: 1px solid black;
     position: relative;
     background-color: white;
-    min-height: 40rem;
-
+    min-height: 8rem;
 }
 
-@media (max-width: 1400px) {
+
+
+@media (min-width: 1000px) {
+
     .Day {
-       min-height: 45rem;
-   
-    }
-}
-
-@media (max-width: 1000px) {
-    .Day {
-       min-height: 12rem;
-       width: 100vw;
-    }
-}
-
-@media (min-width: 1400px) {
-    .list-container {
-        min-height: 35rem;
-        max-height: 35rem;
-    }
-}
-
-@media (min-width: 1000px) and (max-width: 1400px) {
-    .list-container {
-        min-height: 40rem;
-        max-height: 40rem;
+        height: 32rem;
     }
 }
 

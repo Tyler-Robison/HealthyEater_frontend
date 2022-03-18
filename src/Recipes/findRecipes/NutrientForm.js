@@ -2,8 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import './NutrientForm.css'
 import nutrientValidate from './nutrientValidate'
+import useTimedMessage from "../../customHooks/useTimedMessage";
 
 const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setCholesterol, setCarbs, setCalories }) => {
+    const [isMsgActive, setIsMsgActive] = useTimedMessage(1500)
     const validate = nutrientValidate;
 
     const formik = useFormik({
@@ -22,6 +24,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
     })
 
     const addNutrients = (values) => {
+        setIsMsgActive(true)
         const { maxFat, maxSaturatedFat, maxCalories, maxCarbs, maxSugar, maxSodium, maxCholesterol, minProtein } = values
         setFat(maxFat)
         setSatFat(maxSaturatedFat)
@@ -62,8 +65,8 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                         value={formik.values.maxSaturatedFat}
                     />
                 </div>
-                {formik.touched.maxSatFat && formik.errors.maxSatFat && (
-                    <div>{formik.errors.maxSatFat}</div>
+                {formik.touched.maxSaturatedFat && formik.errors.maxSaturatedFat && (
+                    <div>{formik.errors.maxSaturatedFat}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -158,7 +161,9 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                 )}
             </div>
             <div>
-                <button className="general-btn NutrientForm-set-nutrients-btn" type="submit">Update Values</button>
+                {isMsgActive ?  <button className="general-btn-green NutrientForm-set-nutrients-btn" type="submit">Values Updated!</button> : 
+                <button className="general-btn NutrientForm-set-nutrients-btn" type="submit">Set Nutrient Constraints</button>}
+
             </div>
         </form>
     )

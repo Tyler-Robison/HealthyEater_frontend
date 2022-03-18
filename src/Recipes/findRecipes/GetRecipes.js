@@ -8,10 +8,16 @@ import GlobalContext from "../../context/GlobalContext";
 import './GetRecipes.css'
 import { useNavigate } from "react-router-dom";
 
+/** Allows user to search for recipes
+ * 
+ * contains Ingredient/Nutrient forms, iingredientList and all related state
+ * 
+ * makes API call to /recipes/complex to get recipes
+ */
 const GetRecipes = () => {
     const { setRecipes, token, currentUser } = useContext(GlobalContext)
-    const [isMsgActive, setIsMsgActive] = useTimedMessage()
-    const [isMsg2Active, setIsMsg2Active] = useTimedMessage()
+    const [searchMsg, setSearchMsg] = useTimedMessage()
+    const [ingredientMsg, setIngredientMsg] = useTimedMessage()
 
     const navigate = useNavigate();
     const [ingredientsList, setIngredientsList] = useState([])
@@ -37,17 +43,23 @@ const GetRecipes = () => {
         maxProtein: protein
     }
 
+    /** Checks that ingredientsList has at least 1 item
+ *
+ *  redirects user to /recipes if results returned
+ * 
+ *  On failure, gives msg stating there is an invalid ingredient
+ */
     const getRecipesFunc = async () => {
         if (ingredientsList.length === 0) {
-            setIsMsg2Active(true)
+            setIngredientMsg(true)
         }
         const res = await SpoonacularAPI.getRecipes(ingredientsList, nutrientObj, token, currentUser.id)
         
         if (res.results.length === 0) {
-            setIsMsgActive(true)
+            setSearchMsg(true)
             return
         } else {
-            setIsMsgActive(false)
+            setSearchMsg(false)
         }
         setRecipes(res.results);
         navigate('/recipes');
@@ -70,8 +82,8 @@ const GetRecipes = () => {
 
                             <div className="flex-grow-1 d-flex flex-column justify-content-between">
                                 <div>
-                                    {isMsgActive ? <p>Recipe search failed. Try removing ingredients. If you have nutritional constraints, try relaxing them.</p> : null}
-                                    {isMsg2Active ? <p>Must add at least one ingredient!</p> : null}
+                                    {searchMsg && <p>Recipe search failed. Try removing ingredients. If you have nutritional constraints, try relaxing them.</p>}
+                                    {ingredientMsg && <p>Must add at least one ingredient!</p>}
                                     <IngredientForm ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
                                     <IngredientList ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
 
