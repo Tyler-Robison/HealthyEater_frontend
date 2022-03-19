@@ -3,6 +3,7 @@ import MealPlanner from './MealPlanner';
 import { MemoryRouter } from "react-router-dom";
 import ContextProvider from '../../testContext';
 import mockedAxios from 'axios';
+import { testUserWithPoints } from '../../testHelpers';
 
 
 const days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
@@ -19,6 +20,18 @@ it("matches snapshot, correct displaying 2 meals Monday and 1 Tuesday", function
    const container = render(
       <MemoryRouter>
          <ContextProvider >
+            <MealPlanner days={days} />
+         </ContextProvider>
+      </MemoryRouter>
+   );
+   expect(container.asFragment()).toMatchSnapshot();
+});
+
+it("matches snapshot with a points value", function () {
+
+   const container = render(
+      <MemoryRouter>
+         <ContextProvider userData={testUserWithPoints} >
             <MealPlanner days={days} />
          </ContextProvider>
       </MemoryRouter>
@@ -134,6 +147,24 @@ test('can add meals to calendar', async function () {
       expect(screen.getAllByText('eggs')).toHaveLength(2)
    })
 })
+
+
+it("correctly displays weekly points allotment and points currently used", function () {
+
+   render(
+      <MemoryRouter>
+         <ContextProvider userData={testUserWithPoints} >
+            <MealPlanner days={days} />
+         </ContextProvider>
+      </MemoryRouter>
+   );
+   
+   expect(screen.getByText('Point Allowance - Daily: 32, Weekly: 224 Bonus: 44')).toBeInTheDocument();
+   expect(screen.getByText('Weekly points used: 35')).toBeInTheDocument();
+
+});
+
+
 
 
 

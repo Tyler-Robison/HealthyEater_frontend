@@ -1,9 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import RecipeDetail from './RecipeDetail';
 import { MemoryRouter } from "react-router-dom";
 import ContextProvider from '../../testContext';
-import { waitFor, cleanup, waitForElementToBeRemoved } from '@testing-library/react';
 import mockedAxios from 'axios';
 
 
@@ -85,11 +84,11 @@ const data = {
 it("renders without crashing", function () {
     mockedAxios.get.mockResolvedValueOnce(data);
 
-        <MemoryRouter>
-            <ContextProvider >
-                <RecipeDetail />
-            </ContextProvider>
-        </MemoryRouter>
+    <MemoryRouter>
+        <ContextProvider >
+            <RecipeDetail />
+        </ContextProvider>
+    </MemoryRouter>
 });
 
 
@@ -104,7 +103,7 @@ it('Matches snapshot', async () => {
         </MemoryRouter>
     );
 
-    // will get screenshot of the loading text unless we wait
+    // will get screenshot of the loading spinner unless we wait
     await waitForElementToBeRemoved(screen.getByTestId('loading-spinner'));
 
     expect(asFragment()).toMatchSnapshot();
@@ -121,12 +120,27 @@ it('Correctly displays recipe detail', async () => {
         </MemoryRouter>
     );
 
-    // will get screenshot of the loading text unless we wait
     await waitForElementToBeRemoved(screen.getByTestId('loading-spinner'));
 
     // correctly display recipe title, cooktime and nutritional info
     expect(screen.getByText('mocked recipe title')).toBeInTheDocument()
     expect(screen.getByText('Preparation Time: 45 Minutes')).toBeInTheDocument()
     expect(screen.getByText('261mg')).toBeInTheDocument()
+})
+
+it('displays loading spinner while waiting for axios results', async () => {
+    mockedAxios.get.mockResolvedValueOnce(data);
+
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <RecipeDetail />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+
+    await waitFor(() => {
+        expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
+    });
 })
 

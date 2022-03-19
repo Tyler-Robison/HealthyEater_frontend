@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor, getByText } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 import App from './App'
 import { MemoryRouter } from "react-router-dom";
@@ -131,6 +131,7 @@ test("user denied site access on failed sign-up", async function () {
     ...jest.requireActual('react-router-dom'),
     useNavigate: () => mockedUsedNavigate,
   }));
+
 
   // password must be 5 characters minimum
   registerNewUser('bad')

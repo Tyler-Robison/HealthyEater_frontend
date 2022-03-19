@@ -66,8 +66,9 @@ it("Can remove user saved recipes", async function () {
     const removeBaconBtn = screen.getByTestId(1111)
     fireEvent.click(removeBaconBtn)
 
+    // expect bacon to be gone, eggs still there.
     await waitFor(() => {
-        expect( mockedAxios.delete.mockResolvedValueOnce(mockData)).toHaveBeenCalledTimes(1)
+        expect(mockedAxios.delete.mockResolvedValueOnce(mockData)).toHaveBeenCalledTimes(1)
         expect(screen.queryByText('bacon')).not.toBeInTheDocument();
         expect(screen.queryByText('(20 points)')).not.toBeInTheDocument();
         expect(screen.getByText('eggs')).toBeInTheDocument();

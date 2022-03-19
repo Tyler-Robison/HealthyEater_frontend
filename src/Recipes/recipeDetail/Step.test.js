@@ -30,3 +30,18 @@ it("matches snapshot.", function () {
     );
     expect(container.asFragment()).toMatchSnapshot();
 });
+
+it("correctly renders step", function () {
+
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <Step step={step} />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+
+    expect(screen.getByText('mock equipment, other equipment')).toBeInTheDocument();
+    expect(screen.getByText('mock ingredient, other ingredient')).toBeInTheDocument();
+    expect(screen.getByText('Do the first step')).toBeInTheDocument();
+});

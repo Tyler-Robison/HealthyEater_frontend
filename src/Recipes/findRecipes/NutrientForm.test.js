@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import NutrientForm from './NutrientForm';
 import { MemoryRouter } from "react-router-dom";
 import ContextProvider from '../../testContext'
@@ -48,4 +48,24 @@ it("matches snapshot", function () {
         </MemoryRouter>
     );
     expect(container.asFragment()).toMatchSnapshot();
+});
+
+test("can't input invalid values", async function () {
+
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <DummyComponent />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+    
+    const fatInput = screen.getByLabelText('Max Fat (grams)')
+    fireEvent.change(fatInput, { target: { value: -1 } });
+    const setNutrientsBtn = screen.getByText('Set Nutrient Constraints')
+    fireEvent.click(setNutrientsBtn)
+
+    await waitFor(() => {
+        expect(screen.getByText('Fat must be blank or positive number')).toBeInTheDocument();
+    });
 });

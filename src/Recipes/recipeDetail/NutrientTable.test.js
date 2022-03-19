@@ -79,3 +79,22 @@ it("matches snapshot with bad nutrients", function () {
     );
     expect(container.asFragment()).toMatchSnapshot();
 });
+
+it("correctly renders NutrientTable", function () {
+
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+            <DummyComponent nutrientArr={goodNutrients} />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+
+    expect(screen.getByText('Vitamin B12')).toBeInTheDocument();
+    expect(screen.getByText('1µg')).toBeInTheDocument();
+    expect(screen.getByText('17.71')).toBeInTheDocument();
+    expect(screen.getByText('Copper')).toBeInTheDocument();
+    expect(screen.getByText('0.26mg')).toBeInTheDocument();
+    expect(screen.getByText('13.16')).toBeInTheDocument();
+ 
+});

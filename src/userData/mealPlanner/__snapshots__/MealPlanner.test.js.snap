@@ -1,5 +1,310 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`matches snapshot with a points value 1`] = `
+<DocumentFragment>
+  <div
+    class="MealPlanner"
+  >
+    <div
+      class="row d-flex flex-column align-items-center mt-3"
+    >
+      <div
+        class="MealPlanner-header col-12"
+      >
+        <h3>
+          Weekly points used: 35
+        </h3>
+        <p
+          class="MealPlanner-explain-para"
+        >
+          Point Allowance - Daily: 32, Weekly: 224 Bonus: 44
+        </p>
+        <p
+          class="MealPlanner-explain-para"
+        >
+          Bonus points can be used during the week for days when you exceed 32 points
+        </p>
+        <p
+          class="MealPlanner-explain-para"
+        >
+          Bonus points don't count towards weekly total
+        </p>
+      </div>
+    </div>
+    <button
+      class="general-btn-red mb-2"
+    >
+      Clear Calendar
+    </button>
+    <div
+      class=" week-container container vw-100 mx-2"
+    >
+      <div
+        class="MealPlanner-week-div row"
+      >
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Mon
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/recipes/1111"
+                >
+                  <b>
+                    bacon
+                  </b>
+                </a>
+                 (20 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="1"
+                >
+                  X
+                </button>
+              </li>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/recipes/2222"
+                >
+                  <b>
+                    eggs
+                  </b>
+                </a>
+                 (10 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="2"
+                >
+                  X
+                </button>
+              </li>
+            </ol>
+          </div>
+          <p
+            class="Day-points"
+          >
+            <b>
+              Points:
+            </b>
+             30
+          </p>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Tues
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol>
+              <li>
+                 
+                <a
+                  class="RecipeList-para"
+                  href="/recipes/3333"
+                >
+                  <b>
+                    salad
+                  </b>
+                </a>
+                 (5 points)
+                <button
+                  class="general-btn-red small-btn"
+                  data-testid="3"
+                >
+                  X
+                </button>
+              </li>
+            </ol>
+          </div>
+          <p
+            class="Day-points"
+          >
+            <b>
+              Points:
+            </b>
+             5
+          </p>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Wed
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol />
+          </div>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Thurs
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol />
+          </div>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Fri
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol />
+          </div>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Sat
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol />
+          </div>
+        </div>
+        <div
+          class="Day col-lg d-flex flex-column"
+        >
+          <p>
+            <b>
+              Sun
+            </b>
+          </p>
+          <div
+            class="list-container flex-grow-1"
+          >
+            <ol />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MealPlanner-form"
+    >
+      <form>
+        <label
+          for="daySelect"
+        >
+          Select Day
+        </label>
+        <select
+          id="daySelect"
+          name="daySelect"
+        >
+          <option
+            value="Mon"
+          >
+            Mon
+          </option>
+          <option
+            value="Tues"
+          >
+            Tues
+          </option>
+          <option
+            value="Wed"
+          >
+            Wed
+          </option>
+          <option
+            value="Thurs"
+          >
+            Thurs
+          </option>
+          <option
+            value="Fri"
+          >
+            Fri
+          </option>
+          <option
+            value="Sat"
+          >
+            Sat
+          </option>
+          <option
+            value="Sun"
+          >
+            Sun
+          </option>
+        </select>
+        <label
+          for="mealSelect"
+        >
+          Select Meal
+        </label>
+        <select
+          id="mealSelect"
+          name="mealSelect"
+        >
+          <option
+            value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
+          >
+            bacon
+          </option>
+          <option
+            value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
+          >
+            eggs
+          </option>
+          <option
+            value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
+          >
+            salad
+          </option>
+          <option
+            value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
+          >
+            bread
+          </option>
+        </select>
+        <button
+          class="general-btn"
+          type="submit"
+        >
+          Add to Calendar
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`matches snapshot, correct displaying 2 meals Monday and 1 Tuesday 1`] = `
 <DocumentFragment>
   <div

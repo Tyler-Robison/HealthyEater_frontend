@@ -20,3 +20,5 @@ it("matches snapshot", function () {
     );
     expect(container.asFragment()).toMatchSnapshot();
 });
+
+// ability of RequireAuth to prevent authorized access is tested in App.test

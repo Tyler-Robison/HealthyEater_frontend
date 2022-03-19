@@ -47,3 +47,18 @@ it("matches snapshot with filled ingredientList", function () {
     );
     expect(container.asFragment()).toMatchSnapshot();
 });
+
+it("correctly renders IngredientList", function () {
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+                <DummyComponent initialState={['cheese', 'eggs', 'ham']} />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+
+    // name of first recipe
+    expect(screen.getByText('cheese')).toBeInTheDocument()
+    expect(screen.getByText('eggs')).toBeInTheDocument()
+    expect(screen.getByText('ham')).toBeInTheDocument()
+})

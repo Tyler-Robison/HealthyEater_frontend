@@ -51,3 +51,20 @@ it("matches snapshot.", function () {
     );
     expect(container.asFragment()).toMatchSnapshot();
 });
+
+it("correctly renders steps", function () {
+
+    render(
+        <MemoryRouter>
+            <ContextProvider >
+            <StepsList recipeDetail={recipeDetail} />
+            </ContextProvider>
+        </MemoryRouter>
+    );
+
+    expect(screen.getByText('mock equipment, other equipment')).toBeInTheDocument();
+    expect(screen.getByText('mock ingredient, other ingredient')).toBeInTheDocument();
+    expect(screen.getByText('Do the first step')).toBeInTheDocument();
+    expect(screen.getByText('Do the second step')).toBeInTheDocument();
+    expect(screen.getByText('Do the third step')).toBeInTheDocument();
+});
