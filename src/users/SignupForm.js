@@ -18,7 +18,7 @@ const SignupForm = () => {
 
     useEffect(() => {
         if (currentUser) navigate('/')
-    }, [])
+    })
 
     const formik = useFormik({
         initialValues: {
