@@ -3,6 +3,10 @@ An App designed to help users lose weight while eating great tasting recipes.
 
 Live version can be viewed at: https://healthyeater.surge.sh/healthyeater
 
+Back-end GitHub: https://github.com/Tyler-Robison/HealthyEater_backend
+
+Front-end GitHub: https://github.com/Tyler-Robison/HealthyEater_frontend
+
 ## About Healthy Eater:
 I wanted to create an app that would allow users to search for recipes based on their favorite ingredients and use those recipes to construct a mealplan aimed at helping them lose weight. 
 
@@ -109,8 +113,7 @@ Runs a specific test suite
 ### Back End:
 
 ### `node server.js`
-Starts the server
-CTRL c to exit
+Starts the server, CTRL c to exit
 
 Runs the app in the development mode.
 Opens the API on port 3001 http://localhost:3001.
