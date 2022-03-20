@@ -52,6 +52,9 @@ const testRecipes = [
     }
 ];
 
+// mock users and recipes which can be used in tests
+// allows testing of components without having to login
+// or mock API calls to add recipes
 export {
     testUser,
     testGuest,
