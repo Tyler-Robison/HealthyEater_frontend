@@ -13,7 +13,7 @@ exports[`matches snapshot with blank ingredientList 1`] = `
     />
     <div>
       <button
-        class="general-btn mb-2"
+        class="general-btn my-2"
         type="submit"
       >
         Add Ingredient
@@ -36,7 +36,7 @@ exports[`matches snapshot with filled ingredientList 1`] = `
     />
     <div>
       <button
-        class="general-btn mb-2"
+        class="general-btn my-2"
         type="submit"
       >
         Add Ingredient

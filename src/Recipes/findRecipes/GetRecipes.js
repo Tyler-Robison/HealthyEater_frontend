@@ -82,8 +82,8 @@ const GetRecipes = () => {
 
                             <div className="flex-grow-1 d-flex flex-column justify-content-between">
                                 <div>
-                                    {searchMsg && <p>Recipe search failed. Try removing ingredients. If you have nutritional constraints, try relaxing them.</p>}
-                                    {ingredientMsg && <p>Must add at least one ingredient!</p>}
+                                    {searchMsg && <p className="error-msg">Recipe search failed. Try removing ingredients. If you have nutritional constraints, try relaxing them.</p>}
+                                    {ingredientMsg && <p className="error-msg">Must add at least one ingredient!</p>}
                                     <IngredientForm ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
                                     <IngredientList ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
 

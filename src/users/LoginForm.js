@@ -47,7 +47,7 @@ const LoginForm = () => {
             <div className="row mt-3">
                 <div className="LoginForm-div col-12">
                     <h1>Enter Username/Password</h1>
-                    {failureMsg && <p>Invalid Username/Password</p>}
+                    {failureMsg && <p className="error-msg">Invalid Username/Password</p>}
 
                     <form onSubmit={formik.handleSubmit}>
                         <div>
@@ -62,7 +62,7 @@ const LoginForm = () => {
                                 placeholder="Username"
                             />
                             {formik.touched.username && formik.errors.username && (
-                                <div>{formik.errors.username}</div>
+                                <div className="error-msg">{formik.errors.username}</div>
                             )}
                         </div>
                         <div>
@@ -77,7 +77,7 @@ const LoginForm = () => {
                                 placeholder="Password"
                             />
                             {formik.touched.password && formik.errors.password && (
-                                <div>{formik.errors.password}</div>
+                                <div className="error-msg">{formik.errors.password}</div>
                             )}
                         </div>
                         <button className="general-btn LoginForm-btn" data-testid="login-btn" type="submit">Login</button>

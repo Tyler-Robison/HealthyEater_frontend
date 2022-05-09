@@ -31,44 +31,7 @@ it("matches snapshot", function () {
 });
 
 
-test("can register new user, starting from homepage", async function () {
-  // mock of the token value returned by UserApi.register
-  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
 
-  // mock of currentUser by returned by UserAPI.getUserInfo
-  mockedAxios.get.mockResolvedValueOnce(mockUserData);
-
-  render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>
-  );
-
-  // proves we're on homepage
-  expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
-
-  const signupAnchor = screen.getByText('Signup')
-  fireEvent.click(signupAnchor)
-
-  // moved from homepage to sign-in page
-  expect(screen.queryByText('Welcome to Healthy-Eater!')).not.toBeInTheDocument();
-  expect(screen.getByText('Enter Username/Password')).toBeInTheDocument();
-
-  const signupBtn = screen.getByText('Sign-up');
-  const usernameInput = screen.getByLabelText('Username');
-  const passwordInput = screen.getByLabelText('Password');
-
-  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
-  fireEvent.change(passwordInput, { target: { value: 'password' } });
-  fireEvent.click(signupBtn);
-
-  // navigated back to homepage, showing user-specific welcome back msg
-  await waitFor(() => {
-    expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
-    expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
-    expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
-  });
-});
 
 test("Sign-up fails with invalid password, correct message displays", async function () {
   // mock of the token value returned by UserAPI.register
@@ -148,6 +111,45 @@ test("user denied site access on failed sign-up", async function () {
 
   // Didn't get to GetRecipes component because user isn't logged in
   expect(screen.queryByText('Ingredients')).not.toBeInTheDocument()
+});
+
+test("can register new user, starting from homepage", async function () {
+  // mock of the token value returned by UserApi.register
+  mockedAxios.post.mockResolvedValueOnce(mockTokenData);
+
+  // mock of currentUser by returned by UserAPI.getUserInfo
+  mockedAxios.get.mockResolvedValueOnce(mockUserData);
+
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  // proves we're on homepage
+  expect(screen.getByText('Welcome to Healthy-Eater!')).toBeInTheDocument();
+
+  const signupAnchor = screen.getByText('Signup')
+  fireEvent.click(signupAnchor)
+
+  // moved from homepage to sign-in page
+  expect(screen.queryByText('Welcome to Healthy-Eater!')).not.toBeInTheDocument();
+  expect(screen.getByText('Enter Username/Password')).toBeInTheDocument();
+
+  const signupBtn = screen.getByText('Sign-up');
+  const usernameInput = screen.getByLabelText('Username');
+  const passwordInput = screen.getByLabelText('Password');
+
+  fireEvent.change(usernameInput, { target: { value: 'Tyler' } });
+  fireEvent.change(passwordInput, { target: { value: 'password' } });
+  fireEvent.click(signupBtn);
+
+  // navigated back to homepage, showing user-specific welcome back msg
+  await waitFor(() => {
+    expect(mockedAxios.post.mockResolvedValueOnce(mockTokenData)).toHaveBeenCalledTimes(1)
+    expect(mockedAxios.get.mockResolvedValueOnce(mockUserData)).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Welcome back Tyler!')).toBeInTheDocument();
+  });
 });
 
 test("existing user can login", async function () {

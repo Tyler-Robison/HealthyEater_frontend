@@ -57,7 +57,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxFat && formik.errors.maxFat && (
-                    <div>{formik.errors.maxFat}</div>
+                    <div className="error-msg">{formik.errors.maxFat}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -72,7 +72,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxSaturatedFat && formik.errors.maxSaturatedFat && (
-                    <div>{formik.errors.maxSaturatedFat}</div>
+                    <div className="error-msg">{formik.errors.maxSaturatedFat}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -87,7 +87,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxCarbs && formik.errors.maxCarbs && (
-                    <div>{formik.errors.maxCarbs}</div>
+                    <div className="error-msg">{formik.errors.maxCarbs}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -102,7 +102,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxCalories && formik.errors.maxCalories && (
-                    <div>{formik.errors.maxCalories}</div>
+                    <div className="error-msg">{formik.errors.maxCalories}</div>
                 )}
 
 
@@ -118,7 +118,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxCholesterol && formik.errors.maxCholesterol && (
-                    <div>{formik.errors.maxCholesterol}</div>
+                    <div className="error-msg">{formik.errors.maxCholesterol}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -133,7 +133,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxSugar && formik.errors.maxSugar && (
-                    <div>{formik.errors.maxSugar}</div>
+                    <div className="error-msg">{formik.errors.maxSugar}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -148,7 +148,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.maxSodium && formik.errors.maxSodium && (
-                    <div>{formik.errors.maxSodium}</div>
+                    <div className="error-msg">{formik.errors.maxSodium}</div>
                 )}
 
                 <div className="nutrient-input-div">
@@ -163,7 +163,7 @@ const NutrientForm = ({ setFat, setSatFat, setSugar, setProtein, setSodium, setC
                     />
                 </div>
                 {formik.touched.minProtein && formik.errors.minProtein && (
-                    <div>{formik.errors.minProtein}</div>
+                    <div className="error-msg">{formik.errors.minProtein}</div>
                 )}
             </div>
             <div>

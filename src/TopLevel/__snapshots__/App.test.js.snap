@@ -38,7 +38,7 @@ exports[`matches snapshot 1`] = `
             Signup
           </a>
           <button
-            class="general-btn"
+            class="general-btn mt-2"
           >
             Continue as Guest
           </button>

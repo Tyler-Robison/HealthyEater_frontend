@@ -43,7 +43,7 @@ const MealPlanner = () => {
                     </div>}
             </div>
 
-            <button className='general-btn-red mb-2' onClick={deleteMealplan}>Clear Calendar</button>
+            <button className='general-btn-red mb-3 mt-2' onClick={deleteMealplan}>Clear Calendar</button>
 
             <div className=' week-container container vw-100 mx-2'>
                 <div className="MealPlanner-week-div row">

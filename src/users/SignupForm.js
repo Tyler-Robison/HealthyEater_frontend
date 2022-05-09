@@ -48,7 +48,7 @@ const SignupForm = () => {
                 <div className="SignupForm-div col-12">
 
                     <h1>Enter Username/Password</h1>
-                    {failureMsg && <p>That username is already taken</p>}
+                    {failureMsg && <p className="error-msg">That username is already taken</p>}
                     <form onSubmit={formik.handleSubmit}>
                         <div>
                             <div><label htmlFor="username">Username</label></div>
@@ -62,7 +62,7 @@ const SignupForm = () => {
                                 placeholder="Username"
                             />
                             {formik.touched.username && formik.errors.username && (
-                                <div>{formik.errors.username}</div>
+                                <div className="error-msg">{formik.errors.username}</div>
                             )}
                         </div>
                         <div>
@@ -77,7 +77,7 @@ const SignupForm = () => {
                                 placeholder="Password"
                             />
                             {formik.touched.password && formik.errors.password && (
-                                <div>{formik.errors.password}</div>
+                                <div className="error-msg">{formik.errors.password}</div>
                             )}
                         </div>
                         <button className="general-btn SignupForm-btn" type="submit">Sign-up</button>

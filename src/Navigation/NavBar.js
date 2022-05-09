@@ -46,7 +46,7 @@ const NavBar = ({ logout, guestLogin }) => {
                 Signup
             </NavLink>
 
-            <button onClick={guestLogin} className="general-btn">Continue as Guest</button>
+            <button onClick={guestLogin} className="general-btn mt-2">Continue as Guest</button>
 
             <NavLink className="nav-link login" to="/login">
                 Login

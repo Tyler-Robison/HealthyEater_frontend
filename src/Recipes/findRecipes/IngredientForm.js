@@ -40,11 +40,11 @@ const IngredientForm = ({ ingredientsList, setIngredientsList }) => {
             />
 
             {formik.touched.ingredient && formik.errors.ingredient && (
-                <div>{formik.errors.ingredient}</div>
+                <div className="error-msg">{formik.errors.ingredient}</div>
             )}
 
             <div>
-                <button className="general-btn mb-2" type="submit">Add Ingredient</button>
+                <button className="general-btn my-2" type="submit">Add Ingredient</button>
             </div>
         </form>
     )

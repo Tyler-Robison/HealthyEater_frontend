@@ -59,7 +59,7 @@ exports[`matches snapshot 1`] = `
                   />
                   <div>
                     <button
-                      class="general-btn mb-2"
+                      class="general-btn my-2"
                       type="submit"
                     >
                       Add Ingredient

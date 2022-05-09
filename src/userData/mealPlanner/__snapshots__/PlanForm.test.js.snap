@@ -12,6 +12,7 @@ exports[`matches snapshot 1`] = `
         Select Day
       </label>
       <select
+        class="mx-2"
         id="daySelect"
         name="daySelect"
       >
@@ -57,32 +58,33 @@ exports[`matches snapshot 1`] = `
         Select Meal
       </label>
       <select
+        class="mx-2"
         id="mealSelect"
         name="mealSelect"
       >
         <option
-          value="{\\"name\\":\\"bacon\\",\\"recipe_id\\":1111,\\"ww_points\\":20}"
+          value="1111"
         >
           bacon
         </option>
         <option
-          value="{\\"name\\":\\"eggs\\",\\"recipe_id\\":2222,\\"ww_points\\":10}"
+          value="2222"
         >
           eggs
         </option>
         <option
-          value="{\\"name\\":\\"salad\\",\\"recipe_id\\":3333,\\"ww_points\\":5}"
+          value="3333"
         >
           salad
         </option>
         <option
-          value="{\\"name\\":\\"bread\\",\\"recipe_id\\":4444,\\"ww_points\\":7}"
+          value="4444"
         >
           bread
         </option>
       </select>
       <button
-        class="general-btn"
+        class="general-btn m-2"
         type="submit"
       >
         Add to Calendar
